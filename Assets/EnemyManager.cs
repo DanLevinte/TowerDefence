@@ -26,17 +26,50 @@ public class EnemyManager : MonoBehaviour
 
         for (int i = 0; i <= path.Count - 1; i++)
         {
+            if (currentPos == null) { currentPos = path[i]; }
+
+            if (nextPath == null && currentPos != path[i]) { nextPath = path[i]; }
+
             if (i == path.Count - 1) { designatedPos = path[i]; break; }
         }
     }
 
     private void Update()
     {
-        if (designatedPos.pathPos != Vector3.zero) 
+        if (nextPath != null) 
         {
-            Vector3 targetPos = new Vector3(designatedPos.pathPos.x, gameObject.transform.position.y, designatedPos.pathPos.z);
-
+            Vector3 targetPos = new Vector3(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);      
             transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+
+            if (Vector2.Distance(targetPos, transform.position) == 0) { CleanPath(); }
+        } 
+    }
+
+    private void CleanPath()
+    {
+        var path = PathManager.instance.paths;
+
+        for (int i = 0; i <= path.Count - 1; i++)
+        {
+            if (currentPos == path[i]) { path.Remove(path[i]); currentPos = null; }
+            if (nextPath == path[i]) 
+            { 
+                path.Remove(path[i]);
+                currentPos = nextPath;
+                nextPath = null;
+                break;
+            }
+        }
+    }
+
+    private void SetPath()
+    {
+        var path = PathManager.instance.paths;
+
+        for (int i = 0; i <= path.Count - 1; i++)
+        {
+            nextPath = path[i];
+            break;
         }
     }
 }
