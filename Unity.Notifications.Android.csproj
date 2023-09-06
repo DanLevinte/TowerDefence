@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F26E47C4-7ADB-07E1-2C1A-CA4B863FE6A4}</ProjectGuid>
+    <ProjectGuid>{F0F1FE8F-39FB-81C6-B282-9CCAE673C066}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Notifications.Android</AssemblyName>

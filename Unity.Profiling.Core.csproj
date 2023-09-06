@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9486AA65-DE38-E63B-EAAF-E57BB326CFAE}</ProjectGuid>
+    <ProjectGuid>{8E25919A-82F3-8F8B-995D-41F2D9197ABA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Profiling.Core</AssemblyName>

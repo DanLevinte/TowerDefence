@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5C25D2DD-C33D-1D93-E9B7-75DD2F844A87}</ProjectGuid>
+    <ProjectGuid>{43D53A4A-9564-32FD-7101-E08431217393}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.AdaptivePerformance.Simulator.Editor</AssemblyName>
@@ -747,19 +747,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.AdaptivePerformance.csproj">
-      <Project>{D2D1A202-743F-C018-0915-ECAF846A5445}</Project>
+      <Project>{A39A920D-D44E-416B-AE80-D81F0D02EC1F}</Project>
       <Name>Unity.AdaptivePerformance</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Editor.csproj">
-      <Project>{CE31EC6B-9178-C211-24F0-07113F353958}</Project>
+      <Project>{B608278E-5CE3-285E-5996-A3206A85BE91}</Project>
       <Name>Unity.AdaptivePerformance.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{AFD81124-A3D1-A560-00CC-3E4F08EF37CD}</Project>
+      <Project>{638F2B03-3C29-80A9-3F5D-9C5E334CC028}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{4B321203-0888-5371-C266-C639A73A0E4C}</Project>
+      <Project>{39F28EBC-1442-72DD-7F5C-7D244F8349FF}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

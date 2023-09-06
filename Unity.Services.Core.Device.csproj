@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{98585D1B-535A-E92E-60DA-5FCE99AFEED0}</ProjectGuid>
+    <ProjectGuid>{A1E6BDEF-CC9D-EF92-10F0-D1817A4DB87A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Services.Core.Device</AssemblyName>
@@ -734,7 +734,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Services.Core.Internal.csproj">
-      <Project>{080D0D72-E3BB-AE30-E4D1-DECA6A2D6BE9}</Project>
+      <Project>{8C53FCCE-9CD9-49C3-6135-191D306A9394}</Project>
       <Name>Unity.Services.Core.Internal</Name>
     </ProjectReference>
   </ItemGroup>

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{19C9D038-71C5-931B-2FC7-C9DB87527DC2}</ProjectGuid>
+    <ProjectGuid>{77EF34EF-941B-BDB7-0D5B-C27E3DC02F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Services.Core</AssemblyName>

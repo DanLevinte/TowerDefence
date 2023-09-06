@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7D4C0D61-FFAC-D014-1436-E4AC50EA5A2B}</ProjectGuid>
+    <ProjectGuid>{7BA77043-A2A8-3883-B348-0419DF4B3143}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Notifications.iOS</AssemblyName>
