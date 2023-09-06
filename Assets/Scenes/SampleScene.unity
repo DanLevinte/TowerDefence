@@ -1071,10 +1071,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1968766472}
   currentPos: {fileID: 0}
+  nextPath: {fileID: 0}
   designatedPos: {fileID: 0}
   maxHealthPoints: 0
   currentHealthPoints: 0
-  speed: 0.025
+  speed: 0.01
 --- !u!1 &2080594382
 GameObject:
   m_ObjectHideFlags: 0
