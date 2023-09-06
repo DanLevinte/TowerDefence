@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     public Rigidbody rb;
 
     public Path currentPos;
+    public Path nextPath;
     public Path designatedPos;
 
     public int maxHealthPoints;
