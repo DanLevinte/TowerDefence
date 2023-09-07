@@ -361,11 +361,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/EnemyManager.cs"
-"Assets/Path.cs"
-"Assets/PathManager.cs"
-"Assets/TowerLayoutUI.cs"
-"Assets/TowerManager.cs"
+"Assets/Scripts/BallistaLayout.cs"
+"Assets/Scripts/EnemyManager.cs"
+"Assets/Scripts/Path.cs"
+"Assets/Scripts/PathManager.cs"
+"Assets/Scripts/TowerLayoutUI.cs"
+"Assets/Scripts/TowerManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
