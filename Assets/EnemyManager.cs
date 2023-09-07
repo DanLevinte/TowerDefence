@@ -55,9 +55,5 @@ public class EnemyManager : MonoBehaviour
         {
             if (nextPath == null) { nextPath = path[i]; break; }
         }
-
-        Vector3 targetPos = new(designatedPos.pathPos.x, gameObject.transform.position.y, designatedPos.pathPos.z);
-
-        if (Vector3.Distance(targetPos, transform.position) == 0) { nextPath = null; }
     }
 }
