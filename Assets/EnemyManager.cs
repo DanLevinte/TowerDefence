@@ -6,7 +6,6 @@ public class EnemyManager : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public Path currentPos;
     public Path nextPath;
     public Path designatedPos;
 
@@ -26,9 +25,7 @@ public class EnemyManager : MonoBehaviour
 
         for (int i = 0; i <= path.Count - 1; i++)
         {
-            if (currentPos == null) { currentPos = path[i]; }
-
-            if (nextPath == null && currentPos != path[i]) { nextPath = path[i]; }
+            if (nextPath == null) { nextPath = path[i]; }
 
             if (i == path.Count - 1) { designatedPos = path[i]; break; }
         }
@@ -40,7 +37,7 @@ public class EnemyManager : MonoBehaviour
         {
             Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
 
-            if (Vector2.Distance(targetPos, transform.position) == 0) { Debug.Log("D"); CleanPath(); }
+            if (Vector3.Distance(targetPos, transform.position) == 0) { Debug.Log(nextPath); CleanPath(); }
             else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
         }
     }
@@ -49,15 +46,14 @@ public class EnemyManager : MonoBehaviour
     {
         var path = PathManager.instance.paths;
 
-        for (int i = 0; i <= path.Count - 1; i++)
-        {
-            if (currentPos == path[i]) { path.Remove(path[i]); currentPos = nextPath; break; }
-        }
-
         for (int i = 0; i <= path.Count - 1 ; i++)
         {
-            if (i == path.Count - 1) { nextPath = designatedPos; }
-            else { nextPath = path[i]; break; }
+            if (nextPath == path[i]) { path.Remove(path[i]); nextPath = null; break; }
+        }
+
+        for (int i = 0; i <= path.Count - 1; i++)
+        {
+            if (nextPath == null) { nextPath = path[i]; break; }
         }
     }
 }
