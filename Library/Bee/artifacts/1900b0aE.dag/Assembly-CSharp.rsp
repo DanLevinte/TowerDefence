@@ -364,6 +364,8 @@
 "Assets/EnemyManager.cs"
 "Assets/Path.cs"
 "Assets/PathManager.cs"
+"Assets/TowerLayoutUI.cs"
+"Assets/TowerManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
