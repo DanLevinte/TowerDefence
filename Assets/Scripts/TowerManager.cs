@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class TowerManager : MonoBehaviour, IPointerClickHandler
+public class TowerManager : MonoBehaviour
 {
-    public GameObject canvas;
-    public GameObject buildTowerLayout;
+    public Tower towerInUse;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public static TowerManager instance;
+
+    private void Awake()
     {
-        GameObject go = Instantiate(buildTowerLayout, eventData.delta, Quaternion.identity);
-        go.transform.position = eventData.position;
-        go.transform.SetParent(canvas.transform);
+        instance = this;
     }
 }

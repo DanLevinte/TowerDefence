@@ -13,20 +13,13 @@ public class TowerLayoutUI : MonoBehaviour, IPointerExitHandler, IPointerClickHa
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        TowerManager.instance.towerInUse = null;
         Destroy(this.gameObject);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //this.gameObject.GetComponent<Image>().raycastTarget = false;
+        TowerManager.instance.towerInUse = null;
         Destroy(this.gameObject);
-        //StartCoroutine(DestroyLayout());
-    }
-
-    private IEnumerator DestroyLayout()
-    {
-        yield return new WaitForSeconds(.2f);
-    
-        Destroy(gameObject);
     }
 }
