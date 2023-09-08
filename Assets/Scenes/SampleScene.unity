@@ -1282,6 +1282,7 @@ MonoBehaviour:
   canvas: {fileID: 587294087}
   buildTowerLayout: {fileID: 5934945146606581309, guid: d3c12779114749a4d848791e2127fe1a,
     type: 3}
+  spawnedTower: {fileID: 0}
 --- !u!1 &1205674580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2039,7 @@ GameObject:
   - component: {fileID: 1968766476}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: DownEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
