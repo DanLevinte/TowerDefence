@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour
 
     public float speed;
 
+    public bool switchColor;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -40,6 +42,8 @@ public class EnemyManager : MonoBehaviour
             if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
             else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
         }
+
+        if (switchColor) { StartCoroutine(SetHurtColor()); }
     }
 
     private void CleanPath()
@@ -54,6 +58,31 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i <= path.Count - 1; i++)
         {
             if (nextPath == null) { nextPath = path[i]; break; }
+        }
+    }
+
+    private IEnumerator SetHurtColor()
+    {
+        switchColor = false;
+
+        yield return new WaitForSeconds(.25f);
+
+        GetComponent<MeshRenderer>().materials[0].color = Color.white;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            GetComponent<MeshRenderer>().materials[0].color = Color.red;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            GetComponent<MeshRenderer>().materials[0].color = Color.white;
         }
     }
 }

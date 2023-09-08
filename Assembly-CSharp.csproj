@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\Ballista.cs" />
+    <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

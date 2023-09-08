@@ -5,15 +5,19 @@ using UnityEngine;
 public class Ballista : MonoBehaviour
 {
     public GameObject target;
-    public GameObject arrow;
+    public GameObject projectile;
+    public GameObject projectilePos;
+
+    public bool canShoot;
 
     private void Update()
     {
         if (target != null)
         {
-            GetComponent<ParticleSystem>().Play();
             transform.LookAt(target.transform.position);
-        } else { GetComponent<ParticleSystem>().Pause(); }
+
+            if (canShoot) { StartCoroutine(ShootProjectile()); Debug.Log("s"); }
+        }
     }
 
 
@@ -33,5 +37,15 @@ public class Ballista : MonoBehaviour
         }
     }
 
+    private IEnumerator ShootProjectile()
+    {
+        canShoot = false;
 
+        yield return new WaitForSeconds(2);
+
+        GameObject go = Instantiate(projectile, projectilePos.transform.position, projectile.transform.rotation);
+        go.GetComponent<ProjectileMesh>().target = target;
+
+        canShoot = true;
+    }
 }

@@ -366,6 +366,7 @@
 "Assets/Scripts/EnemyManager.cs"
 "Assets/Scripts/Path.cs"
 "Assets/Scripts/PathManager.cs"
+"Assets/Scripts/ProjectileMesh.cs"
 "Assets/Scripts/Tower.cs"
 "Assets/Scripts/TowerLayoutUI.cs"
 "Assets/Scripts/TowerManager.cs"
