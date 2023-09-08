@@ -16,7 +16,7 @@ public class Ballista : MonoBehaviour
         {
             transform.LookAt(target.transform.position);
 
-            if (canShoot) { StartCoroutine(ShootProjectile()); Debug.Log("s"); }
+            if (canShoot) { StartCoroutine(ShootProjectile()); }
         }
     }
 
