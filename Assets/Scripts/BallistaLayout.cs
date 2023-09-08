@@ -22,6 +22,8 @@ public class BallistaLayout : MonoBehaviour, IPointerClickHandler
         go.transform.localScale = new Vector3(.5f, 1, .5f);
         go.transform.localPosition = new Vector3(0, 1, 0);
 
+        TowerManager.instance.towerInUse.spawnedTower = go;
+
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

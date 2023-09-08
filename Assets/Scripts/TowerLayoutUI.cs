@@ -14,7 +14,7 @@ public class TowerLayoutUI : MonoBehaviour, IPointerExitHandler, IPointerClickHa
     public void OnPointerExit(PointerEventData eventData)
     {
         TowerManager.instance.towerInUse = null;
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, .5f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
