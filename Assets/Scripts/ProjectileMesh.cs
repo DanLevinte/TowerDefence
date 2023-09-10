@@ -13,9 +13,10 @@ public class ProjectileMesh : MonoBehaviour
         {
             lifespan -= Time.deltaTime;
 
-            transform.LookAt(target.transform.position);
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f);
+
         } else { lifespan = 0; }
+
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f);
 
         if (lifespan <= 0) { Destroy(gameObject); }
     }

@@ -8,7 +8,6 @@ public class Ballista : MonoBehaviour
     public GameObject projectile;
     public GameObject projectilePos;
     public GameObject ballistaBody;
-    public GameObject projectileOnBallista;
 
     public bool canShoot;
 

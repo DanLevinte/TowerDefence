@@ -2124,7 +2124,7 @@ MonoBehaviour:
   designatedPos: {fileID: 0}
   maxHealthPoints: 0
   currentHealthPoints: 0
-  speed: 0.001
+  speed: 0.005
   switchColor: 0
 --- !u!1 &1974253645
 GameObject:
