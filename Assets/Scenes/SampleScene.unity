@@ -1637,6 +1637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518169069}
+  - component: {fileID: 1518169070}
   m_Layer: 0
   m_Name: MoneyManager
   m_TagString: Untagged
@@ -1659,6 +1660,19 @@ Transform:
   m_Father: {fileID: 104403898}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518169070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518169068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc73ea41479194081a11b22b4f996a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bank: 0
 --- !u!1 &1582338486
 GameObject:
   m_ObjectHideFlags: 0

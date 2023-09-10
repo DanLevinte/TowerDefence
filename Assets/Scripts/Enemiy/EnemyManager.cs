@@ -54,15 +54,13 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        //if (nextPath != null enemyState == EnemyState.isWalking) 
-        //{
-        //    Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
-        //
-        //    if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
-        //    else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
-        //
-        //    enemyState = EnemyState.isWalking;
-        //}
+        if (enemyState == EnemyState.isWalking && nextPath != null) 
+        {
+            Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
+        
+            if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
+            else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
+        }
 
         if (switchColor) { StartCoroutine(SetHurtColor()); }
 
