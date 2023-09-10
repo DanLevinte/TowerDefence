@@ -5,20 +5,23 @@ using UnityEngine;
 public class ProjectileMesh : MonoBehaviour
 {
     public GameObject target;
-    public float lifespan = 1.25f;
+    public float lifespan = 5f;
 
     private void Update()
     {
         if (target != null)
         {
             lifespan -= Time.deltaTime;
+            transform.LookAt(target.transform.position);
 
+        } else { lifespan = 0; Destroy(gameObject); }
 
-        } else { lifespan = 0; }
+        transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
 
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f);
+        if (lifespan <= 0) { gameObject.SetActive(false); }
 
-        if (lifespan <= 0) { Destroy(gameObject); }
+        if (this.gameObject.transform.parent == null && target != null) { transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f); }
+        else { Destroy(gameObject); }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,8 +30,12 @@ public class ProjectileMesh : MonoBehaviour
         {
             other.GetComponent<EnemyManager>().switchColor = true;
             target.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            this.gameObject.transform.SetParent(other.transform);
 
-            Destroy(gameObject, .25f);
+            transform.LookAt(target.transform.position);
+            transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
+
+            //Destroy(gameObject, .25f);
         }
     }
 }
