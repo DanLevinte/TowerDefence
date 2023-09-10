@@ -7,6 +7,8 @@ public class ProjectileMesh : MonoBehaviour
     public GameObject target;
     public float lifespan = 5f;
 
+    public int projDamage;
+
     private void Update()
     {
         if (target != null)
@@ -32,6 +34,7 @@ public class ProjectileMesh : MonoBehaviour
             target.GetComponent<MeshRenderer>().materials[0].color = Color.red;
             this.gameObject.transform.SetParent(other.transform);
 
+            other.GetComponent<EnemyManager>().currentHealth -= projDamage;
             transform.LookAt(target.transform.position);
             transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
 

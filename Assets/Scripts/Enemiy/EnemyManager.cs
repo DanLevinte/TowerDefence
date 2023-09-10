@@ -1,6 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+
+public enum EnemyState
+{
+    isWalking,
+    isHurt,
+    isDead,
+    isFinished
+}
 
 public class EnemyManager : MonoBehaviour
 {
@@ -15,6 +24,12 @@ public class EnemyManager : MonoBehaviour
     public float speed;
 
     public bool switchColor;
+
+    public EnemyState enemyState;
+
+    [Expandable]
+    public Enemy enemy;
+    public int currentHealth;
 
     private void Awake()
     {
@@ -31,19 +46,29 @@ public class EnemyManager : MonoBehaviour
 
             if (i == path.Count - 1) { designatedPos = path[i]; }
         }
+
+        enemyState = EnemyState.isWalking;
+
+        currentHealth = enemy.health;
     }
 
     private void Update()
     {
-        if (nextPath != null) 
-        {
-            Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
-
-            if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
-            else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
-        }
+        //if (nextPath != null enemyState == EnemyState.isWalking) 
+        //{
+        //    Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
+        //
+        //    if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
+        //    else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
+        //
+        //    enemyState = EnemyState.isWalking;
+        //}
 
         if (switchColor) { StartCoroutine(SetHurtColor()); }
+
+        if (enemyState == EnemyState.isHurt && currentHealth <= 0) { enemyState = EnemyState.isDead; }
+
+        if (enemyState == EnemyState.isDead) { KillEnemy(); }
     }
 
     private void CleanPath()
@@ -61,6 +86,21 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    private void KillEnemy()
+    {
+        int chanceOfGettingMoney = Random.Range(0, enemy.chanceOfDroppingGold);
+
+        if (chanceOfGettingMoney <= enemy.chanceOfDroppingGold)
+        {
+            int money = Random.Range(enemy.minValueOfGold, enemy.maxValueOfGold);
+            MoneyManager.instance.bank += money;
+        }
+
+        enemyState = EnemyState.isFinished;
+
+        Destroy(gameObject);
+    }
+
     private IEnumerator SetHurtColor()
     {
         switchColor = false;
@@ -68,6 +108,7 @@ public class EnemyManager : MonoBehaviour
         yield return new WaitForSeconds(.25f);
 
         GetComponent<MeshRenderer>().materials[0].color = Color.white;
+        enemyState = EnemyState.isWalking;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,6 +116,7 @@ public class EnemyManager : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            enemyState = EnemyState.isHurt;
         }
     }
 

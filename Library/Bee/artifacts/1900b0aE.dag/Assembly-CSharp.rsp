@@ -368,6 +368,7 @@
 "Assets/Scripts/BallistaLayout.cs"
 "Assets/Scripts/Enemiy/Enemy.cs"
 "Assets/Scripts/Enemiy/EnemyManager.cs"
+"Assets/Scripts/MoneyManager.cs"
 "Assets/Scripts/Path.cs"
 "Assets/Scripts/PathManager.cs"
 "Assets/Scripts/ProjectileMesh.cs"
