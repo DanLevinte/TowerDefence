@@ -1166,7 +1166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203364074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.78, y: 0.5, z: -74.85}
+  m_LocalPosition: {x: 2.59, y: 0.5, z: -77.38}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2124,7 +2124,8 @@ MonoBehaviour:
   designatedPos: {fileID: 0}
   maxHealthPoints: 0
   currentHealthPoints: 0
-  speed: 0.01
+  speed: 0.001
+  switchColor: 0
 --- !u!1 &1974253645
 GameObject:
   m_ObjectHideFlags: 0

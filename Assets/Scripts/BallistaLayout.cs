@@ -18,8 +18,7 @@ public class BallistaLayout : MonoBehaviour, IPointerClickHandler
         GameObject go = Instantiate(ballistaPrefab, parent.position, Quaternion.identity);
 
         go.transform.SetParent(TowerManager.instance.towerInUse.transform);
-        go.transform.localScale = new Vector3(.5f, 1, .5f);
-        go.transform.localPosition = new Vector3(0, 1, 0);
+        go.transform.localPosition = new Vector3(0, 0, 0);
 
         TowerManager.instance.towerInUse.spawnedTower = go;
 

@@ -57,15 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Ballista.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\TowerLayoutUI.cs" />
+    <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
     <Compile Include="Assets\Scripts\BallistaLayout.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
-    <Compile Include="Assets\Scripts\Ballista.cs" />
-    <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35e46483a3680f4b934255c7b121ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballistaPrefab: {fileID: 7679997269308484035, guid: e8631b05f51a9e344ad4cd1ad5bb6821,
+  ballistaPrefab: {fileID: 2773485740833681633, guid: 833e3e7907d19f04987d927c326a9cdf,
     type: 3}
 --- !u!222 &2449829663741637749
 CanvasRenderer:

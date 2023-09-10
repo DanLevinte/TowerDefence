@@ -7,6 +7,8 @@ public class Ballista : MonoBehaviour
     public GameObject target;
     public GameObject projectile;
     public GameObject projectilePos;
+    public GameObject ballistaBody;
+    public GameObject projectileOnBallista;
 
     public bool canShoot;
 
@@ -14,7 +16,7 @@ public class Ballista : MonoBehaviour
     {
         if (target != null)
         {
-            transform.LookAt(target.transform.position);
+            ballistaBody.transform.LookAt(target.transform.position);
 
             if (canShoot) { StartCoroutine(ShootProjectile()); }
         }
