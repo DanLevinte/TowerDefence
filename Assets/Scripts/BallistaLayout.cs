@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class BallistaLayout : MonoBehaviour, IPointerClickHandler
+public class BallistaLayout : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject ballistaPrefab;
+    public Image ballistaInfo;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -23,5 +24,15 @@ public class BallistaLayout : MonoBehaviour, IPointerClickHandler
         TowerManager.instance.towerInUse.spawnedTower = go;
 
         Destroy(gameObject.transform.parent.gameObject);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ballistaInfo.gameObject.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ballistaInfo.gameObject.SetActive(false);
     }
 }
