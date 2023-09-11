@@ -68,6 +68,9 @@
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
+    <Compile Include="Assets\Scripts\ArcherLayout.cs" />
+    <Compile Include="Assets\Scripts\MageManager.cs" />
+    <Compile Include="Assets\Archer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
