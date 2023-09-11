@@ -61,13 +61,13 @@
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\TowerLayoutUI.cs" />
     <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
+    <Compile Include="Assets\Scripts\Enemiy\Enemy.cs" />
     <Compile Include="Assets\Scripts\BallistaLayout.cs" />
+    <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
-    <Compile Include="Assets\Scripts\Enemiy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\MoneyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -737,6 +737,10 @@
       <Project>{53BD23C4-A5E3-84C0-4A63-B312AECDAF29}</Project>
       <Name>Unity.Notifications</Name>
     </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj">
+      <Project>{E3224A0E-5A1E-DC4B-92A7-24F7D31B2CD6}</Project>
+      <Name>NaughtyAttributes.Test</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{B9416E20-E8D6-1E6B-ACD5-9A28DC634C7A}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
@@ -813,6 +817,10 @@
       <Project>{637CFB13-2358-958E-AEDE-C4C190E4B797}</Project>
       <Name>Unity.Services.Core.Analytics</Name>
     </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj">
+      <Project>{ED8AD875-2F48-7A07-2D3B-957EE51AB98C}</Project>
+      <Name>NaughtyAttributes.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Editor.csproj">
       <Project>{B608278E-5CE3-285E-5996-A3206A85BE91}</Project>
       <Name>Unity.AdaptivePerformance.Editor</Name>
@@ -833,6 +841,10 @@
       <Project>{A78A623C-A060-31DB-8999-8AED650FDB28}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Core.csproj">
+      <Project>{C90C0C4B-B2D9-43ED-DAEF-1579723EB7A3}</Project>
+      <Name>NaughtyAttributes.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.csproj">
       <Project>{A39A920D-D44E-416B-AE80-D81F0D02EC1F}</Project>
       <Name>Unity.AdaptivePerformance</Name>
@@ -848,18 +860,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{EC054111-D6BF-D33D-8D3D-B267E8B0AED4}</Project>
       <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Editor.csproj">
-      <Project>{ED8AD875-2F48-7A07-2D3B-957EE51AB98C}</Project>
-      <Name>NaughtyAttributes.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Test.csproj">
-      <Project>{E3224A0E-5A1E-DC4B-92A7-24F7D31B2CD6}</Project>
-      <Name>NaughtyAttributes.Test</Name>
-    </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Core.csproj">
-      <Project>{C90C0C4B-B2D9-43ED-DAEF-1579723EB7A3}</Project>
-      <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037948628835606731}
   m_LocalRotation: {x: -0.0619897, y: 0.7043843, z: 0.7043843, w: 0.0619897}
-  m_LocalPosition: {x: 0.5637034, y: 0.38027394, z: 0.1720581}
-  m_LocalScale: {x: 85.884476, y: 85.884476, z: 85.88448}
+  m_LocalPosition: {x: 0.5637034, y: 0.513, z: 0.1720581}
+  m_LocalScale: {x: 150, y: 150, z: 150}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2773485740833681638}
@@ -305,7 +305,6 @@ MonoBehaviour:
     type: 3}
   projectilePos: {fileID: 3914450506352659475}
   ballistaBody: {fileID: 6207493320879821206}
-  projectileOnBallista: {fileID: 4296924368932570137}
   canShoot: 1
 --- !u!65 &8570621064876614768
 BoxCollider:
@@ -758,12 +757,6 @@ PrefabInstance:
 --- !u!4 &37266171396811480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8313093165109763405, guid: 687368ef32bf8e742acf844d764a6838,
-    type: 3}
-  m_PrefabInstance: {fileID: 8348107260738058133}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4296924368932570137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5222999778640835468, guid: 687368ef32bf8e742acf844d764a6838,
     type: 3}
   m_PrefabInstance: {fileID: 8348107260738058133}
   m_PrefabAsset: {fileID: 0}

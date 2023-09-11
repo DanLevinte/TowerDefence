@@ -81,8 +81,8 @@
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\ProjectStateManagement\ProjectState.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\CloudEnvironment\CloudEnvironmentConfigProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\UiHelpers\PlatformSupportUiHelper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\Networking\ITokenExchangeUrls.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\ProjectBindRedirect\ProjectBindRedirectPopupUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\Networking\ITokenExchangeUrls.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\ProjectStateManagement\IServiceFlagRequest.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\UserRoleManagement\IUserRoleHandler.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.6.0\Editor\Core\EditorGameService\ServiceFlagEndpoint.cs" />

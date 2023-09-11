@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameOfEnemy: Small Minion
   health: 5
+  speed: 0
   canDropGold: 1
   chanceOfDroppingGold: 75
   minValueOfGold: 1
