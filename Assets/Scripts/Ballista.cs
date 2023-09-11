@@ -15,7 +15,8 @@ public class Ballista : MonoBehaviour
     {
         if (target != null)
         {
-            ballistaBody.transform.LookAt(target.transform.position);
+            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
+            ballistaBody.transform.LookAt(targetPos);
 
             if (canShoot) { StartCoroutine(ShootProjectile()); }
         }

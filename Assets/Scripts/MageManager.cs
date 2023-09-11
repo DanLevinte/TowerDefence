@@ -15,7 +15,6 @@ public class MageManager : MonoBehaviour
             animator.SetBool("isIdle", false);
             Vector3 pos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
             gameObject.transform.LookAt(pos);
-            //gameObject.transform.rotation = Quaternion.Euler(0, gameObject.transform.rotation.y, 0);
         }
     }
 }

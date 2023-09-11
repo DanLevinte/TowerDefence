@@ -14,7 +14,8 @@ public class ProjectileMesh : MonoBehaviour
         if (target != null)
         {
             lifespan -= Time.deltaTime;
-            transform.LookAt(target.transform.position);
+            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
+            transform.LookAt(targetPos);
 
         } else { lifespan = 0; Destroy(gameObject); }
 
@@ -35,8 +36,8 @@ public class ProjectileMesh : MonoBehaviour
             this.gameObject.transform.SetParent(other.transform);
 
             other.GetComponent<EnemyManager>().currentHealth -= projDamage;
-            transform.LookAt(target.transform.position);
-            transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
+            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
+            transform.LookAt(targetPos);
 
             //Destroy(gameObject, .25f);
         }
