@@ -18,8 +18,11 @@ public class ArcherLayout : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         GameObject go = Instantiate(archerPrefab, parent.position, Quaternion.identity);
 
-        go.transform.SetParent(TowerManager.instance.towerInUse.transform);
-        go.transform.localPosition = new Vector3(0, 0, 0);
+        if (TowerManager.instance.towerInUse != null)
+        {
+            go.transform.SetParent(TowerManager.instance.towerInUse.transform);
+            go.transform.localPosition = new Vector3(0, 0, 0);
+        }
 
         TowerManager.instance.towerInUse.spawnedTower = go;
 

@@ -19,7 +19,6 @@ public class EnemyManager : MonoBehaviour
     public Path designatedPos;
 
     public int maxHealthPoints;
-    public int currentHealthPoints;
 
     public float speed;
 
@@ -64,7 +63,7 @@ public class EnemyManager : MonoBehaviour
 
         if (switchColor) { StartCoroutine(SetHurtColor()); }
 
-        if (enemyState == EnemyState.isHurt && currentHealth <= 0) { enemyState = EnemyState.isDead; }
+        if (currentHealth <= 0) { enemyState = EnemyState.isDead; }
 
         if (enemyState == EnemyState.isDead) { KillEnemy(); }
     }

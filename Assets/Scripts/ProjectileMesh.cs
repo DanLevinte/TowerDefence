@@ -19,8 +19,6 @@ public class ProjectileMesh : MonoBehaviour
 
         } else { lifespan = 0; Destroy(gameObject); }
 
-        transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
-
         if (lifespan <= 0) { gameObject.SetActive(false); }
 
         if (this.gameObject.transform.parent == null && target != null) { transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f); }
