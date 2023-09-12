@@ -21,8 +21,11 @@ public class MageManager : MonoBehaviour
             Vector3 pos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
             gameObject.transform.LookAt(pos);
 
-            if (canShoot) { StartCoroutine(ShootMeteor()); }
-            else { StartCoroutine(Recharging()); }
+            //if (canShoot) { StartCoroutine(ShootMeteor()); }
+            //else { StartCoroutine(Recharging()); }
+
+            while(canShoot) { StartCoroutine(ShootMeteor()); } 
+            while (recharging) { StartCoroutine(Recharging()); }
         }
     }
 

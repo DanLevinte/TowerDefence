@@ -12,7 +12,7 @@ public class Meteor : MonoBehaviour
         if (target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, .01f);
-        }
+        } else { Destroy(gameObject); }
     }
 
     private void OnParticleCollision(GameObject other)

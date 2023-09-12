@@ -22,8 +22,8 @@ public class ArcherManager : MonoBehaviour
             Vector3 pos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
             gameObject.transform.LookAt(pos);
 
-            if (canShoot) { StartCoroutine(CanShootArrow()); }
-            else { StartCoroutine(Recharge()); }
+            while (canShoot) { StartCoroutine(CanShootArrow()); }
+            while (recharge) { StartCoroutine(Recharge()); }
         }
     }
 

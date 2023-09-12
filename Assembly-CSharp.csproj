@@ -59,8 +59,11 @@
     <Compile Include="Assets\Scripts\Enemiy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Ballista.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
+    <Compile Include="Assets\WizardLayout.cs" />
     <Compile Include="Assets\Scripts\TowerLayoutUI.cs" />
     <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
+    <Compile Include="Assets\Arrow.cs" />
+    <Compile Include="Assets\ArcherManager.cs" />
     <Compile Include="Assets\Scripts\Enemiy\Enemy.cs" />
     <Compile Include="Assets\Scripts\BallistaLayout.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
@@ -69,13 +72,10 @@
     <Compile Include="Assets\Scripts\MageManager.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\ArcherLayout.cs" />
+    <Compile Include="Assets\Mage.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Mage.cs" />
-    <Compile Include="Assets\ArcherManager.cs" />
-    <Compile Include="Assets\WizardLayout.cs" />
-    <Compile Include="Assets\Arrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
