@@ -5,13 +5,13 @@ using UnityEngine;
 public class Archer : MonoBehaviour
 {
     public GameObject target;
-    public MageManager mageManager;
+    public ArcherManager archerManager;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            mageManager.target = other.gameObject;
+            archerManager.target = other.gameObject;
         }
     }
 
@@ -19,7 +19,7 @@ public class Archer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            mageManager.target = null;
+            archerManager.target = null;
         }
     }
 }

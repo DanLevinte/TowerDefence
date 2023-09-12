@@ -22,7 +22,7 @@ public class MageManager : MonoBehaviour
             gameObject.transform.LookAt(pos);
 
             if (canShoot) { StartCoroutine(ShootMeteor()); }
-            if (recharging) { StartCoroutine(Recharging()); }
+            else { StartCoroutine(Recharging()); }
         }
     }
 

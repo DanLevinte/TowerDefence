@@ -72,6 +72,10 @@
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Meteor.cs" />
+    <Compile Include="Assets\Mage.cs" />
+    <Compile Include="Assets\ArcherManager.cs" />
+    <Compile Include="Assets\WizardLayout.cs" />
+    <Compile Include="Assets\Arrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

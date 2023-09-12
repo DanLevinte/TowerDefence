@@ -365,6 +365,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Archer.cs"
+"Assets/ArcherManager.cs"
+"Assets/Arrow.cs"
+"Assets/Mage.cs"
 "Assets/Meteor.cs"
 "Assets/Scripts/ArcherLayout.cs"
 "Assets/Scripts/Ballista.cs"
@@ -380,6 +383,7 @@
 "Assets/Scripts/TowerLayoutUI.cs"
 "Assets/Scripts/TowerManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
+"Assets/WizardLayout.cs"
 -langversion:9.0
 
 /deterministic
