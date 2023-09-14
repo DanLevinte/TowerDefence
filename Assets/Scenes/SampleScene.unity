@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInUse: {fileID: 0}
+  pathToManage: {fileID: 0}
 --- !u!1 &167196571
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &396894962
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &529225136
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!65 &529225138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1256,6 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1201327314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1391225093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1412287073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!65 &1412287075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2015,6 +2023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1712837101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1727184610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,6 +2247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &1798163585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1968766471
 Transform:
   m_ObjectHideFlags: 0
@@ -2630,6 +2641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPos: {x: 0, y: 0, z: 0}
+  canAct: 0
 --- !u!1 &2080594382
 GameObject:
   m_ObjectHideFlags: 0

@@ -1012,6 +1012,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToDefend: {fileID: 0}
   target: {fileID: 0}
+  knightStates: 0
+  defendablePaths: []
+  animator: {fileID: 7860062399760938682}
 --- !u!1 &7066584901453834380
 GameObject:
   m_ObjectHideFlags: 0
