@@ -7,11 +7,13 @@ public class KnightManager : MonoBehaviour
     public Path pathToDefend;
     public GameObject target;
 
+    public List<Path> defendablePaths = new List<Path>();
+
     private void Update()
     {
-        //if (pathToDefend != null)
-        //{
-        //
-        //}
+        if (pathToDefend == null && Input.GetMouseButtonDown(0))
+        {
+            
+        }
     }
 }
