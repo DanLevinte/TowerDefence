@@ -76,6 +76,10 @@
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Meteor.cs" />
+    <Compile Include="Assets\Scripts\Defenders.cs" />
+    <Compile Include="Assets\Scripts\KnightManager.cs" />
+    <Compile Include="Assets\Scripts\DefendersLayout.cs" />
+    <Compile Include="Assets\Scripts\AreaOfRoam.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
