@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\KnightManager.cs" />
     <Compile Include="Assets\Scripts\DefendersLayout.cs" />
     <Compile Include="Assets\Scripts\AreaOfRoam.cs" />
+    <Compile Include="Assets\SpecialFeatures.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

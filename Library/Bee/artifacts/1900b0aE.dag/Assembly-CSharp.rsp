@@ -386,6 +386,7 @@
 "Assets/Scripts/Tower.cs"
 "Assets/Scripts/TowerLayoutUI.cs"
 "Assets/Scripts/TowerManager.cs"
+"Assets/SpecialFeatures.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/WizardLayout.cs"
 -langversion:9.0
