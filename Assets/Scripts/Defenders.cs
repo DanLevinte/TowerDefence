@@ -16,6 +16,12 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
         knightManager = go.GetComponent<KnightManager>();
     }
 
+    private void Update()
+    {
+        if (areaOfRoam.activeInHierarchy) { GetComponent<BoxCollider>().enabled = false; }
+        else { GetComponent<BoxCollider>().enabled = true; }
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         areaOfRoam.SetActive(true);

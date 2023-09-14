@@ -11,9 +11,9 @@ public class KnightManager : MonoBehaviour
 
     private void Update()
     {
-        if (pathToDefend == null && Input.GetMouseButtonDown(0))
+        if (pathToDefend == null && Input.GetMouseButtonDown(0) && TowerManager.instance.pathToManage != null)
         {
-            
+            pathToDefend = TowerManager.instance.pathToManage;
         }
     }
 }

@@ -17,7 +17,7 @@ public class Path : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (canAct) { Debug.Log(gameObject.name); }
+        if (canAct) { TowerManager.instance.pathToManage = this; }
     }    
 
     public static object Combine(string dataPath, string v)
