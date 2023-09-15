@@ -8,13 +8,15 @@ public enum EnemyState
     isWalking,
     isHurt,
     isDead,
-    isFinished
+    isFinished,
+    isAttacking
 }
 
 public class EnemyManager : MonoBehaviour
 {
     public Rigidbody rb;
 
+    public Path currentPath;
     public Path nextPath;
     public Path designatedPos;
 
@@ -66,6 +68,12 @@ public class EnemyManager : MonoBehaviour
         if (currentHealth <= 0) { enemyState = EnemyState.isDead; }
 
         if (enemyState == EnemyState.isDead) { KillEnemy(); }
+
+        Collider[] hitCols = Physics.OverlapSphere(transform.position, 1);
+        foreach  (Collider hitCol in hitCols)
+        {
+            Debug.Log(hitCols);
+        }
     }
 
     private void CleanPath()
