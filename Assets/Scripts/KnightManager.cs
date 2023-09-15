@@ -5,7 +5,6 @@ using UnityEngine;
 public enum KnightStates
 {
     IsIdle,
-    IsPursuing,
     IsFollowing,
     IsRetreating,
     IsHurting,
@@ -23,6 +22,8 @@ public class KnightManager : MonoBehaviour
     public List<Path> defendablePaths = new List<Path>();
 
     public Animator animator;
+
+    public bool recharging;
 
     private void Start()
     {
@@ -47,29 +48,28 @@ public class KnightManager : MonoBehaviour
 
             if (target == null && pathToDefend !=  null)
             {
-                //Vector3 path = new Vector3(pathToDefend.pathPos.x, transform.position.y, pathToDefend.pathPos.z);
-                //transform.position = Vector3.MoveTowards(transform.position, path, .01f);
-                //
-                //Vector3 pos = new Vector3(pathToDefend.transform.position.x, gameObject.transform.position.y, pathToDefend.transform.position.z);
-                //gameObject.transform.LookAt(pos);
+                Vector3 path = new Vector3(pathToDefend.pathPos.x, transform.position.y, pathToDefend.pathPos.z);
+                transform.position = Vector3.MoveTowards(transform.position, path, .01f);
+                
+                Vector3 pos = new Vector3(pathToDefend.transform.position.x, gameObject.transform.position.y, pathToDefend.transform.position.z);
+                gameObject.transform.LookAt(pos);
 
                 if (Vector3.Distance(transform.position, pathToDefend.pathPos) <= 1f) { animator.SetBool("isMoving", false); }
             }
             if (target != null)
             {
-                //Vector3 targetPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-                //transform.position = Vector3.MoveTowards(transform.position, targetPos, .01f);
-                //
-                //Vector3 targetRot = new Vector3(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
-                //this.gameObject.transform.LookAt(targetRot);
-                
                 KnightFollow(target);
 
                 if (Vector3.Distance(transform.position, target.transform.position) <= 1.75f) { animator.SetBool("isMoving", false); knightStates = KnightStates.IsAttacking; }
             }
         }
 
-        if (knightStates == KnightStates.IsAttacking) { animator.SetBool("isAttacking", true); }
+        if (knightStates == KnightStates.IsAttacking && target != null) 
+        {
+            animator.SetBool("isAttacking", true);
+
+            if ((Vector3.Distance(transform.position, target.transform.position) >= 1.75f)) { animator.SetBool("isAttacking", false); knightStates = KnightStates.IsFollowing; }
+        } else if (target == null && knightStates == KnightStates.IsAttacking) { animator.SetBool("isAttacking", false); knightStates = KnightStates.IsFollowing; }
 
         if (target != null && knightStates != KnightStates.IsAttacking) { knightStates = KnightStates.IsFollowing; }
     }

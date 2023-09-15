@@ -81,6 +81,8 @@
     <Compile Include="Assets\Scripts\DefendersLayout.cs" />
     <Compile Include="Assets\Scripts\AreaOfRoam.cs" />
     <Compile Include="Assets\SpecialFeatures.cs" />
+    <Compile Include="Assets\Sword.cs" />
+    <Compile Include="Assets\EnemyTargetFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

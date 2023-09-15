@@ -20,6 +20,8 @@ public class EnemyManager : MonoBehaviour
     public Path nextPath;
     public Path designatedPos;
 
+    public GameObject target;
+
     public int maxHealthPoints;
 
     public float speed;
@@ -68,12 +70,6 @@ public class EnemyManager : MonoBehaviour
         if (currentHealth <= 0) { enemyState = EnemyState.isDead; }
 
         if (enemyState == EnemyState.isDead) { KillEnemy(); }
-
-        Collider[] hitCols = Physics.OverlapSphere(transform.position, 1);
-        foreach  (Collider hitCol in hitCols)
-        {
-            Debug.Log(hitCols);
-        }
     }
 
     private void CleanPath()
@@ -119,6 +115,12 @@ public class EnemyManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Projectile"))
+        {
+            GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            enemyState = EnemyState.isHurt;
+        }
+
+        if (other.gameObject.CompareTag("Sword"))
         {
             GetComponent<MeshRenderer>().materials[0].color = Color.red;
             enemyState = EnemyState.isHurt;

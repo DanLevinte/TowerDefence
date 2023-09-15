@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Path
   - Sword
+  - Knight
   layers:
   - Default
   - TransparentFX

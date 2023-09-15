@@ -367,6 +367,7 @@
 "Assets/Archer.cs"
 "Assets/ArcherManager.cs"
 "Assets/Arrow.cs"
+"Assets/EnemyTargetFinder.cs"
 "Assets/Mage.cs"
 "Assets/Meteor.cs"
 "Assets/Scripts/ArcherLayout.cs"
@@ -387,6 +388,7 @@
 "Assets/Scripts/TowerLayoutUI.cs"
 "Assets/Scripts/TowerManager.cs"
 "Assets/SpecialFeatures.cs"
+"Assets/Sword.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 "Assets/WizardLayout.cs"
 -langversion:9.0
