@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638296119016378326
+      ticks: 638304005950000000
     m_Hash: 338050866
   m_LockFileStatus:
     m_FilePath: E:/UnityProjects/TowerDefence/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638296119307843881
+      ticks: 638304005950000000
     m_Hash: 2206079696
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
