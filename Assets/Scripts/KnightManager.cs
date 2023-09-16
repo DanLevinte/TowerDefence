@@ -60,7 +60,7 @@ public class KnightManager : MonoBehaviour
             {
                 KnightFollow(target);
 
-                if (Vector3.Distance(transform.position, target.transform.position) <= 1f) { animator.SetBool("isMoving", false); knightStates = KnightStates.IsAttacking; }
+                if (Vector3.Distance(transform.position, target.transform.position) <= 1.5f) { animator.SetBool("isMoving", false); knightStates = KnightStates.IsAttacking; }
             }
         }
 

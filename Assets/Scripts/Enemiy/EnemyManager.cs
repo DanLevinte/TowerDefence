@@ -5,22 +5,23 @@ using NaughtyAttributes;
 
 public enum EnemyState
 {
+    isIdle,
     isWalking,
     isHurt,
     isDead,
     isFinished,
-    isAttacking
+    isAttacking,
+    NoAction
 }
 
 public class EnemyManager : MonoBehaviour
 {
     public Rigidbody rb;
-
-    public Path currentPath;
     public Path nextPath;
     public Path designatedPos;
 
     public GameObject target;
+    private GameObject killer;
 
     public int maxHealthPoints;
 
@@ -33,6 +34,8 @@ public class EnemyManager : MonoBehaviour
     [Expandable]
     public Enemy enemy;
     public int currentHealth;
+
+    public Animator animator;
 
     private void Awake()
     {
@@ -57,12 +60,25 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemyState == EnemyState.isWalking && nextPath != null) 
+        if (enemyState == EnemyState.isWalking && nextPath != null && target == null) 
         {
             Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
-        
+
+            Vector3 pos = new Vector3(nextPath.transform.position.x, gameObject.transform.position.y, nextPath.transform.position.z);
+            gameObject.transform.LookAt(pos);       
+
             if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
             else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
+        }
+
+        if (enemyState == EnemyState.isWalking && target != null)
+        {
+            Vector3 targetPos = new(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+
+            LookAtObject(target);
+
+            if (Vector3.Distance(targetPos, transform.position) <= 1.5f) { enemyState = EnemyState.isAttacking; }
         }
 
         if (switchColor) { StartCoroutine(SetHurtColor()); }
@@ -70,6 +86,52 @@ public class EnemyManager : MonoBehaviour
         if (currentHealth <= 0) { enemyState = EnemyState.isDead; }
 
         if (enemyState == EnemyState.isDead) { KillEnemy(); }
+
+        if (enemyState == EnemyState.isFinished) { StartCoroutine(SetDyingAnimation()); }
+
+        SetStateAnimation();
+    }
+
+    private void LookAtObject(GameObject target)
+    {
+        Vector3 pos = new Vector3(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
+        gameObject.transform.LookAt(pos);
+    }
+
+    private IEnumerator SetDyingAnimation()
+    {
+        LookAtObject(killer);
+
+        yield return new WaitForSeconds(2.8f);
+
+        enemyState = EnemyState.NoAction;
+        animator.SetBool("isDying", false);
+        Destroy(gameObject);
+    }
+
+    private void SetStateAnimation()
+    {
+        switch (enemyState)
+        {
+            case EnemyState.isWalking:
+                SetAnimation(true, false, false);
+                break;
+            case EnemyState.isAttacking:
+                SetAnimation(false, true, false);
+                break;
+            case EnemyState.isFinished:
+                SetAnimation(false, false, true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void SetAnimation(bool isMoving, bool isAttacking, bool isDead)
+    {
+        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isAttacking", isAttacking);
+        animator.SetBool("isDying", isDead);
     }
 
     private void CleanPath()
@@ -97,9 +159,9 @@ public class EnemyManager : MonoBehaviour
             MoneyManager.instance.bank += money;
         }
 
-        enemyState = EnemyState.isFinished;
+        if (this.target != null) { killer = target; this.target.GetComponent<KnightManager>().target = null; this.target = null; }
 
-        Destroy(gameObject);
+        enemyState = EnemyState.isFinished;
     }
 
     private IEnumerator SetHurtColor()
