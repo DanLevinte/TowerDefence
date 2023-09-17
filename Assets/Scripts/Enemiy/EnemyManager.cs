@@ -31,6 +31,8 @@ public class EnemyManager : MonoBehaviour
 
     public float id;
 
+    public bool isDying;
+
     public List<Path> paths = new List<Path>();
 
     public EnemyState enemyState;
@@ -92,7 +94,7 @@ public class EnemyManager : MonoBehaviour
 
         if (this.switchColor) { this.StartCoroutine(SetHurtColor()); }
 
-        if (this.currentHealth <= 0) { this.enemyState = EnemyState.isDead; }
+        if (this.currentHealth <= 0) { this.enemyState = EnemyState.isDead; isDying = true; }
 
         if (this.enemyState == EnemyState.isDead) { this.KillEnemy(); }
 

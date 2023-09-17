@@ -7,11 +7,6 @@ public class Sword : MonoBehaviour
     public int damage;
     public bool isGivingDamage = false;
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("DownEnemy"))
