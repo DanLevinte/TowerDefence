@@ -88,6 +88,16 @@ public class KnightManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("DownEnemy") && target == null) { target = other.gameObject; }
+        if (other.CompareTag("EnemySearcher") && target == null) { target = other.gameObject; }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("EnemySearcher") && target == null) { target = other.gameObject; }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EnemySearcher") && target != null) { target = null; }
     }
 }

@@ -9,7 +9,22 @@ public class EnemyTargetFinder : MonoBehaviour
         if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
             if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = other.gameObject; }
-        } 
-            
+        }     
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
+        {
+            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = other.gameObject; }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
+        {
+            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = null; }
+        }
     }
 }

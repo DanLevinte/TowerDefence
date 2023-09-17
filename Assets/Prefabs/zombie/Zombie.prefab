@@ -299,10 +299,10 @@ GameObject:
   - component: {fileID: 1379905493465289751}
   - component: {fileID: 1379905493465289753}
   - component: {fileID: 1379905493465289750}
-  - component: {fileID: 6963445607839936426}
+  - component: {fileID: 6189137358425014276}
   m_Layer: 0
   m_Name: ZombieMesh
-  m_TagString: Untagged
+  m_TagString: EnemySearcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248acd0ac4a49b746bc9224d2d3ddfc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &6963445607839936426
+--- !u!54 &6189137358425014276
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

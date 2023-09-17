@@ -10,6 +10,7 @@ TagManager:
   - Path
   - Sword
   - Knight
+  - EnemySearcher
   layers:
   - Default
   - TransparentFX
