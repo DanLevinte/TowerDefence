@@ -29,6 +29,8 @@ public class EnemyManager : MonoBehaviour
 
     public bool switchColor;
 
+    public float id;
+
     public List<Path> paths = new List<Path>();
 
     public EnemyState enemyState;
@@ -46,15 +48,18 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        paths = PathManager.instance.paths;
+        id = Random.Range(0, 900);
 
-        var path = PathManager.instance.paths;
-
-        for (int i = 0; i <= path.Count - 1; i++)
+        for (int i = 0; i <= PathManager.instance.paths.Count - 1; i++)
         {
-            if (nextPath == null) { nextPath = path[i]; }
+            paths.Add(PathManager.instance.paths[i]);
+        }
 
-            if (i == path.Count - 1) { designatedPos = path[i]; }
+        for (int i = 0; i <= paths.Count - 1; i++)
+        {
+            if (nextPath == null) { nextPath = paths[i]; }
+
+            if (i == paths.Count - 1) { designatedPos = paths[i]; }
         }
 
         enemyState = EnemyState.isWalking;
@@ -66,23 +71,23 @@ public class EnemyManager : MonoBehaviour
     {
         if (enemyState == EnemyState.isWalking && nextPath != null && target == null) 
         {
-            Vector3 targetPos = new(nextPath.pathPos.x, gameObject.transform.position.y, nextPath.pathPos.z);
+            Vector3 targetPos = new(this.nextPath.pathPos.x, this.gameObject.transform.position.y, this.nextPath.pathPos.z);
 
-            Vector3 pos = new Vector3(nextPath.transform.position.x, gameObject.transform.position.y, nextPath.transform.position.z);
-            gameObject.transform.LookAt(pos);       
+            Vector3 pos = new Vector3(this.nextPath.transform.position.x, this.gameObject.transform.position.y, this.nextPath.transform.position.z);
+            this.gameObject.transform.LookAt(pos);       
 
-            if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
-            else { this.transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
+            if (Vector3.Distance(targetPos, this.transform.position) == 0) { CleanPath(); Debug.Log(id); }
+            else { this.transform.position = Vector3.MoveTowards(this.transform.position, targetPos, speed); }
         }
 
-        if (enemyState == EnemyState.isWalking && target != null)
+        if (this.enemyState == EnemyState.isWalking && this.target != null)
         {
-            Vector3 targetPos = new(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
-            this.transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+            Vector3 targetPos = new(this.target.transform.position.x, this.gameObject.transform.position.y, this.target.transform.position.z);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, targetPos, speed);
 
             LookAtObject(target);
 
-            if (Vector3.Distance(targetPos, transform.position) <= 1.5f) { enemyState = EnemyState.isAttacking; }
+            if (Vector3.Distance(targetPos, this.transform.position) <= 1.5f) { this.enemyState = EnemyState.isAttacking; }
         }
 
         if (switchColor) { StartCoroutine(SetHurtColor()); }
@@ -140,16 +145,14 @@ public class EnemyManager : MonoBehaviour
 
     private void CleanPath()
     {
-        var path = PathManager.instance.paths;
-
-        for (int i = 0; i <= path.Count - 1 ; i++)
+        for (int i = 0; i <= paths.Count - 1 ; i++)
         {
-            if (nextPath == path[i]) { path.Remove(path[i]); nextPath = null; break; }
+            if (this.nextPath == this.paths[i]) { this.paths.Remove(this.paths[i]); this.nextPath = null; break; }
         }
 
-        for (int i = 0; i <= path.Count - 1; i++)
+        for (int i = 0; i <= this.paths.Count - 1; i++)
         {
-            if (nextPath == null) { nextPath = path[i]; break; }
+            if (this.nextPath == null) { nextPath = this.paths[i]; break; }
         }
     }
 
