@@ -5,4 +5,5 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public bool inFight;
+    public GameObject target;
 }

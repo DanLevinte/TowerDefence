@@ -73,8 +73,8 @@ public class KnightManager : MonoBehaviour
 
         if (target != null && knightStates != KnightStates.IsAttacking) { knightStates = KnightStates.IsFollowing; }
 
-        if (target == null) { GetComponent<Character>().inFight = false; }
-        else { GetComponent<Character>().inFight = true; }
+        if (target == null) { this.GetComponent<Character>().inFight = false; this.GetComponent<Character>().target = null; ; }
+        else { this.GetComponent<Character>().inFight = true; this.GetComponent<Character>().target = this.target; }
     }
 
     private void KnightFollow(GameObject pos)
@@ -93,11 +93,12 @@ public class KnightManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("EnemySearcher") && target == null) { target = other.gameObject; }
+        if (other.CompareTag("EnemySearcher") && target == null && other.GetComponent<EnemyManager>().enemyState == EnemyState.isWalking)
+        { target = other.gameObject; }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("EnemySearcher") && target != null) { target = null; }
+        if (other.CompareTag("EnemySearcher") && target == null) { target = null; }
     }
 }

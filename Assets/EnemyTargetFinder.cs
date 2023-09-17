@@ -8,7 +8,8 @@ public class EnemyTargetFinder : MonoBehaviour
     {
         if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
-            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = other.gameObject; }
+            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null)
+            { GetComponentInParent<EnemyManager>().target = other.gameObject; }
         }     
     }
 
@@ -16,7 +17,8 @@ public class EnemyTargetFinder : MonoBehaviour
     {
         if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
-            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = other.gameObject; }
+            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null) 
+            { GetComponentInParent<EnemyManager>().target = other.gameObject; }
         }
     }
 
@@ -24,7 +26,8 @@ public class EnemyTargetFinder : MonoBehaviour
     {
         if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
-            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = null; }
+            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null) 
+            { GetComponentInParent<EnemyManager>().target = null; }
         }
     }
 }
