@@ -6,9 +6,9 @@ public class EnemyTargetFinder : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Knight"))
+        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
-            GetComponentInParent<EnemyManager>().target = other.gameObject;
+            if (!other.GetComponent<Character>().inFight) { GetComponentInParent<EnemyManager>().target = other.gameObject; }
         } 
             
     }

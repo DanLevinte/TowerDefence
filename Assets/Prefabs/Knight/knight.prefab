@@ -971,6 +971,7 @@ GameObject:
   - component: {fileID: 6783839929943635374}
   - component: {fileID: 3103337728545319016}
   - component: {fileID: 6159080861359951582}
+  - component: {fileID: 7481505340321070421}
   m_Layer: 0
   m_Name: knight
   m_TagString: Knight
@@ -1104,6 +1105,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7481505340321070421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049792349398535127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83ede35518c97548a98ead01a57372e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inFight: 0
 --- !u!1 &7066584901453834380
 GameObject:
   m_ObjectHideFlags: 0

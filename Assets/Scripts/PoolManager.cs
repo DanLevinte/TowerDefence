@@ -27,7 +27,7 @@ public class PoolManager : MonoBehaviour
                 {
                     GameObject go = Instantiate(enemiesOnPool[0], poolStartup.position, Quaternion.identity);
                     enemiesOnPool.Remove(enemiesOnPool[0]);
-                    timer = 2;
+                    timer = 3.5f;
                     break;
                 }
             }

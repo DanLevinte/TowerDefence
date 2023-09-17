@@ -43,40 +43,40 @@ public class EnemyManager : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        this.rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        id = Random.Range(0, 900);
+        this.id = Random.Range(0, 900);
 
         for (int i = 0; i <= PathManager.instance.paths.Count - 1; i++)
         {
-            paths.Add(PathManager.instance.paths[i]);
+            this.paths.Add(PathManager.instance.paths[i]);
         }
 
         for (int i = 0; i <= paths.Count - 1; i++)
         {
-            if (nextPath == null) { nextPath = paths[i]; }
+            if (this.nextPath == null) { this.nextPath = paths[i]; }
 
-            if (i == paths.Count - 1) { designatedPos = paths[i]; }
+            if (i == paths.Count - 1) { this.designatedPos = paths[i]; }
         }
 
-        enemyState = EnemyState.isWalking;
+        this.enemyState = EnemyState.isWalking;
 
-        currentHealth = enemy.health;
+        this.currentHealth = enemy.health;
     }
 
     private void Update()
     {
-        if (enemyState == EnemyState.isWalking && nextPath != null && target == null) 
+        if (this.enemyState == EnemyState.isWalking && this.nextPath != null && this.target == null) 
         {
             Vector3 targetPos = new(this.nextPath.pathPos.x, this.gameObject.transform.position.y, this.nextPath.pathPos.z);
 
             Vector3 pos = new Vector3(this.nextPath.transform.position.x, this.gameObject.transform.position.y, this.nextPath.transform.position.z);
             this.gameObject.transform.LookAt(pos);       
 
-            if (Vector3.Distance(targetPos, this.transform.position) == 0) { CleanPath(); Debug.Log(id); }
+            if (Vector3.Distance(targetPos, this.transform.position) == 0) { CleanPath(); }
             else { this.transform.position = Vector3.MoveTowards(this.transform.position, targetPos, speed); }
         }
 
@@ -85,51 +85,51 @@ public class EnemyManager : MonoBehaviour
             Vector3 targetPos = new(this.target.transform.position.x, this.gameObject.transform.position.y, this.target.transform.position.z);
             this.transform.position = Vector3.MoveTowards(this.transform.position, targetPos, speed);
 
-            LookAtObject(target);
+            this.LookAtObject(target);
 
             if (Vector3.Distance(targetPos, this.transform.position) <= 1.5f) { this.enemyState = EnemyState.isAttacking; }
         }
 
-        if (switchColor) { StartCoroutine(SetHurtColor()); }
+        if (this.switchColor) { this.StartCoroutine(SetHurtColor()); }
 
-        if (currentHealth <= 0) { enemyState = EnemyState.isDead; }
+        if (this.currentHealth <= 0) { this.enemyState = EnemyState.isDead; }
 
-        if (enemyState == EnemyState.isDead) { KillEnemy(); }
+        if (this.enemyState == EnemyState.isDead) { this.KillEnemy(); }
 
-        if (enemyState == EnemyState.isFinished) { StartCoroutine(SetDyingAnimation()); }
+        if (this.enemyState == EnemyState.isFinished) { this.StartCoroutine(SetDyingAnimation()); }
 
-        SetStateAnimation();
+        this.SetStateAnimation();
     }
 
-    private void LookAtObject(GameObject target)
+    private void LookAtObject(GameObject tg)
     {
-        Vector3 pos = new Vector3(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
-        gameObject.transform.LookAt(pos);
+        Vector3 pos = new Vector3(tg.transform.position.x, this.gameObject.transform.position.y, tg.transform.position.z);
+        this.gameObject.transform.LookAt(pos);
     }
 
     private IEnumerator SetDyingAnimation()
     {
-        LookAtObject(killer);
+        this.LookAtObject(this.killer);
 
         yield return new WaitForSeconds(2.8f);
 
-        enemyState = EnemyState.NoAction;
-        animator.SetBool("isDying", false);
-        Destroy(gameObject);
+        this.enemyState = EnemyState.NoAction;
+        this.animator.SetBool("isDying", false);
+        Destroy(this.gameObject);
     }
 
     private void SetStateAnimation()
     {
-        switch (enemyState)
+        switch (this.enemyState)
         {
             case EnemyState.isWalking:
-                SetAnimation(true, false, false);
+                this.SetAnimation(true, false, false);
                 break;
             case EnemyState.isAttacking:
-                SetAnimation(false, true, false);
+                this.SetAnimation(false, true, false);
                 break;
             case EnemyState.isFinished:
-                SetAnimation(false, false, true);
+                this.SetAnimation(false, false, true);
                 break;
             default:
                 break;
@@ -138,61 +138,62 @@ public class EnemyManager : MonoBehaviour
 
     private void SetAnimation(bool isMoving, bool isAttacking, bool isDead)
     {
-        animator.SetBool("isMoving", isMoving);
-        animator.SetBool("isAttacking", isAttacking);
-        animator.SetBool("isDying", isDead);
+        this.animator.SetBool("isMoving", isMoving);
+        this.animator.SetBool("isAttacking", isAttacking);
+        this.animator.SetBool("isDying", isDead);
     }
 
     private void CleanPath()
     {
-        for (int i = 0; i <= paths.Count - 1 ; i++)
+        for (int i = 0; i <= this.paths.Count - 1 ; i++)
         {
             if (this.nextPath == this.paths[i]) { this.paths.Remove(this.paths[i]); this.nextPath = null; break; }
         }
 
         for (int i = 0; i <= this.paths.Count - 1; i++)
         {
-            if (this.nextPath == null) { nextPath = this.paths[i]; break; }
+            if (this.nextPath == null) { this.nextPath = this.paths[i]; break; }
         }
     }
 
     private void KillEnemy()
     {
-        int chanceOfGettingMoney = Random.Range(0, enemy.chanceOfDroppingGold);
+        int chanceOfGettingMoney = Random.Range(0, this.enemy.chanceOfDroppingGold);
 
-        if (chanceOfGettingMoney <= enemy.chanceOfDroppingGold)
+        if (chanceOfGettingMoney <= this.enemy.chanceOfDroppingGold)
         {
             int money = Random.Range(enemy.minValueOfGold, enemy.maxValueOfGold);
             MoneyManager.instance.bank += money;
         }
 
-        if (this.target != null) { killer = target; this.target.GetComponent<KnightManager>().target = null; this.target = null; }
+        if (this.target != null) { this.killer = target; this.target.GetComponent<KnightManager>().target = null; this.target = null; }
 
-        enemyState = EnemyState.isFinished;
+        this.enemyState = EnemyState.isFinished;
     }
 
     private IEnumerator SetHurtColor()
     {
-        switchColor = false;
+        this.switchColor = false;
 
         yield return new WaitForSeconds(.25f);
 
-        GetComponent<MeshRenderer>().materials[0].color = Color.white;
-        enemyState = EnemyState.isWalking;
+        this.GetComponent<MeshRenderer>().materials[0].color = Color.white;
+        this.enemyState = EnemyState.isWalking;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Projectile"))
         {
-            GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            enemyState = EnemyState.isHurt;
+            this.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            this.enemyState = EnemyState.isHurt;
         }
 
         if (other.gameObject.CompareTag("Sword"))
         {
-            GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            enemyState = EnemyState.isHurt;
+            this.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            this.enemyState = EnemyState.isHurt;
+            Debug.Log(id);
         }
     }
 
@@ -200,7 +201,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Projectile"))
         {
-            GetComponent<MeshRenderer>().materials[0].color = Color.white;
+            this.GetComponent<MeshRenderer>().materials[0].color = Color.white;
         }
     }
 }
