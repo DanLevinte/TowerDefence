@@ -29,6 +29,8 @@ public class EnemyManager : MonoBehaviour
 
     public bool switchColor;
 
+    public List<Path> paths = new List<Path>();
+
     public EnemyState enemyState;
 
     [Expandable]
@@ -44,6 +46,8 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
+        paths = PathManager.instance.paths;
+
         var path = PathManager.instance.paths;
 
         for (int i = 0; i <= path.Count - 1; i++)
@@ -68,13 +72,13 @@ public class EnemyManager : MonoBehaviour
             gameObject.transform.LookAt(pos);       
 
             if (Vector3.Distance(targetPos, transform.position) == 0) { CleanPath(); }
-            else { transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
+            else { this.transform.position = Vector3.MoveTowards(transform.position, targetPos, speed); }
         }
 
         if (enemyState == EnemyState.isWalking && target != null)
         {
             Vector3 targetPos = new(target.transform.position.x, gameObject.transform.position.y, target.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
+            this.transform.position = Vector3.MoveTowards(transform.position, targetPos, speed);
 
             LookAtObject(target);
 
