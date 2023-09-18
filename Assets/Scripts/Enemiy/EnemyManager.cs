@@ -52,6 +52,8 @@ public class EnemyManager : MonoBehaviour
     {
         this.id = Random.Range(0, 900);
 
+        this.gameObject.name = this.gameObject.name + " " + this.id;
+
         for (int i = 0; i <= PathManager.instance.paths.Count - 1; i++)
         {
             this.paths.Add(PathManager.instance.paths[i]);
@@ -94,7 +96,7 @@ public class EnemyManager : MonoBehaviour
 
         if (this.switchColor) { this.StartCoroutine(SetHurtColor()); }
 
-        if (this.currentHealth <= 0) { this.enemyState = EnemyState.isDead; isDying = true; }
+        if (this.currentHealth <= 0) { this.enemyState = EnemyState.isDead; isDying = true; PoolManager.instance.updatePool = true; }
 
         if (this.enemyState == EnemyState.isDead) { this.KillEnemy(); }
 
