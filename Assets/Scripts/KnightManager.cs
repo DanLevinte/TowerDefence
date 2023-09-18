@@ -93,7 +93,7 @@ public class KnightManager : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("EnemySearcher") && this.target == null && !other.GetComponent<EnemyManager>().isDying)
+        if (other.CompareTag("EnemySearcher") && this.target == null && other.GetComponent<EnemyManager>() != null && !other.GetComponent<EnemyManager>().isDying)
         { this.target = other.gameObject; }
     }
 
