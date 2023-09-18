@@ -2073,6 +2073,16 @@ MonoBehaviour:
   enemiesOnPool:
   - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
   - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  - {fileID: 2298807704877079449, guid: 54e3ee204297e9b49bdf0a05818c64fb, type: 3}
+  enemiesOffPool: []
+  updatePool: 0
   timer: 0
 --- !u!1 &1657016430
 GameObject:
