@@ -12,7 +12,7 @@ public class PoolManager : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
+        if (enemiesOnPool != null) { timer -= Time.deltaTime; }
 
         if (timer <= 0) { CallEnemy(); }
     }
