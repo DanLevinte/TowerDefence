@@ -73,8 +73,10 @@ public class KnightManager : MonoBehaviour
 
         if (target != null && knightStates != KnightStates.IsAttacking) { knightStates = KnightStates.IsFollowing; }
 
-        if (target == null) { this.GetComponent<Character>().inFight = false; this.GetComponent<Character>().target = null; ; }
+        if (target == null && knightStates != KnightStates.IsAttacking) { this.GetComponent<Character>().inFight = false; this.GetComponent<Character>().target = null; ; }
         else { this.GetComponent<Character>().inFight = true; this.GetComponent<Character>().target = this.target; }
+
+        if (target != null && knightStates == KnightStates.IsFollowing) { this.GetComponent<Character>().inFight = true && this.GetComponent<Character>().target == null; }
     }
 
     private void KnightFollow(GameObject pos)

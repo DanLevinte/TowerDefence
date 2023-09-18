@@ -8,20 +8,39 @@ public class EnemyTargetFinder : MonoBehaviour
     {
         if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
         {
-
-
-            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null)
-            { GetComponentInParent<EnemyManager>().target = other.gameObject; }
+            var poolManager = PoolManager.instance.enemiesOffPool;
+            for (int i = 0; i <= poolManager.Count - 1; i++)
+            {
+                var character = other.gameObject.GetComponent<Character>();
+                if (!character.inFight && character.target == null)
+                {
+                    if (poolManager[i].GetComponent<EnemyManager>().target == null &&
+                        poolManager[i].GetComponent<EnemyManager>() == this.transform.parent.GetComponent<EnemyManager>())
+                    {
+                        this.GetComponentInParent<EnemyManager>().target = other.gameObject;
+                    }
+                }
+            }
         }     
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
+        if (other.CompareTag("Knight") && this.GetComponentInParent<EnemyManager>().target == null)
         {
-            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null) 
-            { GetComponentInParent<EnemyManager>().target = other.gameObject; Debug.Log(gameObject.transform.parent.name); }
-            else { GetComponentInParent<EnemyManager>().target = null; }
+            var poolManager = PoolManager.instance.enemiesOffPool;
+            for (int i = 0; i <= poolManager.Count - 1; i++)
+            {
+                var character = other.gameObject.GetComponent<Character>();
+                if (!character.inFight && character.target == null || character.inFight && character.target != null)
+                {
+                    if (poolManager[i].GetComponent<EnemyManager>().target == null &&
+                        poolManager[i].GetComponent<EnemyManager>() == this.transform.parent.GetComponent<EnemyManager>())
+                    {
+                        this.GetComponentInParent<EnemyManager>().target = other.gameObject;
+                    }
+                }
+            }
         }
     }
 
