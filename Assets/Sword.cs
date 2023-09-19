@@ -17,18 +17,17 @@ public class Sword : MonoBehaviour
                 other.GetComponentInParent<EnemyManager>().switchColor = true;
                 other.GetComponentInParent<MeshRenderer>().materials[0].color = Color.red;
                 isGivingDamage = true;
+                StartCoroutine(SetColOff());
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private IEnumerator SetColOff()
     {
-        if (this.GetComponentInParent<KnightManager>().target == other.gameObject)
-        {
-            Debug.Log("ex");
-            this.GetComponent<BoxCollider>().enabled = false;
-            this.GetComponent<BoxCollider>().enabled = true;
-            isGivingDamage = false;
-        }
+        this.GetComponent<BoxCollider>().enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        this.GetComponent<BoxCollider>().enabled = true;
     }
 }

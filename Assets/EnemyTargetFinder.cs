@@ -48,10 +48,10 @@ public class EnemyTargetFinder : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target == null)
+        if (other.CompareTag("Knight") && GetComponentInParent<EnemyManager>().target != null)
         {
-            if (!other.GetComponent<Character>().inFight && other.GetComponent<Character>().target == null) 
-            { GetComponentInParent<EnemyManager>().target = null; }
+            this.GetComponentInParent<EnemyManager>().target = null;
+            this.GetComponentInParent<EnemyManager>().enemyState = EnemyState.isWalking;
         }
     }
 }
