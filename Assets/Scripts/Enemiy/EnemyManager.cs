@@ -197,7 +197,6 @@ public class EnemyManager : MonoBehaviour
         {
             this.GetComponent<MeshRenderer>().materials[0].color = Color.red;
             this.enemyState = EnemyState.isHurt;
-            Debug.Log(id);
         }
     }
 
@@ -206,6 +205,12 @@ public class EnemyManager : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             this.GetComponent<MeshRenderer>().materials[0].color = Color.white;
+        }
+
+        if (other.gameObject.CompareTag("Sword"))
+        {
+            this.GetComponent<MeshRenderer>().materials[0].color = Color.white;
+            this.enemyState = EnemyState.isAttacking;
         }
     }
 }
