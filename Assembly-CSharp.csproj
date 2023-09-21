@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieMovingState.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\StateManager\MobManager.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieAttackingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
