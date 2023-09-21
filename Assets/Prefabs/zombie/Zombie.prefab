@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bcfcb1846b9d7428288b7d0f853d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieIdleState: {fileID: 0}
+  zombieIdleState: {fileID: 6846675563407138700}
   zombieAttackingState: {fileID: 8062170087645046278}
   mobManager: {fileID: 9081611982794060090}
   nextPath: {fileID: 0}
@@ -86,6 +86,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 0.0025
+  targetRadius: Infinity
   isTargetInRange: 0
 --- !u!1 &270946280105085948
 GameObject:
@@ -259,8 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d78e1a0882d6846902b0ff40a80d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingState: {fileID: 0}
-  mobManager: {fileID: 0}
+  movingState: {fileID: 3533524501105303504}
+  mobManager: {fileID: 9081611982794060090}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1012197919946567825
 GameObject:
   m_ObjectHideFlags: 0
