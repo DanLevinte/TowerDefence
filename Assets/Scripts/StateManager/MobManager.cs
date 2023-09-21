@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MobManager : MonoBehaviour
 {
+    public GameObject mob;
+    public GameObject target;
+
     public StateManager stateManager;
 
     public static MobManager instance;

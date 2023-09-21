@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6714462800120291004}
+  - component: {fileID: 3533524501105303504}
   m_Layer: 0
   m_Name: ZombieMovingState
   m_TagString: Untagged
@@ -63,6 +64,23 @@ Transform:
   m_Father: {fileID: 2998782535548032686}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3533524501105303504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243976712903878205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bcfcb1846b9d7428288b7d0f853d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobManager: {fileID: 9081611982794060090}
+  nextPath: {fileID: 0}
+  designatedPos: {fileID: 0}
+  pathsToTake: []
+  speed: 0.0025
 --- !u!1 &270946280105085948
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +651,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2298807704877079449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cec23b29664c64d48969e6f5a0c9da92, type: 3}
   m_Name: 
@@ -664,6 +682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mob: {fileID: 2298807704877079449}
+  target: {fileID: 0}
+  stateManager: {fileID: 3088097724637628145}
 --- !u!1 &2382328693980959937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3c1b97aa43a27448082fb48b408f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingState: {fileID: 0}
+  movingState: {fileID: 3533524501105303504}
 --- !u!1 &5834776971017210752
 GameObject:
   m_ObjectHideFlags: 0

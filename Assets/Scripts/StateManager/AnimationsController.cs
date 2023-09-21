@@ -16,5 +16,6 @@ public class AnimationsController : MonoBehaviour
     private void Update()
     {
         animator.Play(mobManager.stateManager.GetAnimationName());
+        
     }
 }
