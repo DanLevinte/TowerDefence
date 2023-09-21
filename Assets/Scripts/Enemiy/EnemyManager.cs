@@ -210,7 +210,7 @@ public class EnemyManager : MonoBehaviour
         if (other.gameObject.CompareTag("Sword"))
         {
             this.GetComponent<MeshRenderer>().materials[0].color = Color.white;
-            this.enemyState = EnemyState.isAttacking;
+            this.enemyState = EnemyState.isWalking;
         }
     }
 }
