@@ -24,7 +24,7 @@ public class AreaOfRoam : MonoBehaviour, IPointerExitHandler
     {
         if (other.gameObject.CompareTag("Path"))
         {
-            GetComponentInParent<Defenders>().knightManager.defendablePaths.Add(other.GetComponent<Path>());
+            GetComponentInParent<Defenders>().defenderManager.defendablePaths.Add(other.GetComponent<Path>());
             other.GetComponent<Path>().canAct = true;
         }
     }

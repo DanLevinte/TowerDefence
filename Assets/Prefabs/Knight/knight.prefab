@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 3103337728545319016}
   - component: {fileID: 6159080861359951582}
   - component: {fileID: 3034917390787473217}
+  - component: {fileID: 8823512583466253704}
   m_Layer: 6
   m_Name: knight
   m_TagString: Knight
@@ -1209,9 +1210,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob: {fileID: 0}
+  mob: {fileID: 7049792349398535127}
   target: {fileID: 0}
-  stateManager: {fileID: 0}
+  stateManager: {fileID: 6296430349715315220}
+--- !u!114 &8823512583466253704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049792349398535127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5d05840ec7ce440bb73b9e242e5391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  defendablePaths: []
+  pathToDefend: {fileID: 0}
 --- !u!1 &7066584901453834380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700e20794496cf6478992c507dbc6812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
+  currentState: {fileID: 971687733588788304}
 --- !u!114 &3180145243737886889
 MonoBehaviour:
   m_ObjectHideFlags: 0

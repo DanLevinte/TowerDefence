@@ -95,6 +95,7 @@
     <Compile Include="Assets\Meteor.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightIdleState.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightMovingState.cs" />
+    <Compile Include="Assets\Scripts\DefenderManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

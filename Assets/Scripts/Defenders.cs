@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Defenders : MonoBehaviour, IPointerClickHandler
 {
-    public KnightManager knightManager;
+    public DefenderManager defenderManager;
     public GameObject defenderToBeSpawned;
     public GameObject defenderPos;
     public GameObject areaOfRoam;
@@ -13,8 +13,8 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         GameObject go = Instantiate(defenderToBeSpawned, defenderPos.transform.position, Quaternion.identity);
-        this.knightManager = go.GetComponent<KnightManager>();
-        this.knightManager.transform.SetParent(this.transform);
+        this.defenderManager = go.GetComponent<DefenderManager>();
+        this.defenderManager.transform.SetParent(this.transform);
     }
 
     private void Update()
@@ -32,7 +32,7 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            this.knightManager.target = other.gameObject;
+            this.defenderManager.target = other.gameObject;
         }
     }
 
@@ -40,7 +40,7 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            this.knightManager.target = null;
+            this.defenderManager.target = null;
         }
     }
 }
