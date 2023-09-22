@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3970b7e9afea964cb87b5a9e33fbec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defenderManager: {fileID: 8823512583466253704}
   movingState: {fileID: 8285123360403291885}
   defendablePaths: []
-  pathToDefend: {fileID: 0}
 --- !u!1 &744172042221843938
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1421b42832641d346a591036b63043e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knightIdleState: {fileID: 971687733588788304}
+  pathToMoveTo: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &1010442154188452402
 GameObject:
   m_ObjectHideFlags: 0
