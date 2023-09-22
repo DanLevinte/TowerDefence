@@ -13,7 +13,8 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         GameObject go = Instantiate(defenderToBeSpawned, defenderPos.transform.position, Quaternion.identity);
-        knightManager = go.GetComponent<KnightManager>();
+        this.knightManager = go.GetComponent<KnightManager>();
+        this.knightManager.transform.SetParent(this.transform);
     }
 
     private void Update()
@@ -24,14 +25,14 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        areaOfRoam.SetActive(true);
+        this.areaOfRoam.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            knightManager.target = other.gameObject;
+            this.knightManager.target = other.gameObject;
         }
     }
 
@@ -39,7 +40,7 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
     {
         if (other.gameObject.CompareTag("DownEnemy"))
         {
-            knightManager.target = null;
+            this.knightManager.target = null;
         }
     }
 }
