@@ -188,6 +188,11 @@ MonoBehaviour:
   knightIdleState: {fileID: 971687733588788304}
   pathToMoveTo: {fileID: 0}
   target: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: Infinity
+  isTargetInRange: 0
 --- !u!1 &1010442154188452402
 GameObject:
   m_ObjectHideFlags: 0

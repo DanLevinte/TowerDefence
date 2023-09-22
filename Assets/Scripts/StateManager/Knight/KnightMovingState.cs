@@ -12,9 +12,11 @@ public class KnightMovingState : State
 
     public override State RunCurrentState()
     {
+        if (target == null) { knightIdleState.CheckForTargets(); }
+
         if (pathToMoveTo != null && target == null) { MoveToPath(); }
 
-        if (target != null) { MoveToTarget(); }
+        if (target != null && pathToMoveTo != null) { MoveToTarget(); }
 
         if (OnPathPosition()) { return knightIdleState; }
 
@@ -29,7 +31,11 @@ public class KnightMovingState : State
     private void MoveToPath()
     {
         Vector3 path = new Vector3(pathToMoveTo.pathPos.x, MobManager.instance.mob.transform.position.y, pathToMoveTo.pathPos.z);
-        MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, path, .01f);
+
+        if (Vector3.Distance(MobManager.instance.mob.transform.position, pathToMoveTo.pathPos) >= 1f)
+        {
+            MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, path, .01f);
+        }
 
         Vector3 pos = new Vector3(pathToMoveTo.transform.position.x, MobManager.instance.mob.transform.position.y, pathToMoveTo.transform.position.z);
         MobManager.instance.mob.transform.LookAt(pos);

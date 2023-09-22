@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 1379905494447826641}
   - component: {fileID: 1379905494447826634}
   - component: {fileID: 9081611982794060090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Zombie
   m_TagString: DownEnemy
   m_Icon: {fileID: 0}
@@ -1875,6 +1875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e4199df8240e14782f16bbec49c050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackingState: {fileID: 0}
+  timer: 0
 --- !u!1 &5834776971017210752
 GameObject:
   m_ObjectHideFlags: 0
