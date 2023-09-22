@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieAttackingState : State
 {
     public ZombieMovingState movingState;
+    public ZombieHurtState hurtState;
 
     public MobManager mobManager;
 
@@ -14,6 +15,8 @@ public class ZombieAttackingState : State
     {
         if (mobManager.target != null) { RecheckTarget(); }
         else { return this.movingState; }
+
+        if (Input.GetKeyDown(KeyCode.Space)) { return hurtState; }
 
         return this;
     }

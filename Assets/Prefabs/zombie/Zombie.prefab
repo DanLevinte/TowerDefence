@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingState: {fileID: 3533524501105303504}
+  hurtState: {fileID: 6313574669778725846}
   mobManager: {fileID: 9081611982794060090}
   targetMask:
     serializedVersion: 2
@@ -1830,6 +1831,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingState: {fileID: 3533524501105303504}
+--- !u!1 &5827747039068368868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3338054654273823642}
+  - component: {fileID: 6313574669778725846}
+  m_Layer: 0
+  m_Name: ZombieHurtState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3338054654273823642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827747039068368868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2998782535548032686}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6313574669778725846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827747039068368868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e4199df8240e14782f16bbec49c050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5834776971017210752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,7 +2077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2998782535548032686}
   m_Layer: 0
-  m_Name: MovementStates
+  m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2053,6 +2098,7 @@ Transform:
   - {fileID: 6237646858874337934}
   - {fileID: 6714462800120291004}
   - {fileID: 3920598101833890064}
+  - {fileID: 3338054654273823642}
   m_Father: {fileID: 508544152078523895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
