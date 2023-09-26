@@ -49,9 +49,19 @@ public class ZombieMovingState : State
                 {
                     if (detections[i].transform.position.magnitude < targetRadius)  // Find the lowest.
                     {
-                        this.mobManager.target = detections[i].gameObject;
+                        bool getTarget;
+                        var targets = PoolManager.instance.enemiesOffPool;
+                        for (int j = 0; j <= targets.Count - 1; j++)
+                        {
+                            if (targets[j].GetComponent<MobManager>().target != detections[i].gameObject)
+                            {
+                                getTarget = true;
+                                this.mobManager.target = detections[i].gameObject;
+                            }
+                            else { getTarget = false; this.mobManager.target = null; break; }
+                        }
 
-                        break;
+                        //if (getTarget) { this.mobManager.target = detections[i].gameObject; break; }
                     }
                 }
             }
