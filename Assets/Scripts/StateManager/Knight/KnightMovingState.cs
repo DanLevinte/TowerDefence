@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KnightMovingState : State
 {
+    public MobManager mobManager;
+
     public KnightIdleState knightIdleState;
     public KnightAttackingState knightAttackState;
 
@@ -15,13 +17,13 @@ public class KnightMovingState : State
 
     public override State RunCurrentState()
     {
-        if (MobManager.instance.target == null) { knightIdleState.CheckForTargets(); }
+        if (this.mobManager.target == null) { knightIdleState.CheckForTargets(); }
 
-        if (pathToMoveTo != null && MobManager.instance.target == null) { MoveToPath(); }
+        if (pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
 
-        if (MobManager.instance.target != null && pathToMoveTo != null) { MoveToTarget(); }
+        if (this.mobManager.target != null && pathToMoveTo != null) { MoveToTarget(); }
 
-        if (OnPathPosition()) { return knightIdleState; }
+        if (OnPathPosition() && this.mobManager.target == null) { return knightIdleState; }
 
         if (attack) { return knightAttackState; }
 
@@ -35,33 +37,33 @@ public class KnightMovingState : State
 
     private void MoveToPath()
     {
-        Vector3 path = new Vector3(pathToMoveTo.pathPos.x, MobManager.instance.mob.transform.position.y, pathToMoveTo.pathPos.z);
+        Vector3 path = new Vector3(pathToMoveTo.pathPos.x, this.mobManager.mob.transform.position.y, pathToMoveTo.pathPos.z);
 
-        if (Vector3.Distance(MobManager.instance.mob.transform.position, pathToMoveTo.pathPos) >= 1f)
+        if (Vector3.Distance(this.mobManager.mob.transform.position, pathToMoveTo.pathPos) >= 1f)
         {
-            MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, path, .01f);
+            this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, path, .01f);
         }
 
-        MobManager.instance.mob.transform.LookAt(path);
+        this.mobManager.mob.transform.LookAt(path);
     }
 
     private void MoveToTarget()
     {
-        var target = MobManager.instance.target.transform.position;
+        var target = this.mobManager.target.transform.position;
 
-        Vector3 targetPos = new Vector3(target.x, MobManager.instance.mob.transform.position.y, target.z);
+        Vector3 targetPos = new Vector3(target.x, this.mobManager.mob.transform.position.y, target.z);
         
-        if (Vector3.Distance(MobManager.instance.mob.transform.position, target) >= 1f)
+        if (Vector3.Distance(this.mobManager.mob.transform.position, target) >= 1.65f)
         {
-            MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, targetPos, .01f);
+            this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, targetPos, .01f);
         } else { attack = true; }
 
-        MobManager.instance.mob.transform.LookAt(targetPos);
+        this.mobManager.mob.transform.LookAt(targetPos);
     }
 
     private bool OnPathPosition()
     {
-        if (Vector3.Distance(MobManager.instance.mob.transform.position, pathToMoveTo.pathPos) <= 1f) { return true; }
+        if (Vector3.Distance(this.mobManager.transform.position, pathToMoveTo.pathPos) <= 1f) { return true; }
         else { return false; }
     }
 }

@@ -114,7 +114,6 @@ MonoBehaviour:
     m_Bits: 128
   targetRadius: Infinity
   isTargetInRange: 0
-  target: {fileID: 0}
 --- !u!1 &744172042221843938
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1421b42832641d346a591036b63043e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mobManager: {fileID: 3034917390787473217}
   knightIdleState: {fileID: 971687733588788304}
   knightAttackState: {fileID: 2064260439041892157}
   pathToMoveTo: {fileID: 0}
@@ -1113,7 +1113,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7682635630464651629}
   - component: {fileID: 7860062399760938682}
-  - component: {fileID: 910230073015329220}
   - component: {fileID: 6783839929943635374}
   - component: {fileID: 3103337728545319016}
   - component: {fileID: 6159080861359951582}
@@ -1164,24 +1163,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &910230073015329220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7049792349398535127}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618bdf5e5d594d945ae562d9cb707d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathToDefend: {fileID: 0}
-  target: {fileID: 0}
-  knightStates: 0
-  defendablePaths: []
-  animator: {fileID: 7860062399760938682}
-  recharging: 0
 --- !u!65 &6783839929943635374
 BoxCollider:
   m_ObjectHideFlags: 0

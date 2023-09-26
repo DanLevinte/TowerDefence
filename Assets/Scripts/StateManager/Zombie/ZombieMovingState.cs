@@ -24,7 +24,7 @@ public class ZombieMovingState : State
 
         if (this.nextPath != null) { AdvanceOnPath(); }
 
-        if (mobManager.target == null) { CheckForTargets(); }
+        if (this.mobManager.target == null) { CheckForTargets(); }
         else { return zombieAttackingState; }
 
         return this;
@@ -37,20 +37,19 @@ public class ZombieMovingState : State
 
     private void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(mobManager.transform.position, 3, targetMask);
+        var detections = Physics.OverlapSphere(this.mobManager.transform.position, 3, targetMask);
 
         if (detections.Length != 0)
         {
             for (int i = 0; i <= detections.Length - 1; i++)
             {
-                float dist = (transform.position - detections[i].transform.position).magnitude;
+                float dist = (this.transform.position - detections[i].transform.position).magnitude;
 
-                if (dist <= 3)
+                if (dist <= 3 && detections[i].tag == "Knight")
                 {
                     if (detections[i].transform.position.magnitude < targetRadius)  // Find the lowest.
                     {
-                        mobManager.target = detections[i].gameObject;
-                        isTargetInRange = true;
+                        this.mobManager.target = detections[i].gameObject;
 
                         break;
                     }
@@ -62,9 +61,7 @@ public class ZombieMovingState : State
     private void AdvanceOnPath()
     {
         Vector3 targetPos = new(this.nextPath.pathPos.x, this.mobManager.mob.transform.position.y, this.nextPath.pathPos.z);
-
-        Vector3 pos = new Vector3(this.nextPath.transform.position.x, this.mobManager.mob.transform.position.y, this.nextPath.transform.position.z);
-        this.mobManager.mob.transform.LookAt(pos);
+        this.mobManager.mob.transform.LookAt(targetPos);
 
         if (Vector3.Distance(targetPos, this.mobManager.mob.transform.position) == 0) { CleanPath(); }
         else { this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, targetPos, speed); }
