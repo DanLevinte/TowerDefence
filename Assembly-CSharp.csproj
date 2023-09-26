@@ -78,6 +78,7 @@
     <Compile Include="Assets\EnemyTargetFinder.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\MobManager.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Knight\KnightIdleState.cs" />
     <Compile Include="Assets\Archer.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\MageManager.cs" />
@@ -87,15 +88,15 @@
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieMovingState.cs" />
     <Compile Include="Assets\Scripts\StateManager\StateManager.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Knight\KnightMovingState.cs" />
     <Compile Include="Assets\Scripts\ArcherLayout.cs" />
     <Compile Include="Assets\Mage.cs" />
+    <Compile Include="Assets\Scripts\DefenderManager.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Scripts\StateManager\Knight\KnightIdleState.cs" />
-    <Compile Include="Assets\Scripts\StateManager\Knight\KnightMovingState.cs" />
-    <Compile Include="Assets\Scripts\DefenderManager.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Knight\KnightAttackingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
