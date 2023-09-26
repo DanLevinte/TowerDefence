@@ -12,17 +12,17 @@ public class KnightIdleState : State
 
     public LayerMask targetMask;
 
-    public float targetRadius;
+    public float targetRadius = Mathf.Infinity;
 
     public bool isTargetInRange;
-
-    public GameObject target;
 
     public override State RunCurrentState()
     {
         if (ShouldBeMoving()) { movingState.pathToMoveTo = GetComponentInParent<DefenderManager>().pathToDefend; return movingState; }
 
-        if (MobManager.instance.target != null) { Debug.Log("s"); }
+        if (MobManager.instance.target == null) { CheckForTargets(); }
+
+        if (MobManager.instance.target != null) { return movingState; }
 
         return this;
     }
@@ -41,7 +41,7 @@ public class KnightIdleState : State
 
     public void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(MobManager.instance.mob.transform.position, 3, targetMask);
+        var detections = Physics.OverlapSphere(MobManager.instance.mob.transform.position, 6, targetMask);
 
         if (detections.Length != 0)
         {
@@ -49,7 +49,7 @@ public class KnightIdleState : State
             {
                 float dist = (transform.position - detections[i].transform.position).magnitude;
 
-                if (dist <= 3)
+                if (dist <= 6)
                 {
                     if (detections[i].transform.position.magnitude < targetRadius)
                     {

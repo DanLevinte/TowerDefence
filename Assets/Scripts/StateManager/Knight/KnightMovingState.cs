@@ -5,20 +5,25 @@ using UnityEngine;
 public class KnightMovingState : State
 {
     public KnightIdleState knightIdleState;
+    public KnightAttackingState knightAttackState;
 
     public Path pathToMoveTo;
 
     public GameObject target;
 
+    public bool attack;
+
     public override State RunCurrentState()
     {
-        if (target == null) { knightIdleState.CheckForTargets(); }
+        if (MobManager.instance.target == null) { knightIdleState.CheckForTargets(); }
 
-        if (pathToMoveTo != null && target == null) { MoveToPath(); }
+        if (pathToMoveTo != null && MobManager.instance.target == null) { MoveToPath(); }
 
-        if (target != null && pathToMoveTo != null) { MoveToTarget(); }
+        if (MobManager.instance.target != null && pathToMoveTo != null) { MoveToTarget(); }
 
         if (OnPathPosition()) { return knightIdleState; }
+
+        if (attack) { return knightAttackState; }
 
         return this;
     }
@@ -37,13 +42,21 @@ public class KnightMovingState : State
             MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, path, .01f);
         }
 
-        Vector3 pos = new Vector3(pathToMoveTo.transform.position.x, MobManager.instance.mob.transform.position.y, pathToMoveTo.transform.position.z);
-        MobManager.instance.mob.transform.LookAt(pos);
+        MobManager.instance.mob.transform.LookAt(path);
     }
 
     private void MoveToTarget()
     {
+        var target = MobManager.instance.target.transform.position;
 
+        Vector3 targetPos = new Vector3(target.x, MobManager.instance.mob.transform.position.y, target.z);
+        
+        if (Vector3.Distance(MobManager.instance.mob.transform.position, target) >= 1f)
+        {
+            MobManager.instance.mob.transform.position = Vector3.MoveTowards(MobManager.instance.mob.transform.position, targetPos, .01f);
+        } else { attack = true; }
+
+        MobManager.instance.mob.transform.LookAt(targetPos);
     }
 
     private bool OnPathPosition()

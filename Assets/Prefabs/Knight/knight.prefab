@@ -111,8 +111,8 @@ MonoBehaviour:
   defendablePaths: []
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
-  targetRadius: 0
+    m_Bits: 128
+  targetRadius: Infinity
   isTargetInRange: 0
   target: {fileID: 0}
 --- !u!1 &744172042221843938
@@ -192,8 +192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightIdleState: {fileID: 971687733588788304}
+  knightAttackState: {fileID: 2064260439041892157}
   pathToMoveTo: {fileID: 0}
   target: {fileID: 0}
+  attack: 0
 --- !u!1 &1010442154188452402
 GameObject:
   m_ObjectHideFlags: 0
