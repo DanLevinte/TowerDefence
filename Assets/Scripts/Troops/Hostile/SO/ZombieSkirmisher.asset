@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f18bce751cf70498b3e14881d593a1, type: 3}
   m_Name: ZombieSkirmisher
   m_EditorClassIdentifier: 
-  health: 25
+  health: 10
   minDamage: 2
   maxDamage: 4
   speed: 1

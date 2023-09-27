@@ -45,7 +45,7 @@ public class ZombieMovingState : State
             {
                 float dist = (this.transform.position - detections[i].transform.position).magnitude;
 
-                if (dist <= 3 && detections[i].tag == "Knight")
+                if (dist <= 3 && detections[i].tag == "Knight" && detections[i].GetComponent<FriendlyTroopManager>().health >= 0)
                 {
                     if (detections[i].transform.position.magnitude < targetRadius)
                     {

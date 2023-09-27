@@ -104,6 +104,8 @@
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroopManager.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileSkirmisher.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightRestState.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieDeathState.cs" />
+    <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieStayDeadState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

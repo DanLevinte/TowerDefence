@@ -5,6 +5,9 @@ using UnityEngine;
 public class KnightAttackingState : State
 {
     public KnightRestState knightRestState;
+    public KnightIdleState knightIdleState;
+
+    public bool returnToIdleState;
 
     public float timer = 2;
 
@@ -13,6 +16,8 @@ public class KnightAttackingState : State
         timer -= Time.deltaTime;
 
         if (timer <= 0) { AttackTarget(); return knightRestState; }
+
+        if (returnToIdleState) { return knightIdleState; }
 
         return this;
     }
@@ -27,7 +32,16 @@ public class KnightAttackingState : State
         var target = this.GetComponentInParent<MobManager>().target.GetComponent<HostileTroopManager>();
         var troop = this.GetComponentInParent<FriendlyTroopManager>();
 
-        target.health -= troop.damage;
+        if (target.health >= 0)
+        {
+            target.health -= troop.damage;
+        } else
+        {
+            this.gameObject.GetComponentInParent<MobManager>().target.GetComponent<MobManager>().target = null;
+            this.gameObject.GetComponentInParent<MobManager>().target = null;
+            returnToIdleState = true;
+            knightIdleState.movingState.attack = false;
+        }
 
         timer = 2;
     }

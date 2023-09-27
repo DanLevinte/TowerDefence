@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieHurtState : State
 {
     public ZombieAttackingState attackingState;
+    public ZombieDeathState deathState;
 
     public float timer = 1;
 
@@ -13,6 +14,8 @@ public class ZombieHurtState : State
         timer -= Time.deltaTime;
 
         if (timer <= 0) { timer = 1; return attackingState; }
+
+        if (this.gameObject.GetComponentInParent<HostileTroopManager>().health <= 0) { return deathState; }
 
         return this;
     }
