@@ -71,7 +71,9 @@ public class ZombieMovingState : State
         this.mobManager.mob.transform.LookAt(targetPos);
 
         if (Vector3.Distance(targetPos, this.mobManager.mob.transform.position) == 0) { CleanPath(); }
-        else { this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, targetPos, speed * Time.deltaTime); }
+        else { this.mobManager.mob.transform.position = Vector3.MoveTowards
+                (this.mobManager.mob.transform.position, targetPos, GetComponentInParent<HostileTroopManager>().speed * Time.deltaTime); 
+        }
     }
 
     private void CleanPath()

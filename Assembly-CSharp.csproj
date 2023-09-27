@@ -97,9 +97,12 @@
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\Troop.cs" />
-    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\TroopDefender.cs" />
-    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\TroopManager.cs" />
+    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroop.cs" />
+    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopDefender.cs" />
+    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopManager.cs" />
+    <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
+    <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroopManager.cs" />
+    <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileSkirmisher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

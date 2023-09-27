@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 1379905494447826641}
   - component: {fileID: 1379905494447826634}
   - component: {fileID: 9081611982794060090}
+  - component: {fileID: 509291079748719720}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: DownEnemy
@@ -688,6 +689,22 @@ MonoBehaviour:
   mob: {fileID: 2298807704877079449}
   target: {fileID: 0}
   stateManager: {fileID: 3088097724637628145}
+--- !u!114 &509291079748719720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298807704877079449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1460f04d5f43dc49b220302f471f5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hostileTroop: {fileID: 11400000, guid: 226c48c55f384a74f913c56d4b302b98, type: 2}
+  damage: 0
+  health: 0
+  speed: 0
 --- !u!1 &2382328693980959937
 GameObject:
   m_ObjectHideFlags: 0
