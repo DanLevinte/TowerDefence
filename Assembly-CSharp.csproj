@@ -97,6 +97,9 @@
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Meteor.cs" />
+    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\Troop.cs" />
+    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\TroopDefender.cs" />
+    <Compile Include="Assets\Scripts\Mob\Troops\Scripts\TroopManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -195,6 +195,7 @@ MonoBehaviour:
   knightAttackState: {fileID: 2064260439041892157}
   pathToMoveTo: {fileID: 0}
   target: {fileID: 0}
+  speed: 5
   attack: 0
 --- !u!1 &1010442154188452402
 GameObject:
@@ -1118,6 +1119,7 @@ GameObject:
   - component: {fileID: 6159080861359951582}
   - component: {fileID: 3034917390787473217}
   - component: {fileID: 8823512583466253704}
+  - component: {fileID: 3478924842950524152}
   m_Layer: 6
   m_Name: knight
   m_TagString: Knight
@@ -1264,6 +1266,21 @@ MonoBehaviour:
   target: {fileID: 0}
   defendablePaths: []
   pathToDefend: {fileID: 0}
+--- !u!114 &3478924842950524152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049792349398535127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d680f047e5ce2814c8309dcb053aafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troops: {fileID: 11400000, guid: 88edd9938dfabfb4382199ab71744095, type: 2}
+  damage: 0
+  health: 0
 --- !u!1 &7066584901453834380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,20 +1777,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.004937474, y: 0.0049163, z: 0.014693671}
   m_Center: {x: 0.0000000013752329, y: -0.0008393586, z: 0.0074320026}
---- !u!114 &8043343994603157071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7049792349467746237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e1da5bc3891524e87b2d5591d56755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  isGivingDamage: 0
 --- !u!4 &7682635630269613319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36fab3ffd9c82804b89ab12e47fea653,

@@ -13,15 +13,17 @@ public class KnightMovingState : State
 
     public GameObject target;
 
+    public int speed;
+
     public bool attack;
 
     public override State RunCurrentState()
     {
         if (this.mobManager.target == null) { knightIdleState.CheckForTargets(); }
 
-        if (pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
+        if (this.pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
 
-        if (this.mobManager.target != null && pathToMoveTo != null) { MoveToTarget(); }
+        if (this.mobManager.target != null && this.pathToMoveTo != null) { MoveToTarget(); }
 
         if (OnPathPosition() && this.mobManager.target == null) { return knightIdleState; }
 
