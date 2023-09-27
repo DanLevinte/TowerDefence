@@ -266,6 +266,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 64
+  timer: 2
 --- !u!1 &1012197919946567825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e4199df8240e14782f16bbec49c050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackingState: {fileID: 0}
+  attackingState: {fileID: 8062170087645046278}
   timer: 0
 --- !u!1 &5834776971017210752
 GameObject:

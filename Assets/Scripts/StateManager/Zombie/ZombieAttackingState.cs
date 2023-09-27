@@ -11,10 +11,16 @@ public class ZombieAttackingState : State
 
     public LayerMask targetMask;
 
+    public float timer = 2.5f;
+
     public override State RunCurrentState()
     {
         if (mobManager.target != null) { RecheckTarget(); }
         else { return this.movingState; }
+
+        timer -= Time.deltaTime;
+
+        if (timer <= 0) { AttackTarget(); return hurtState; }
 
         if (Input.GetKeyDown(KeyCode.Space)) { return hurtState; }
 
@@ -24,6 +30,16 @@ public class ZombieAttackingState : State
     public override string GetStateName()
     {
         return "zombie_attack";
+    }
+
+    private void AttackTarget()
+    {
+        var target = this.GetComponentInParent<MobManager>().target.GetComponent<FriendlyTroopManager>();
+        var troop = this.GetComponentInParent<HostileTroopManager>();
+
+        target.health -= troop.damage;
+
+        timer = 2.5f;
     }
 
     private void RecheckTarget()
