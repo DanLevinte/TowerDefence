@@ -40,7 +40,7 @@ public class PoolManager : MonoBehaviour
                     GameObject go = Instantiate(enemiesOnPool[0], poolStartup.position, Quaternion.identity);
                     enemiesOnPool.Remove(enemiesOnPool[0]);
                     enemiesOffPool.Add(go);
-                    timer = 3.5f;
+                    timer = 10f;
                     break;
                 }
             }
