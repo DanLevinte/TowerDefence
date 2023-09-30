@@ -2076,6 +2076,7 @@ MonoBehaviour:
   enemiesOffPool: []
   updatePool: 0
   timer: 0
+  spawnRate: 6
 --- !u!1 &1657016430
 GameObject:
   m_ObjectHideFlags: 0

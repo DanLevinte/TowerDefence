@@ -12,7 +12,7 @@ public class ZombieDeathState : State
     {
         timer -= Time.deltaTime;
 
-        if (timer <= 0) { DeathState(); return zombieStayDeadState; }
+        if (timer <= 0) { PoolManager.instance.updatePool = true; return zombieStayDeadState; }
 
         return this;
     }
@@ -20,9 +20,5 @@ public class ZombieDeathState : State
     public override string GetStateName()
     {
         return "zombie_Death";
-    }
-
-    private void DeathState()
-    {
     }
 }

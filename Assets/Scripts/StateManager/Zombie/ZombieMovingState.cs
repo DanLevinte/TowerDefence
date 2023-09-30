@@ -51,6 +51,11 @@ public class ZombieMovingState : State
                     {
                         var targets = PoolManager.instance.enemiesOffPool;
 
+                        for (int k = 0; k <= targets.Count - 1; k++)
+                        {
+                            if (targets[k].GetComponent<HostileTroopManager>().health <= 0) { targets.Remove(targets[k]); }
+                        }
+
                         for (int j = 0; j <= targets.Count - 1; j++)
                         {
                             if (targets[j].GetComponent<MobManager>().target != detections[i].gameObject)

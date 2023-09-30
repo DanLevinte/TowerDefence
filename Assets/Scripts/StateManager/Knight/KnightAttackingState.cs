@@ -17,7 +17,7 @@ public class KnightAttackingState : State
 
         if (timer <= 0) { AttackTarget(); return knightRestState; }
 
-        if (returnToIdleState) { return knightIdleState; }
+        if (returnToIdleState) { returnToIdleState = false; return knightIdleState; }
 
         return this;
     }

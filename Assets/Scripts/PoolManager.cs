@@ -12,6 +12,7 @@ public class PoolManager : MonoBehaviour
     public bool updatePool;
 
     public float timer;
+    public float spawnRate;
 
     public static PoolManager instance;
 
@@ -40,7 +41,7 @@ public class PoolManager : MonoBehaviour
                     GameObject go = Instantiate(enemiesOnPool[0], poolStartup.position, Quaternion.identity);
                     enemiesOnPool.Remove(enemiesOnPool[0]);
                     enemiesOffPool.Add(go);
-                    timer = 10f;
+                    timer = spawnRate;
                     break;
                 }
             }
@@ -51,7 +52,9 @@ public class PoolManager : MonoBehaviour
     {
         for (int i = 0; i <= enemiesOffPool.Count - 1; i++)
         {
-            if (enemiesOffPool[i].GetComponent<EnemyManager>().currentHealth <= 0) { enemiesOffPool.Remove(enemiesOffPool[i]); }
+            if (enemiesOffPool[i].GetComponent<HostileTroopManager>().health <= 0) { enemiesOffPool.Remove(enemiesOffPool[i]); }
         }
+
+        updatePool = false;
     }
 }
