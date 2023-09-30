@@ -22,6 +22,8 @@ public class ZombieAttackingState : State
 
         if (timer <= 0) { AttackTarget(); return hurtState; }
 
+        if (this.GetComponentInParent<HostileTroopManager>().health < 0) { return hurtState.deathState; }
+
         return this;
     }
 

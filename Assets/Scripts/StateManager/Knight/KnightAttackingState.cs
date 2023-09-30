@@ -32,7 +32,7 @@ public class KnightAttackingState : State
         var target = this.GetComponentInParent<MobManager>().target.GetComponent<HostileTroopManager>();
         var troop = this.GetComponentInParent<FriendlyTroopManager>();
 
-        if (target.health >= 0)
+        if (target.health > 0)
         {
             target.health -= troop.damage;
         } else
