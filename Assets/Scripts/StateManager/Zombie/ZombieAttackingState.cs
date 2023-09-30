@@ -22,8 +22,6 @@ public class ZombieAttackingState : State
 
         if (timer <= 0) { AttackTarget(); return hurtState; }
 
-        if (Input.GetKeyDown(KeyCode.Space)) { return hurtState; }
-
         return this;
     }
 

@@ -27,7 +27,7 @@ public class KnightMovingState : State
 
         if (OnPathPosition() && this.mobManager.target == null) { return knightIdleState; }
 
-        if (attack) { return knightAttackState; }
+        if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { return knightAttackState; }
 
         return this;
     }
@@ -55,7 +55,7 @@ public class KnightMovingState : State
 
         Vector3 targetPos = new Vector3(target.x, this.mobManager.mob.transform.position.y, target.z);
         
-        if (Vector3.Distance(this.mobManager.mob.transform.position, target) >= 1.65f && )
+        if (Vector3.Distance(this.mobManager.mob.transform.position, target) >= 1.65f)
         {
             this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, targetPos, .01f);
         } else { attack = true; }
