@@ -6,15 +6,16 @@ public class HostileTroopManager : MonoBehaviour
 {
     public HostileTroop hostileTroop;
 
-    public int damage, health, speed;
+    public int damage, currentHealth, maxHealth, speed;
 
     private void Start()
     {
         if (hostileTroop.isSkirmisher) 
         { 
             damage = Random.Range(hostileTroop.hostileSkirmisher.minDamage, hostileTroop.hostileSkirmisher.maxDamage);
-            health = hostileTroop.hostileSkirmisher.health;
+            currentHealth = hostileTroop.hostileSkirmisher.health;
             speed = hostileTroop.hostileSkirmisher.speed;
+            maxHealth = hostileTroop.hostileSkirmisher.health;
         }
     }
 }

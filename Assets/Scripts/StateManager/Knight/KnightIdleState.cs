@@ -49,7 +49,7 @@ public class KnightIdleState : State
             {
                 float dist = (this.transform.position - detections[i].transform.position).magnitude;
 
-                if (dist <= 6 && detections[i].GetComponent<HostileTroopManager>().health >= 0 && detections[i].tag == "DownEnemy")
+                if (dist <= 6 && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
                 {
                     if (detections[i].transform.position.magnitude < targetRadius)
                     {

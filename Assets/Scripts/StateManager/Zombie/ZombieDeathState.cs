@@ -12,7 +12,7 @@ public class ZombieDeathState : State
     {
         timer -= Time.deltaTime;
 
-        if (timer <= 0) { PoolManager.instance.updatePool = true; return zombieStayDeadState; }
+        if (timer <= 0) { PoolManager.instance.updatePool = true; this.GetComponentInParent<MobManager>().canvas.SetActive(false); return zombieStayDeadState; }
 
         return this;
     }

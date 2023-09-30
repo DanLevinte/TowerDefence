@@ -32,9 +32,14 @@ public class KnightAttackingState : State
         var target = this.GetComponentInParent<MobManager>().target.GetComponent<HostileTroopManager>();
         var troop = this.GetComponentInParent<FriendlyTroopManager>();
 
-        if (target.health > 0)
+        if (target.currentHealth > 0)
         {
-            target.health -= troop.damage;
+            target.currentHealth -= troop.damage;
+
+            var enemy = target.gameObject.GetComponentInParent<MobManager>();
+
+            if (!enemy.canvas.activeInHierarchy) { enemy.canvas.SetActive(true); }
+
         } else
         {
             this.gameObject.GetComponentInParent<MobManager>().target.GetComponent<MobManager>().target = null;

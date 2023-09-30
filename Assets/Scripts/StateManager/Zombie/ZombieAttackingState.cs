@@ -22,7 +22,7 @@ public class ZombieAttackingState : State
 
         if (timer <= 0) { AttackTarget(); return hurtState; }
 
-        if (this.GetComponentInParent<HostileTroopManager>().health < 0) { return hurtState.deathState; }
+        if (this.GetComponentInParent<HostileTroopManager>().currentHealth < 0) { return hurtState.deathState; }
 
         return this;
     }
@@ -36,6 +36,10 @@ public class ZombieAttackingState : State
     {
         var target = this.GetComponentInParent<MobManager>().target.GetComponent<FriendlyTroopManager>();
         var troop = this.GetComponentInParent<HostileTroopManager>();
+
+        var enemy = target.gameObject.GetComponentInParent<MobManager>();
+
+        if (!enemy.canvas.activeInHierarchy) { enemy.canvas.SetActive(true); }
 
         target.health -= troop.damage;
 

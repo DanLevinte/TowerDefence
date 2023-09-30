@@ -52,7 +52,7 @@ public class PoolManager : MonoBehaviour
     {
         for (int i = 0; i <= enemiesOffPool.Count - 1; i++)
         {
-            if (enemiesOffPool[i].GetComponent<HostileTroopManager>().health <= 0) { enemiesOffPool.Remove(enemiesOffPool[i]); }
+            if (enemiesOffPool[i].GetComponent<HostileTroopManager>().currentHealth <= 0) { enemiesOffPool.Remove(enemiesOffPool[i]); }
         }
 
         updatePool = false;

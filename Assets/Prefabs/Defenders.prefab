@@ -112,9 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0684980fa6aee45a36598b3eb0df44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightManager: {fileID: 910230073015329220, guid: 4e027f8dc87e6794b8f733b38c356604,
-    type: 3}
-  defenderToBeSpawned: {fileID: 7049792349398535127, guid: 4e027f8dc87e6794b8f733b38c356604,
+  defenderManager: {fileID: 0}
+  defenderToBeSpawned: {fileID: 4436010591313827941, guid: 79250aaef6c00e446a5eb6f9df894432,
     type: 3}
   defenderPos: {fileID: 7651208299620180453}
   areaOfRoam: {fileID: 8512143584564240679}

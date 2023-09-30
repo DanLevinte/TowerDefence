@@ -27,7 +27,7 @@ public class ZombieMovingState : State
         if (this.mobManager.target == null) { CheckForTargets(); }
         else { return zombieAttackingState; }
 
-        if (this.GetComponentInParent<HostileTroopManager>().health < 0) { return zombieAttackingState.hurtState.deathState; }
+        if (this.GetComponentInParent<HostileTroopManager>().currentHealth < 0) { return zombieAttackingState.hurtState.deathState; }
 
         return this;
     }
@@ -55,7 +55,7 @@ public class ZombieMovingState : State
 
                         for (int k = 0; k <= targets.Count - 1; k++)
                         {
-                            if (targets[k].GetComponent<HostileTroopManager>().health <= 0) { targets.Remove(targets[k]); }
+                            if (targets[k].GetComponent<HostileTroopManager>().currentHealth <= 0) { targets.Remove(targets[k]); }
                         }
 
                         for (int j = 0; j <= targets.Count - 1; j++)

@@ -15,7 +15,7 @@ public class ZombieHurtState : State
 
         if (timer <= 0) { timer = 1; return attackingState; }
 
-        if (this.gameObject.GetComponentInParent<HostileTroopManager>().health <= 0) { return deathState; }
+        if (this.gameObject.GetComponentInParent<HostileTroopManager>().currentHealth <= 0) { return deathState; }
 
         return this;
     }
