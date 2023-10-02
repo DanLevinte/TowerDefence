@@ -21,13 +21,17 @@ public class KnightMovingState : State
     {
         if (this.mobManager.target == null) { knightIdleState.CheckForTargets(); }
 
+        if (this.pathToMoveTo == null && this.mobManager.target == null) { ReturnToBase(); }
+
         if (this.pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
 
-        if (this.mobManager.target != null && this.pathToMoveTo != null) { MoveToTarget(); }
+        if (this.mobManager.target != null) { MoveToTarget(); }
 
-        if (OnPathPosition() && this.mobManager.target == null) { return knightIdleState; }
+        if (this.pathToMoveTo != null && OnPathPosition(pathToMoveTo.pathPos) && this.mobManager.target == null) { return knightIdleState; }
 
-        if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { return knightAttackState; }
+        if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { attack = false; return knightAttackState; }
+
+        if (OnPathPosition(this.knightIdleState.basePos.transform.position) && this.pathToMoveTo == null && this.mobManager.target == null) { return knightIdleState; }
 
         return this;
     }
@@ -35,6 +39,22 @@ public class KnightMovingState : State
     public override string GetStateName()
     {
         return "knight_moving";
+    }
+
+    private void ReturnToBase()
+    {
+        var defPos = knightIdleState.basePos.transform.position;
+
+        this.transform.position = Vector3.MoveTowards(this.transform.position, defPos, .01f);
+
+        Vector3 path = new Vector3(defPos.x, this.mobManager.mob.transform.position.y, defPos.z);
+
+        if (Vector3.Distance(this.transform.position, defPos) >= 1f)
+        {
+            this.transform.position = Vector3.MoveTowards(this.transform.position, path, .01f);
+        }
+
+        this.transform.LookAt(path);
     }
 
     private void MoveToPath()
@@ -63,9 +83,9 @@ public class KnightMovingState : State
         this.mobManager.mob.transform.LookAt(targetPos);
     }
 
-    private bool OnPathPosition()
+    private bool OnPathPosition(Vector3 location)
     {
-        if (Vector3.Distance(this.mobManager.transform.position, pathToMoveTo.pathPos) <= 1f) { return true; }
+        if (Vector3.Distance(this.mobManager.transform.position, location) <= 1f) { return true; }
         else { return false; }
     }
 }

@@ -12,9 +12,14 @@ public class KnightIdleState : State
 
     public LayerMask targetMask;
 
+    public GameObject basePos;
+
     public float targetRadius = Mathf.Infinity;
 
-    public bool isTargetInRange;
+    private void Start()
+    {
+        this.basePos = this.GetComponentInParent<Defenders>().defenderPos;
+    }
 
     public override State RunCurrentState()
     {
@@ -54,7 +59,6 @@ public class KnightIdleState : State
                     if (detections[i].transform.position.magnitude < targetRadius)
                     {
                         this.movingState.mobManager.target = detections[i].gameObject;
-                        this.isTargetInRange = true;
                         Debug.Log(detections[i].name);
                         break;
                     }

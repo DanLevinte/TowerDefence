@@ -9,45 +9,71 @@ public class Ballista : MonoBehaviour
     public GameObject projectilePos;
     public GameObject ballistaBody;
 
+    public LayerMask targetMask;
+
+    public int targetRadius;
+
     public bool canShoot;
 
     private void Update()
     {
-        if (target != null)
-        {
-            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
-            ballistaBody.transform.LookAt(targetPos);
-
-            if (canShoot) { StartCoroutine(ShootProjectile()); }
-        }
+        if (this.target != null) { this.ShootTarget(); } 
+        else { this.FindTarget(); }
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void ShootTarget()
     {
-        if (other.gameObject.CompareTag("DownEnemy")) 
+        var detections = Physics.OverlapSphere(this.transform.position, this.targetRadius, this.targetMask);
+
+        GameObject tg = null;
+
+        if (detections.Length > 0)
         {
-            target = other.gameObject;
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                if (detections[i].gameObject == this.target && this.target.GetComponent<HostileTroopManager>().currentHealth > 0)
+                {
+                    Vector3 targetPos = new Vector3(this.target.transform.position.x, this.gameObject.transform.position.y, this.target.transform.position.z);
+                    this.ballistaBody.transform.LookAt(targetPos);
+
+                    if (this.canShoot) { this.StartCoroutine(ShootProjectile()); }
+                    tg = detections[i].gameObject;
+                    
+                    break;
+                }
+            }
         }
+
+        if (tg == null) { this.target = null; }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void FindTarget()
     {
-        if (other.gameObject.CompareTag("DownEnemy"))
+        var detections = Physics.OverlapSphere(this.transform.position, this.targetRadius, this.targetMask);
+
+        if (detections.Length > 0)
         {
-            target = null;
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                float dist = (this.transform.position - detections[i].transform.position).magnitude;
+
+                if (detections[i].tag == "DownEnemy" && detections[i].GetComponent<HostileTroopManager>().currentHealth > 0)
+                {
+                    this.target = detections[i].gameObject;
+                }
+            }
         }
     }
 
     private IEnumerator ShootProjectile()
     {
-        canShoot = false;
+        this.canShoot = false;
 
         yield return new WaitForSeconds(2);
 
-        GameObject go = Instantiate(projectile, projectilePos.transform.position, projectile.transform.rotation);
-        go.GetComponent<ProjectileMesh>().target = target;
+        GameObject go = Instantiate(this.projectile, this.projectilePos.transform.position, this.projectile.transform.rotation);
+        go.GetComponent<ProjectileMesh>().target = this.target;
 
-        canShoot = true;
+        this.canShoot = true;
     }
 }

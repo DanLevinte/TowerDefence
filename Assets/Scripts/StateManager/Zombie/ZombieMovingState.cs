@@ -27,7 +27,7 @@ public class ZombieMovingState : State
         if (this.mobManager.target == null) { CheckForTargets(); }
         else { return zombieAttackingState; }
 
-        if (this.GetComponentInParent<HostileTroopManager>().currentHealth < 0) { return zombieAttackingState.hurtState.deathState; }
+        if (this.GetComponentInParent<HostileTroopManager>().currentHealth <= 0) { return zombieAttackingState.hurtState.deathState; }
 
         return this;
     }

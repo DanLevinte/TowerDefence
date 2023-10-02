@@ -301,10 +301,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  projectile: {fileID: 5222999778640835468, guid: 687368ef32bf8e742acf844d764a6838,
+  projectile: {fileID: 4870299483866376568, guid: 9fb46816af336dd4b88e38edb1174f93,
     type: 3}
   projectilePos: {fileID: 3914450506352659475}
   ballistaBody: {fileID: 6207493320879821206}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: 8
   canShoot: 1
 --- !u!65 &8570621064876614768
 BoxCollider:

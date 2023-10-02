@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 10
   minDamage: 2
   maxDamage: 4
-  speed: 1
+  speed: 3

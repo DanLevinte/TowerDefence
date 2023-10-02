@@ -5,39 +5,45 @@ using UnityEngine;
 public class ProjectileMesh : MonoBehaviour
 {
     public GameObject target;
-    public float lifespan = 5f;
+    public float lifespan = 2.5f;
+    public float speed;
 
     public int projDamage;
 
+    public LayerMask targetMask;
+
     private void Update()
     {
-        if (target != null)
+        if (this.target != null)
         {
-            lifespan -= Time.deltaTime;
-            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
-            transform.LookAt(targetPos);
+            this.lifespan -= Time.deltaTime;
+            this.gameObject.transform.rotation = Quaternion.identity;
 
-        } else { lifespan = 0; Destroy(gameObject); }
+            FollowTarget();
+        } else { this.lifespan = 0; Destroy(this.gameObject); }
 
-        if (lifespan <= 0) { gameObject.SetActive(false); }
-
-        if (this.gameObject.transform.parent == null && target != null) { transform.position = Vector3.MoveTowards(transform.position, target.transform.position, 0.1f); }
-        else { Destroy(gameObject); }
+        if (this.lifespan <= 0) { this.gameObject.SetActive(false); }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void FollowTarget()
     {
-        if (other.gameObject.CompareTag("DownEnemy"))
+        this.transform.position = Vector3.MoveTowards(this.transform.position, this.target.transform.position, this.speed * Time.deltaTime);
+
+        var detections = Physics.OverlapSphere(this.transform.position, 1.5f, this.targetMask);
+
+        if (detections.Length != 0)
         {
-            other.GetComponent<EnemyManager>().switchColor = true;
-            target.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            this.gameObject.transform.SetParent(other.transform);
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                if (detections[i].gameObject == this.target) 
+                {
+                    var targetManager = detections[i].gameObject.GetComponent<HostileTroopManager>();
 
-            other.GetComponent<EnemyManager>().currentHealth -= projDamage;
-            Vector3 targetPos = new Vector3(target.transform.position.x, this.gameObject.transform.position.y, target.transform.position.z);
-            transform.LookAt(targetPos);
-
-            //Destroy(gameObject, .25f);
+                    targetManager.currentHealth -= this.projDamage;
+                    this.target = null;
+                    break;
+                }
+            }
         }
     }
 }
