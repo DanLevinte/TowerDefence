@@ -2072,7 +2072,6 @@ MonoBehaviour:
   poolStartup: {fileID: 1657016431}
   enemiesOnPool:
   - {fileID: 7651957213978116792, guid: 9f60deae8ca57324e929d24eb695d9f1, type: 3}
-  - {fileID: 7651957213978116792, guid: 9f60deae8ca57324e929d24eb695d9f1, type: 3}
   enemiesOffPool: []
   updatePool: 0
   timer: 0
