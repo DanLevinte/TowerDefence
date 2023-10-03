@@ -32,6 +32,7 @@ public class KnightMovingState : State
         if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { attack = false; return knightAttackState; }
 
         if (OnPathPosition(this.knightIdleState.basePos.transform.position) && this.pathToMoveTo == null && this.mobManager.target == null) { return knightIdleState; }
+        else { ReturnToBase(); }
 
         return this;
     }
