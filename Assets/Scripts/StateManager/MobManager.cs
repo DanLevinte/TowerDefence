@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public enum TypeOfTroop
 {
     Friendly,
-    Hostile
+    Hostile,
+    Tower
 }
 
 public class MobManager : MonoBehaviour
@@ -21,6 +22,10 @@ public class MobManager : MonoBehaviour
 
     public TypeOfTroop typeOfTroop;
 
+    public LayerMask targetMask;
+
+    public float targetRadius;
+
     public static MobManager instance;
 
     private void Awake()
@@ -30,17 +35,16 @@ public class MobManager : MonoBehaviour
 
     private void Update()
     {
-        if (typeOfTroop == TypeOfTroop.Hostile)
+        if (this.typeOfTroop == TypeOfTroop.Hostile)
         {
             var ratio = 0.0f;
             var hostile = GetComponent<HostileTroopManager>();
-            healthbar.fillAmount = Mathf.Lerp(hostile.currentHealth, hostile.maxHealth, ratio);
+            this.healthbar.fillAmount = Mathf.Lerp(hostile.currentHealth, hostile.maxHealth, ratio);
         }
-
     }
 
     private void LateUpdate()
     {
-        if (this.canvas.activeInHierarchy) { this.canvas.transform.rotation = Quaternion.identity; }
+        if (this.canvas != null && this.canvas.activeInHierarchy) { this.canvas.transform.rotation = Quaternion.identity; }
     }
 }

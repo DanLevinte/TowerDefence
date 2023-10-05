@@ -106,6 +106,9 @@
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
     <Compile Include="Assets\Meteor.cs" />
+    <Compile Include="Assets\Prefabs\archer\StateManager\ArcherIdleState.cs" />
+    <Compile Include="Assets\Prefabs\archer\StateManager\ArcherShootingState.cs" />
+    <Compile Include="Assets\Prefabs\archer\StateManager\ArcherRestState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

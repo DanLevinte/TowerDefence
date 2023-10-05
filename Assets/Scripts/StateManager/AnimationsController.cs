@@ -9,13 +9,13 @@ public class AnimationsController : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponentInParent<Animator>();
-        mobManager = GetComponentInParent<MobManager>();
+        this.animator = this.GetComponentInParent<Animator>();
+        this.mobManager = this.GetComponentInParent<MobManager>();
     }
 
     private void Update()
     {
-        animator.Play(mobManager.stateManager.GetAnimationName());
+        this.animator.Play(this.mobManager.stateManager.GetAnimationName());
         
     }
 }

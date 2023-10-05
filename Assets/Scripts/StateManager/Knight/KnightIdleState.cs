@@ -59,7 +59,6 @@ public class KnightIdleState : State
                     if (detections[i].transform.position.magnitude < targetRadius)
                     {
                         this.movingState.mobManager.target = detections[i].gameObject;
-                        Debug.Log(detections[i].name);
                         break;
                     }
                 }
