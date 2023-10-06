@@ -903,4 +903,4 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 128
-  targetRadius: 10
+  targetRadius: 7

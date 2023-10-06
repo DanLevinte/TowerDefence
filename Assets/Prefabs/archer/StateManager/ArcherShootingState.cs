@@ -35,22 +35,25 @@ public class ArcherShootingState : State
 
     public void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
 
-        if (detections.Length != 0)
+        GameObject tg = null;
+
+        if (detections.Length > 0)
         {
             for (int i = 0; i <= detections.Length - 1; i++)
             {
-                float dist = (this.transform.position - detections[i].transform.position).magnitude;
-
-                if (dist <= this.idleState.mobManager.targetRadius && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
+                if (detections[i].gameObject == this.idleState.mobManager.target && this.idleState.mobManager.target.GetComponent<HostileTroopManager>().currentHealth > 0)
                 {
-                    this.idleState.mobManager.target = detections[i].gameObject;
+                    tg = detections[i].gameObject;
+
                     break;
                 }
-                else { this.idleState.mobManager.target = null; Debug.Log("null"); }
             }
         }
+
+        if (tg == null) { this.idleState.mobManager.target = null; }
+        else { this.idleState.mobManager.target = tg; }
     }
 
     private void ShootTarget()

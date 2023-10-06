@@ -60,6 +60,7 @@ public class Ballista : MonoBehaviour
                 if (detections[i].tag == "DownEnemy" && detections[i].GetComponent<HostileTroopManager>().currentHealth > 0)
                 {
                     this.target = detections[i].gameObject;
+                    break;
                 }
             }
         }
