@@ -14,12 +14,10 @@ public class ArcherShootingState : State
 
     public override State RunCurrentState()
     {
-        if (idleState.mobManager.target == null) { return idleState; }
+        if (this.idleState.mobManager.target == null) { return idleState; }
         else { ShootTarget(); }
 
         if (!this.canShoot) { this.canShoot = true; return restState; }
-
-        //OnDrawGizmos();
 
         return this;
     }
@@ -35,15 +33,39 @@ public class ArcherShootingState : State
         return "archer_isShooting";
     }
 
+    public void CheckForTargets()
+    {
+        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
+
+        if (detections.Length != 0)
+        {
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                float dist = (this.transform.position - detections[i].transform.position).magnitude;
+
+                if (dist <= this.idleState.mobManager.targetRadius && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
+                {
+                    this.idleState.mobManager.target = detections[i].gameObject;
+                    break;
+                }
+                else { this.idleState.mobManager.target = null; Debug.Log("null"); }
+            }
+        }
+    }
+
     private void ShootTarget()
     {
+        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
+
+        CheckForTargets();
+
         if (this.canShoot)
         {
             this.canShoot = false;
 
             Vector3 tg = new Vector3(idleState.mobManager.target.transform.position.x, this.idleState.mobManager.mob.transform.position.y, idleState.mobManager.target.transform.position.z);
 
-            this.transform.LookAt(tg);
+            this.idleState.mobManager.mob.transform.LookAt(tg);
 
             GameObject go = Instantiate(this.arrowPrefab, this.arrowPos.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             go.GetComponent<Arrow>().target = idleState.mobManager.target;

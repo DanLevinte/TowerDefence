@@ -14,9 +14,4 @@ public class Arrow : MonoBehaviour
             this.transform.position = Vector3.MoveTowards(this.transform.position, this.target.transform.position, .01f);
         } else { Destroy(this.gameObject); }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
 }
