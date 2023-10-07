@@ -62,7 +62,7 @@ public class ArcherShootingState : State
 
         CheckForTargets();
 
-        if (this.canShoot)
+        if (this.canShoot && idleState.mobManager.target != null)
         {
             this.canShoot = false;
 
