@@ -25,6 +25,6 @@ public class ArcherRestState : State
 
     public override string GetStateName()
     {
-        return "archer_isIdle";
+        return "archer_isShooting";
     }
 }
