@@ -1,5 +1,162 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1621819423274715332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8786352062081559374}
+  - component: {fileID: 7195953771031172762}
+  m_Layer: 0
+  m_Name: MageRestState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8786352062081559374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621819423274715332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8416389761068539607}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7195953771031172762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621819423274715332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc732f65277d0294ebac82104f75e1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageShootingState: {fileID: 4524480313334791853}
+  timer: 1
+--- !u!1 &1736667105539661200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3934033985952093192}
+  - component: {fileID: 4524480313334791853}
+  m_Layer: 0
+  m_Name: MageShootingState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3934033985952093192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736667105539661200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8416389761068539607}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4524480313334791853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736667105539661200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334b5145e6fd14445af8dbb1b6a6cb90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageIdleState: {fileID: 15763241924125135}
+  restState: {fileID: 7195953771031172762}
+  fireballPrefab: {fileID: 7737092990614404224, guid: f7b39020bf6d42242a73b52f8469d56c,
+    type: 3}
+  fireballPos: {fileID: 3816601431071774072}
+  canShoot: 1
+--- !u!1 &2260005852092183924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8416389761068539607}
+  - component: {fileID: 8182606266030835393}
+  - component: {fileID: 5414906656373946155}
+  m_Layer: 0
+  m_Name: StateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8416389761068539607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260005852092183924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.765, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7860161332030923402}
+  - {fileID: 3934033985952093192}
+  - {fileID: 8786352062081559374}
+  m_Father: {fileID: 4863869792206136938}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8182606266030835393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260005852092183924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700e20794496cf6478992c507dbc6812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 15763241924125135}
+--- !u!114 &5414906656373946155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260005852092183924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5405bde91184e9843907445dcff43311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3816601431071774072
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +271,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7494165550627981273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7860161332030923402}
+  - component: {fileID: 15763241924125135}
+  m_Layer: 0
+  m_Name: MageIdleState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7860161332030923402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494165550627981273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8416389761068539607}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15763241924125135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494165550627981273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ad099b06583db41a28331849ae5e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageShootingState: {fileID: 4524480313334791853}
+  mobManager: {fileID: 7436699776089518680}
 --- !u!1 &7955085967118390467
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7307050571259120803}
   - component: {fileID: 8279407380563465678}
-  - component: {fileID: 7706699273291824459}
   m_Layer: 0
   m_Name: MageTower
   m_TagString: Untagged
@@ -162,20 +364,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 8, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7706699273291824459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7955085967118390467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7f1feac488bc94bb83de55cf3ff22b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  mageManager: {fileID: 8549432034459890092}
 --- !u!1001 &4968973091218538881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -712,7 +900,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8549432034459890092
+--- !u!114 &7436699776089518680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -721,13 +909,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5202853162956061904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b48d6facf26ad47a7f878e506c92e5, type: 3}
+  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mob: {fileID: 5202853162956061904}
   target: {fileID: 0}
-  canShoot: 1
-  recharging: 0
-  meteorPos: {fileID: 3816601431071774072}
-  meteorPrefab: {fileID: 7737092990614404224, guid: f7b39020bf6d42242a73b52f8469d56c,
-    type: 3}
-  animator: {fileID: 8766001936551577960}
+  canvas: {fileID: 0}
+  healthbar: {fileID: 0}
+  stateManager: {fileID: 8182606266030835393}
+  typeOfTroop: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: 7

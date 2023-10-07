@@ -7,23 +7,35 @@ public class Meteor : MonoBehaviour
     public GameObject target;
     public int damage;
 
+    public LayerMask targetMask;
+
     private void Update()
     {
         if (target != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, .01f);
-        } else { Destroy(gameObject); }
+            FollowTarget();
+        } else { Destroy(this.gameObject); }
     }
 
-    private void OnParticleCollision(GameObject other)
+    private void FollowTarget()
     {
-        if (other.CompareTag("DownEnemy")) 
-        {
-            target.GetComponent<EnemyManager>().currentHealth -= damage;
-            other.GetComponent<EnemyManager>().switchColor = true;
-            target.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+        this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 10 * Time.deltaTime);
 
-            Destroy(gameObject);
+        var detections = Physics.OverlapSphere(this.transform.position, .5f, this.targetMask);
+
+        if (detections.Length != 0)
+        {
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                if (detections[i].gameObject == this.target)
+                {
+                    var targetManager = detections[i].gameObject.GetComponent<HostileTroopManager>();
+
+                    targetManager.currentHealth -= this.damage;
+                    this.target = null;
+                    break;
+                }
+            }
         }
     }
 }

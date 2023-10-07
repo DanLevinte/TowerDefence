@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleState: {fileID: 3347714028700838959}
   restState: {fileID: 8900294997331587265}
-  arrowPrefab: {fileID: 1540150452901360546, guid: d01bd27f675c5f146a50ccaa0ac871de,
+  arrowPrefab: {fileID: 4870299483866376568, guid: 9fb46816af336dd4b88e38edb1174f93,
     type: 3}
   arrowPos: {fileID: 2234465048621354122}
   canShoot: 1

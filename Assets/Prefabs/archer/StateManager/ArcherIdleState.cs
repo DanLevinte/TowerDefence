@@ -31,10 +31,9 @@ public class ArcherIdleState : State
             {
                 float dist = (this.transform.position - detections[i].transform.position).magnitude;
 
-                if (dist <= this.mobManager.targetRadius && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
+                if (dist <= this.mobManager.targetRadius && detections[i].GetComponent<HostileTroopManager>().currentHealth > 0 && detections[i].tag == "DownEnemy")
                 {
                     this.mobManager.target = detections[i].gameObject;
-                    Debug.Log("s");
                     break;
                 } else { this.mobManager.target = null; }
             }

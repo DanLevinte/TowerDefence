@@ -71,7 +71,8 @@ public class ArcherShootingState : State
             this.idleState.mobManager.mob.transform.LookAt(tg);
 
             GameObject go = Instantiate(this.arrowPrefab, this.arrowPos.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
-            go.GetComponent<Arrow>().target = idleState.mobManager.target;
+            go.GetComponent<ProjectileMesh>().target = idleState.mobManager.target;
+            go.transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
         } 
     }
 }
