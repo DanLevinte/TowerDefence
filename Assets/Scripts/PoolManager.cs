@@ -9,7 +9,7 @@ public class PoolManager : MonoBehaviour
     public List<GameObject> enemiesOnPool = new List<GameObject>();
 
     public List<GameObject> enemiesOffPool = new List<GameObject>();
-    public bool updatePool;
+    public bool updatePool, onValueChange;
 
     public float timer;
     public float spawnRate;
@@ -38,6 +38,7 @@ public class PoolManager : MonoBehaviour
             {
                 if (enemiesOnPool[i] != null)
                 {
+                    onValueChange = true;
                     GameObject go = Instantiate(enemiesOnPool[0], poolStartup.position, Quaternion.identity);
                     enemiesOnPool.Remove(enemiesOnPool[0]);
                     enemiesOffPool.Add(go);
