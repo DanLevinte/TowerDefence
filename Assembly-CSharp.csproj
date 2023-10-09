@@ -88,6 +88,7 @@
     <Compile Include="Assets\Prefabs\archer\StateManager\ArcherShootingState.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightIdleState.cs" />
     <Compile Include="Assets\Archer.cs" />
+    <Compile Include="Assets\Prefabs\Mage\StateManager\MageShootingState.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\MageManager.cs" />
     <Compile Include="Assets\Scripts\KnightManager.cs" />
@@ -98,9 +99,11 @@
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieMovingState.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroopManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\StateManager.cs" />
+    <Compile Include="Assets\Prefabs\Mage\StateManager\MageRestState.cs" />
     <Compile Include="Assets\Scripts\Path.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightMovingState.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightRestState.cs" />
+    <Compile Include="Assets\Prefabs\Mage\StateManager\MageIdleState.cs" />
     <Compile Include="Assets\Scripts\ArcherLayout.cs" />
     <Compile Include="Assets\Mage.cs" />
     <Compile Include="Assets\Scripts\DefenderManager.cs" />
@@ -109,9 +112,6 @@
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Prefabs\Mage\StateManager\MageIdleState.cs" />
-    <Compile Include="Assets\Prefabs\Mage\StateManager\MageShootingState.cs" />
-    <Compile Include="Assets\Prefabs\Mage\StateManager\MageRestState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
