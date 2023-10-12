@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7cb0d5994cdf504cab3da2ff5e4b94a, type: 3}
   m_Name: Zombie
   m_EditorClassIdentifier: 
+  nameOfTroop: Slow Zombie
   isMage: 0
   isArcher: 0
   isSkirmisher: 1

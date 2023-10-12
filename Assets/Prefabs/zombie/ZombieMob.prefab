@@ -2995,7 +2995,12 @@ MonoBehaviour:
   canvas: {fileID: 2198793489274320179}
   healthbar: {fileID: 0}
   stateManager: {fileID: 6849156318565081040}
-  typeOfTroop: 0
+  typeOfTroop: 1
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  targetRadius: 0
+  spriteOfMob: {fileID: 21300000, guid: 40273c53a7f44564f83cde001b7228d8, type: 3}
 --- !u!114 &8270696266203450697
 MonoBehaviour:
   m_ObjectHideFlags: 0

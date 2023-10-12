@@ -144,6 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543328243582756253}
+  - component: {fileID: 3901484756152202288}
   m_Layer: 5
   m_Name: Mob 1
   m_TagString: Untagged
@@ -174,6 +175,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3901484756152202288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543328243582756252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe59ca7a53397b4d841f6a3ff3b8812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mob: {fileID: 0}
+  nameOfMob: {fileID: 1543328242680349686}
+  spriteOfMob: {fileID: 0}
+  health: 0
+  onTab: 0
 --- !u!1 &1543328243964143465
 GameObject:
   m_ObjectHideFlags: 0

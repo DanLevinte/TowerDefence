@@ -8,8 +8,12 @@ public class HostileTroopManager : MonoBehaviour
 
     public int damage, currentHealth, maxHealth, speed;
 
+    public string nameOfHostile;
+
     private void Start()
     {
+        nameOfHostile = hostileTroop.nameOfTroop;
+
         if (hostileTroop.isSkirmisher) 
         { 
             damage = Random.Range(hostileTroop.hostileSkirmisher.minDamage, hostileTroop.hostileSkirmisher.maxDamage);

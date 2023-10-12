@@ -26,6 +26,10 @@ public class MobManager : MonoBehaviour
 
     public float targetRadius;
 
+    public Sprite spriteOfMob;
+
+    public bool onUI;
+
     public static MobManager instance;
 
     private void Awake()
@@ -37,9 +41,9 @@ public class MobManager : MonoBehaviour
     {
         if (this.typeOfTroop == TypeOfTroop.Hostile)
         {
-            var ratio = 0.0f;
-            var hostile = GetComponent<HostileTroopManager>();
-            this.healthbar.fillAmount = Mathf.Lerp(hostile.currentHealth, hostile.maxHealth, ratio);
+            //var ratio = 0.0f;
+            //var hostile = GetComponent<HostileTroopManager>();
+            ////this.healthbar.fillAmount = Mathf.Lerp(hostile.currentHealth, hostile.maxHealth, ratio);
         }
     }
 

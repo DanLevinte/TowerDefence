@@ -6,6 +6,8 @@ using NaughtyAttributes;
 [CreateAssetMenu(menuName = "Troop/Hostile/HostileTroopManager")]
 public class HostileTroop : ScriptableObject
 {
+    public string nameOfTroop;
+
     public bool isMage, isArcher, isSkirmisher, isAirborne;
 
     [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisher;
