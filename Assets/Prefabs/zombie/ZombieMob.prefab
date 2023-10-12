@@ -855,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2198793489274320178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   mob: {fileID: 7651957213978116792}
   target: {fileID: 0}
   canvas: {fileID: 2198793489274320179}
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 8795009719934255562}
   stateManager: {fileID: 6849156318565081040}
   typeOfTroop: 1
   targetMask:
@@ -3001,6 +3001,7 @@ MonoBehaviour:
     m_Bits: 0
   targetRadius: 0
   spriteOfMob: {fileID: 21300000, guid: 40273c53a7f44564f83cde001b7228d8, type: 3}
+  onUI: 0
 --- !u!114 &8270696266203450697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3014,10 +3015,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostileTroop: {fileID: 11400000, guid: 226c48c55f384a74f913c56d4b302b98, type: 2}
-  damage: 0
   currentHealth: 0
   maxHealth: 0
+  damage: 0
   speed: 0
+  nameOfHostile: 
 --- !u!1 &8156058171029557090
 GameObject:
   m_ObjectHideFlags: 0

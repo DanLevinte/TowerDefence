@@ -34,6 +34,7 @@ public class KnightAttackingState : State
 
         if (target.currentHealth > 0)
         {
+            target.GetComponent<MobManager>().isHurt = true;
             target.currentHealth -= troop.damage;
 
             var enemy = target.gameObject.GetComponentInParent<MobManager>();

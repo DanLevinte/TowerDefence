@@ -55,8 +55,6 @@ public class Ballista : MonoBehaviour
         {
             for (int i = 0; i <= detections.Length - 1; i++)
             {
-                float dist = (this.transform.position - detections[i].transform.position).magnitude;
-
                 if (detections[i].tag == "DownEnemy" && detections[i].GetComponent<HostileTroopManager>().currentHealth > 0)
                 {
                     this.target = detections[i].gameObject;

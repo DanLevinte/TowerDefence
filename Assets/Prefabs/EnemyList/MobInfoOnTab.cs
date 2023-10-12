@@ -10,7 +10,9 @@ public class MobInfoOnTab : MonoBehaviour
 
     public TextMeshProUGUI nameOfMob;
     public Sprite spriteOfMob;
-    public int health;
+    public float health;
+
+    public Image healthSprite;
 
     public bool onTab;
 }

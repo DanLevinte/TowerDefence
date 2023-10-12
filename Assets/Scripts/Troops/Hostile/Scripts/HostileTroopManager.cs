@@ -6,7 +6,9 @@ public class HostileTroopManager : MonoBehaviour
 {
     public HostileTroop hostileTroop;
 
-    public int damage, currentHealth, maxHealth, speed;
+    public float currentHealth, maxHealth;
+
+    public int damage, speed;
 
     public string nameOfHostile;
 

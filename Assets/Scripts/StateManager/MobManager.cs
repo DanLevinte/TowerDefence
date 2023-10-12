@@ -30,6 +30,8 @@ public class MobManager : MonoBehaviour
 
     public bool onUI;
 
+    public bool isHurt;
+
     public static MobManager instance;
 
     private void Awake()
@@ -41,10 +43,11 @@ public class MobManager : MonoBehaviour
     {
         if (this.typeOfTroop == TypeOfTroop.Hostile)
         {
-            //var ratio = 0.0f;
-            //var hostile = GetComponent<HostileTroopManager>();
-            ////this.healthbar.fillAmount = Mathf.Lerp(hostile.currentHealth, hostile.maxHealth, ratio);
+            var troop = this.mob.GetComponent<HostileTroopManager>();
+            this.healthbar.fillAmount = (troop.currentHealth / troop.maxHealth);
         }
+
+        if (isHurt) { TabManager.instance.tabPoolManager.updateHealthbars = true; isHurt = false; }
     }
 
     private void LateUpdate()

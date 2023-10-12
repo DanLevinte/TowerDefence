@@ -8,6 +8,8 @@ public class TabPoolManager : MonoBehaviour
     public List<GameObject> poolMobsUI = new List<GameObject>();
     public List<GameObject> tabPool;
 
+    public bool updateHealthbars;
+
     TabManager tabManager;
 
     private void Awake()
@@ -23,6 +25,32 @@ public class TabPoolManager : MonoBehaviour
     private void Update()
     {
         if (PoolManager.instance.onValueChange) { UpdateTabPool(); }
+
+        if (updateHealthbars) { UpdateHealthbars(); }
+    }
+
+    private void UpdateHealthbars()
+    {
+        for (int i = 0; i <= tabPool.Count - 1; i++)
+        {
+            var mobUI = tabPool[i].GetComponent<MobInfoOnTab>();
+
+            switch (mobUI.mob.GetComponent<MobManager>().typeOfTroop)
+            {
+                case TypeOfTroop.Hostile:
+                    var mobHostile = mobUI.mob.GetComponent<HostileTroopManager>();
+                    mobUI.healthSprite.fillAmount = mobHostile.currentHealth / mobHostile.maxHealth;
+                    break;
+                case TypeOfTroop.Friendly:
+                    break;
+                case TypeOfTroop.Tower:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        updateHealthbars = false;
     }
 
     private void UpdateTabPool()
@@ -31,7 +59,6 @@ public class TabPoolManager : MonoBehaviour
         {
             if (!tabPool.Contains(poolMobsUI[i]) && !poolMobsUI[i].GetComponent<MobManager>().onUI)
             {
-                Debug.Log("in");
                 poolMobsUI[i].GetComponent<MobManager>().onUI = true;
                 GameObject go = Instantiate(tabManager.mobPrefab, tabManager.container.transform.position, Quaternion.identity);
                 go.transform.SetParent(tabManager.container.transform);
@@ -62,7 +89,7 @@ public class TabPoolManager : MonoBehaviour
                     default:
                         break;
                 }
-            } else { Debug.Log("off"); continue; }
+            } else { continue; }
         }
 
         PoolManager.instance.onValueChange = false;

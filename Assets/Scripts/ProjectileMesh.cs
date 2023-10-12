@@ -39,6 +39,7 @@ public class ProjectileMesh : MonoBehaviour
                 {
                     var targetManager = detections[i].gameObject.GetComponent<HostileTroopManager>();
 
+                    this.target.GetComponent<MobManager>().isHurt = true;
                     targetManager.currentHealth -= this.projDamage;
                     this.target = null;
                     break;

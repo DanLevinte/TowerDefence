@@ -31,6 +31,7 @@ public class Meteor : MonoBehaviour
                 {
                     var targetManager = detections[i].gameObject.GetComponent<HostileTroopManager>();
 
+                    this.target.GetComponent<MobManager>().isHurt = true;
                     targetManager.currentHealth -= this.damage;
                     this.target = null;
                     break;

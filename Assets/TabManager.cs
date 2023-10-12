@@ -9,10 +9,13 @@ public class TabManager : MonoBehaviour
     public GameObject container;
     public GameObject mobPrefab;
 
+    public TabPoolManager tabPoolManager;
+
     public static TabManager instance;
 
     private void Awake()
     {
         instance = this;
+        tabPoolManager = GetComponent<TabPoolManager>();
     }
 }
