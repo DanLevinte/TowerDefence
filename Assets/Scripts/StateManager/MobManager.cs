@@ -47,7 +47,7 @@ public class MobManager : MonoBehaviour
             this.healthbar.fillAmount = (troop.currentHealth / troop.maxHealth);
         }
 
-        if (isHurt) { TabManager.instance.tabPoolManager.updateHealthbars = true; isHurt = false; }
+        if (isHurt) { TabManager.instance.tabPoolManager.updateEnemyHealthbars = true; isHurt = false; }
     }
 
     private void LateUpdate()

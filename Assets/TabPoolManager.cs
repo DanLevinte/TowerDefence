@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class TabPoolManager : MonoBehaviour
 {
-    public List<GameObject> poolMobsUI = new List<GameObject>();
+    public List<GameObject> poolEnemyMobsUI = new List<GameObject>();
     public List<GameObject> tabPool;
 
-    public bool updateHealthbars;
+    public List<GameObject> friendlyDefendersUI = new List<GameObject>();
+
+    public bool updateEnemyHealthbars;
+    public bool addDefenders;
 
     TabManager tabManager;
 
@@ -19,17 +22,24 @@ public class TabPoolManager : MonoBehaviour
 
     private void Start()
     {
-        poolMobsUI = PoolManager.instance.enemiesOffPool;
+        poolEnemyMobsUI = PoolManager.instance.enemiesOffPool;
     }
 
     private void Update()
     {
-        if (PoolManager.instance.onValueChange) { UpdateTabPool(); }
+        if (PoolManager.instance.onValueChange) { UpdateEnemyTabPool(); }
 
-        if (updateHealthbars) { UpdateHealthbars(); }
+        if (updateEnemyHealthbars) { UpdateEnemyHealthbars(); }
+
+        if (addDefenders) { AddDefendersToBar(); }
     }
 
-    private void UpdateHealthbars()
+    private void AddDefendersToBar()
+    {
+
+    }
+
+    private void UpdateEnemyHealthbars()
     {
         for (int i = 0; i <= tabPool.Count - 1; i++)
         {
@@ -50,16 +60,16 @@ public class TabPoolManager : MonoBehaviour
             }
         }
 
-        updateHealthbars = false;
+        updateEnemyHealthbars = false;
     }
 
-    private void UpdateTabPool()
+    private void UpdateEnemyTabPool()
     {
-        for (int i = 0; i <= poolMobsUI.Count - 1; i++)
+        for (int i = 0; i <= poolEnemyMobsUI.Count - 1; i++)
         {
-            if (!tabPool.Contains(poolMobsUI[i]) && !poolMobsUI[i].GetComponent<MobManager>().onUI)
+            if (!tabPool.Contains(poolEnemyMobsUI[i]) && !poolEnemyMobsUI[i].GetComponent<MobManager>().onUI)
             {
-                poolMobsUI[i].GetComponent<MobManager>().onUI = true;
+                poolEnemyMobsUI[i].GetComponent<MobManager>().onUI = true;
                 GameObject go = Instantiate(tabManager.mobPrefab, tabManager.foeContainer.transform.position, Quaternion.identity);
                 go.transform.SetParent(tabManager.foeContainer.transform);
                 go.transform.localScale = new Vector3(1, 1, 1);
@@ -67,7 +77,7 @@ public class TabPoolManager : MonoBehaviour
 
                 var mobOnUI = go.GetComponent<MobInfoOnTab>();
 
-                mobOnUI.mob = poolMobsUI[i];
+                mobOnUI.mob = poolEnemyMobsUI[i];
 
                 var mobOnMap = mobOnUI.mob.GetComponent<MobManager>();
 

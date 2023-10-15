@@ -17,6 +17,8 @@ public class WizardLayout : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         var parent = this.gameObject.transform.parent.transform;
 
         GameObject go = Instantiate(magePrefab, parent.position, Quaternion.identity);
+        TabManager.instance.tabPoolManager.friendlyDefendersUI.Add(go);
+        TabManager.instance.tabPoolManager.addDefenders = true;
 
         if (TowerManager.instance.towerInUse != null)
         {

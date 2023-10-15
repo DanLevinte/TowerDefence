@@ -17,6 +17,8 @@ public class BallistaLayout : MonoBehaviour, IPointerClickHandler, IPointerEnter
         var parent = this.gameObject.transform.parent.transform;
 
         GameObject go = Instantiate(ballistaPrefab, parent.position, Quaternion.identity);
+        TabManager.instance.tabPoolManager.friendlyDefendersUI.Add(go);
+        TabManager.instance.tabPoolManager.addDefenders = true;
 
         if (TowerManager.instance.towerInUse != null)
         {

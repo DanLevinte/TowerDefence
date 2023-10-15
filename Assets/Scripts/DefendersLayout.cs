@@ -17,6 +17,8 @@ public class DefendersLayout : MonoBehaviour, IPointerEnterHandler, IPointerExit
         var parent = this.gameObject.transform.parent.transform;
 
         GameObject go = Instantiate(defenderPrefab, parent.position, Quaternion.identity);
+        TabManager.instance.tabPoolManager.friendlyDefendersUI.Add(go);
+        TabManager.instance.tabPoolManager.addDefenders = true;
 
         if (TowerManager.instance.towerInUse != null)
         {
