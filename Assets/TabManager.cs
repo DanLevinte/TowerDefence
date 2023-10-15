@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class TabManager : MonoBehaviour
 {
-    public GameObject UI_box;
-    public GameObject container;
+    public GameObject FriendlyUI_box;
+    public GameObject friendlyContainer;
+
+    public GameObject FoeUI_box;
+    public GameObject foeContainer;
+
     public GameObject mobPrefab;
 
     public TabPoolManager tabPoolManager;

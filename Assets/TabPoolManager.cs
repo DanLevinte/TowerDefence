@@ -60,8 +60,8 @@ public class TabPoolManager : MonoBehaviour
             if (!tabPool.Contains(poolMobsUI[i]) && !poolMobsUI[i].GetComponent<MobManager>().onUI)
             {
                 poolMobsUI[i].GetComponent<MobManager>().onUI = true;
-                GameObject go = Instantiate(tabManager.mobPrefab, tabManager.container.transform.position, Quaternion.identity);
-                go.transform.SetParent(tabManager.container.transform);
+                GameObject go = Instantiate(tabManager.mobPrefab, tabManager.foeContainer.transform.position, Quaternion.identity);
+                go.transform.SetParent(tabManager.foeContainer.transform);
                 go.transform.localScale = new Vector3(1, 1, 1);
                 tabPool.Add(go);
 

@@ -9,24 +9,50 @@ public enum ShowHide
     Hide
 }
 
+public enum BarType
+{
+    Enemies,
+    Friendly
+}
+
+
 
 public class ShowMobBar : MonoBehaviour, IPointerClickHandler
 {
     public RectTransform mobBar;
     public ShowHide showHide;
+    public BarType barType;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (showHide == ShowHide.Show)
+        if (barType == BarType.Enemies)
         {
-            mobBar.anchoredPosition = new Vector2(150, 0);
-            GetComponentInParent<MobBarButtonController>().hiddenButton.SetActive(true);
-            this.gameObject.SetActive(false);
+            if (showHide == ShowHide.Show)
+            {
+                mobBar.anchoredPosition = new Vector2(150, 0);
+                GetComponentInParent<MobBarButtonController>().hiddenButton.SetActive(true);
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                mobBar.anchoredPosition = new Vector2(150, -150);
+                GetComponentInParent<MobBarButtonController>().shownButton.SetActive(true);
+                this.gameObject.SetActive(false);
+            }
         } else
         {
-            mobBar.anchoredPosition = new Vector2(150, -150);
-            GetComponentInParent<MobBarButtonController>().shownButton.SetActive(true);
-            this.gameObject.SetActive(false);
+            if (showHide == ShowHide.Show)
+            {
+                mobBar.anchoredPosition = new Vector2(-150, 0);
+                GetComponentInParent<MobBarButtonController>().hiddenButton.SetActive(true);
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                mobBar.anchoredPosition = new Vector2(-150, -150);
+                GetComponentInParent<MobBarButtonController>().shownButton.SetActive(true);
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }
