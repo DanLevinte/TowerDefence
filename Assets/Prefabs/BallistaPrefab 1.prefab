@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 2773485740833681638}
   - component: {fileID: 847122780767818755}
   - component: {fileID: 8570621064876614768}
+  - component: {fileID: 4194419366342462265}
   m_Layer: 0
   m_Name: BallistaPrefab 1
   m_TagString: Untagged
@@ -323,6 +324,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 3, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4194419366342462265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2773485740833681633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mob: {fileID: 0}
+  target: {fileID: 0}
+  canvas: {fileID: 0}
+  healthbar: {fileID: 0}
+  stateManager: {fileID: 0}
+  typeOfTroop: 2
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: 0
+  spriteOfMob: {fileID: 21300000, guid: bcc27de10f0bada41963dde15f905812, type: 3}
+  onUI: 0
+  isHurt: 0
 --- !u!1 &3411885043521956932
 GameObject:
   m_ObjectHideFlags: 0

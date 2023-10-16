@@ -1450,6 +1450,13 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   stateManager: {fileID: 809362468119644582}
   typeOfTroop: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  targetRadius: 0
+  spriteOfMob: {fileID: 21300000, guid: ef43b1a826640fe48a4d7175d7243f88, type: 3}
+  onUI: 0
+  isHurt: 0
 --- !u!114 &2749849003603193402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,8 +1970,8 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 128
+  basePos: {fileID: 0}
   targetRadius: Infinity
-  isTargetInRange: 0
 --- !u!1 &6781077654580480023
 GameObject:
   m_ObjectHideFlags: 0

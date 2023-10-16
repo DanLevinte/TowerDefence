@@ -110,13 +110,13 @@
     <Compile Include="Assets\Scripts\ArcherLayout.cs" />
     <Compile Include="Assets\Mage.cs" />
     <Compile Include="Assets\Scripts\DefenderManager.cs" />
+    <Compile Include="Assets\Scripts\ShowMobBar.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
+    <Compile Include="Assets\MobBarButtonController.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Scripts\ShowMobBar.cs" />
-    <Compile Include="Assets\MobBarButtonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
