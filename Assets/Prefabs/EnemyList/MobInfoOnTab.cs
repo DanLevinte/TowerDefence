@@ -12,6 +12,7 @@ public class MobInfoOnTab : MonoBehaviour
     public Sprite spriteOfMob;
     public float health;
 
+    public Image imageOfMob;
     public Image healthSprite;
 
     public bool onTab;

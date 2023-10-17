@@ -36,7 +36,31 @@ public class TabPoolManager : MonoBehaviour
 
     private void AddDefendersToBar()
     {
+        addDefenders = false;
 
+        for (int i = 0; i <= friendlyDefendersUI.Count - 1; i++)
+        {
+            if (!friendlyDefendersUI[i].GetComponent<MobManager>().onUI)
+            {
+                friendlyDefendersUI[i].GetComponent<MobManager>().onUI = true;
+                GameObject go = Instantiate(tabManager.mobPrefab, tabManager.friendlyContainer.transform.position, Quaternion.identity);
+                go.transform.SetParent(tabManager.friendlyContainer.transform);
+                go.transform.localScale = new Vector3(1, 1, 1);
+                tabPool.Add(go);
+
+                var mobOnUI = go.GetComponent<MobInfoOnTab>();
+
+                mobOnUI.mob = friendlyDefendersUI[i];
+
+                var mobOnMap = mobOnUI.mob.GetComponent<MobManager>();
+
+                mobOnUI.spriteOfMob = mobOnMap.spriteOfMob;
+
+                go.GetComponent<MobInfoOnTab>().imageOfMob.sprite = mobOnUI.spriteOfMob;
+
+                //mobOnUI.nameOfMob.SetText(mobHostile.nameOfHostile);
+            }
+        }
     }
 
     private void UpdateEnemyHealthbars()

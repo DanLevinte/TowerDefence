@@ -3834,8 +3834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: effd1efca84902a4dbc491b2ff671f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FriendlyUI_box: {fileID: 0}
-  friendlyContainer: {fileID: 0}
+  FriendlyUI_box: {fileID: 676687906}
+  friendlyContainer: {fileID: 2121396198}
   FoeUI_box: {fileID: 71410429}
   foeContainer: {fileID: 26587133}
   mobPrefab: {fileID: 1543328243582756252, guid: 1fc3d45672289b64e966c99d7a3cb3ca,

@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingState: {fileID: 7229537739216769246}
-  mobManager: {fileID: 3993653265351283030}
+  mobManager: {fileID: 0}
 --- !u!1 &5860758234323199045
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 6493707029586640639}
   - component: {fileID: 7040696244052510496}
   - component: {fileID: 68972517536638343}
+  - component: {fileID: 2021234921939908746}
   m_Layer: 0
   m_Name: ArcherTower
   m_TagString: Untagged
@@ -273,6 +274,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 8, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2021234921939908746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860758234323199045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mob: {fileID: 5486254060543125276}
+  target: {fileID: 0}
+  canvas: {fileID: 0}
+  healthbar: {fileID: 0}
+  stateManager: {fileID: 6651621584809460947}
+  typeOfTroop: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: 7
+  spriteOfMob: {fileID: 21300000, guid: 7dee1371bd466cf4682c6181df6cf683, type: 3}
+  onUI: 0
+  isHurt: 0
 --- !u!1 &6390100329718929796
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,28 +908,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9195344135604219239}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3993653265351283030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5486254060543125276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mob: {fileID: 5486254060543125276}
-  target: {fileID: 0}
-  canvas: {fileID: 0}
-  healthbar: {fileID: 0}
-  stateManager: {fileID: 6651621584809460947}
-  typeOfTroop: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  targetRadius: 7
-  spriteOfMob: {fileID: 21300000, guid: 7dee1371bd466cf4682c6181df6cf683, type: 3}
-  onUI: 0
-  isHurt: 0

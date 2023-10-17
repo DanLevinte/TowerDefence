@@ -191,6 +191,7 @@ MonoBehaviour:
   nameOfMob: {fileID: 1543328242680349686}
   spriteOfMob: {fileID: 0}
   health: 0
+  imageOfMob: {fileID: 1543328244068659769}
   healthSprite: {fileID: 3337110967111310402}
   onTab: 0
 --- !u!1 &1543328243964143465
