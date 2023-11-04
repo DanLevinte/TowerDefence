@@ -41,7 +41,7 @@ public class KnightAttackingState : State
 
             if (!enemy.canvas.activeInHierarchy) { enemy.canvas.SetActive(true); }
 
-        } else
+        } else if (target.currentHealth <= 0)
         {
             this.gameObject.GetComponentInParent<MobManager>().target.GetComponent<MobManager>().target = null;
             this.gameObject.GetComponentInParent<MobManager>().target = null;

@@ -382,6 +382,8 @@ MonoBehaviour:
   defenderPrefab: {fileID: 3359002551924956610, guid: 7e38c8c6fa0d7ff4d9c7b9d1e9d43921,
     type: 3}
   defenderInfo: {fileID: 3364356984185410993}
+  priceText: {fileID: 5526952276546929635}
+  price: 110
 --- !u!1 &4973972954659353735
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +917,8 @@ MonoBehaviour:
   archerPrefab: {fileID: 5860758234323199045, guid: fd0f9bffb49e27d4a90050855a0fa4f3,
     type: 3}
   archerInfo: {fileID: 1391964491764311469}
+  priceText: {fileID: 9140200224373118452}
+  price: 85
 --- !u!1 &6997387981656150355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1012,8 @@ MonoBehaviour:
   magePrefab: {fileID: 7955085967118390467, guid: 88a2cccbe6c504f44bbe30cd3229593b,
     type: 3}
   mageInfo: {fileID: 6007995793111794265}
+  priceText: {fileID: 5296139411594106193}
+  price: 85
 --- !u!1 &7137145633829443512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1069,8 @@ MonoBehaviour:
   ballistaPrefab: {fileID: 2773485740833681633, guid: 833e3e7907d19f04987d927c326a9cdf,
     type: 3}
   ballistaInfo: {fileID: 5514116978158281828}
+  priceText: {fileID: 4864843952426011531}
+  price: 110
 --- !u!222 &2449829663741637749
 CanvasRenderer:
   m_ObjectHideFlags: 0

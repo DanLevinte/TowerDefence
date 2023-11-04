@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641b6cf32daad3b49a91c48f9d86a0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mob: {fileID: 7651957213978116792}
 --- !u!1 &695221857613058762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3003,7 @@ MonoBehaviour:
   targetRadius: 0
   spriteOfMob: {fileID: 21300000, guid: 40273c53a7f44564f83cde001b7228d8, type: 3}
   onUI: 0
+  isHurt: 0
 --- !u!114 &8270696266203450697
 MonoBehaviour:
   m_ObjectHideFlags: 0

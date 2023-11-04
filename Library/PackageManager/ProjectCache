@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638316631900000000
-    m_Hash: 338050866
+      ticks: 638347202105634196
+    m_Hash: 3689361573
   m_LockFileStatus:
     m_FilePath: E:/UnityProjects/TowerDefence/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638316631900000000
-    m_Hash: 2206079696
+      ticks: 638347202105864207
+    m_Hash: 4141450653
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,58 @@ m_LocalPackages:
 m_ProjectPath: E:/UnityProjects/TowerDefence/Packages
 m_EditorVersion: 2021.3.15f1 (e8e88683f834)
 m_ResolvedPackages:
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: E:\UnityProjects\TowerDefence\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    verified: 1.0.0
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.17.7
   testable: 0
   isDirectDependency: 1
@@ -114,6 +166,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     - 2.1.0
+    - 2.2.0
     compatible:
     - 1.17.7
     - 2.0.0-preview.6
@@ -133,6 +186,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     - 2.1.0
+    - 2.2.0
     verified: 1.17.7
   dependencies:
   - name: com.unity.services.core
@@ -313,6 +367,7 @@ m_ResolvedPackages:
     - 3.0.22
     - 3.0.24
     - 3.0.25
+    - 3.0.26
     compatible:
     - 3.0.16
     - 3.0.17
@@ -322,7 +377,8 @@ m_ResolvedPackages:
     - 3.0.22
     - 3.0.24
     - 3.0.25
-    verified: 3.0.25
+    - 3.0.26
+    verified: 3.0.26
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -396,13 +452,15 @@ m_ResolvedPackages:
     - 2.0.18
     - 2.0.20
     - 2.0.21
+    - 2.0.22
     compatible:
     - 2.0.16
     - 2.0.17
     - 2.0.18
     - 2.0.20
     - 2.0.21
-    verified: 2.0.21
+    - 2.0.22
+    verified: 2.0.22
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -892,12 +950,14 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
     - 1.8.5
+    - 1.8.6
     compatible:
     - 1.6.4
     - 1.6.5
@@ -909,12 +969,14 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
     - 1.8.5
+    - 1.8.6
     verified: 1.6.5
   dependencies:
   - name: com.unity.modules.director
@@ -3230,12 +3292,14 @@ m_ResolvedPackages:
     - 2.2.0
     - 2.2.1
     - 2.2.2
+    - 2.3.0
     compatible:
     - 2.1.0
     - 2.1.1
     - 2.2.0
     - 2.2.1
     - 2.2.2
+    - 2.3.0
     verified: 2.1.1
   dependencies:
   - name: com.unity.modules.androidjni
@@ -3317,6 +3381,7 @@ m_ResolvedPackages:
     - 1.9.0
     - 1.10.1
     - 1.11.0
+    - 1.12.0
     compatible:
     - 1.6.0
     - 1.7.0
@@ -3326,6 +3391,7 @@ m_ResolvedPackages:
     - 1.9.0
     - 1.10.1
     - 1.11.0
+    - 1.12.0
     verified: 1.6.0
   dependencies:
   - name: com.unity.modules.unitywebrequest

@@ -1452,8 +1452,8 @@ MonoBehaviour:
   typeOfTroop: 0
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
-  targetRadius: 0
+    m_Bits: 128
+  targetRadius: 6
   spriteOfMob: {fileID: 21300000, guid: ef43b1a826640fe48a4d7175d7243f88, type: 3}
   onUI: 0
   isHurt: 0
