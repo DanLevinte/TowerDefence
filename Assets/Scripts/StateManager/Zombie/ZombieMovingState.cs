@@ -27,6 +27,8 @@ public class ZombieMovingState : State
         if (this.mobManager.target == null) { CheckForTargets(); }
         else { return zombieAttackingState; }
 
+        if (designatedPos == null && nextPath == null) { return null; }
+
         if (this.GetComponentInParent<HostileTroopManager>().currentHealth <= 0) { return zombieAttackingState.hurtState.deathState; }
 
         return this;
@@ -76,6 +78,14 @@ public class ZombieMovingState : State
     {
         Vector3 targetPos = new(this.nextPath.pathPos.x, this.mobManager.mob.transform.position.y, this.nextPath.pathPos.z);
         this.mobManager.mob.transform.LookAt(targetPos);
+
+        if (Vector3.Distance(this.designatedPos.transform.position, this.nextPath.transform.position) == 0) 
+        { 
+            this.mobManager.gameObject.SetActive(false);
+            this.nextPath = null;
+            this.designatedPos = null;
+            return;
+        }
 
         if (Vector3.Distance(targetPos, this.mobManager.mob.transform.position) == 0) { CleanPath(); }
         else { this.mobManager.mob.transform.position = Vector3.MoveTowards

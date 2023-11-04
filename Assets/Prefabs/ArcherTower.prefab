@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingState: {fileID: 7229537739216769246}
-  mobManager: {fileID: 0}
+  mobManager: {fileID: 2021234921939908746}
 --- !u!1 &5860758234323199045
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8798817385673977416
 Transform:
   m_ObjectHideFlags: 0

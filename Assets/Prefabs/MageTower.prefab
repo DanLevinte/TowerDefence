@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mageShootingState: {fileID: 4524480313334791853}
-  mobManager: {fileID: 7436699776089518680}
+  mobManager: {fileID: 6617937281979072489}
 --- !u!1 &7955085967118390467
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7307050571259120803}
   - component: {fileID: 8279407380563465678}
+  - component: {fileID: 6617937281979072489}
   m_Layer: 0
   m_Name: MageTower
   m_TagString: Untagged
@@ -364,6 +365,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 8, z: 12}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6617937281979072489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955085967118390467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mob: {fileID: 5202853162956061904}
+  target: {fileID: 0}
+  canvas: {fileID: 0}
+  healthbar: {fileID: 0}
+  stateManager: {fileID: 8182606266030835393}
+  typeOfTroop: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  targetRadius: 7
+  spriteOfMob: {fileID: 0}
+  onUI: 0
+  isHurt: 0
 --- !u!1001 &4968973091218538881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -900,25 +926,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7436699776089518680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5202853162956061904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f29f303e2b6a1b147be9e24c7669c7d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mob: {fileID: 5202853162956061904}
-  target: {fileID: 0}
-  canvas: {fileID: 0}
-  healthbar: {fileID: 0}
-  stateManager: {fileID: 8182606266030835393}
-  typeOfTroop: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  targetRadius: 7

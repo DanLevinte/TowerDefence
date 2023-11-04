@@ -19,7 +19,7 @@ public class KnightMovingState : State
 
     public override State RunCurrentState()
     {
-        if (this.mobManager.target == null) { CheckForTargets(); }
+        if (this.mobManager.target == null) { return knightIdleState; }
         else { MoveToTarget(); }
 
         if (this.pathToMoveTo == null && this.mobManager.target == null) { ReturnToBase(); }
