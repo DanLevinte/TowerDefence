@@ -27,7 +27,7 @@ public class ZombieMovingState : State
         if (this.mobManager.target == null) { CheckForTargets(); }
         else { return zombieAttackingState; }
 
-        if (designatedPos == null && nextPath == null) { UIManager.instance.livesText.SetText((UIManager.instance.livesLimit - 1).ToString()); return null; }
+        if (this.designatedPos == null && this.nextPath == null) { SetUI(); return null; }
 
         if (this.GetComponentInParent<HostileTroopManager>().currentHealth <= 0) { return zombieAttackingState.hurtState.deathState; }
 
@@ -37,6 +37,12 @@ public class ZombieMovingState : State
     public override string GetStateName()
     {
         return "zombie_move";
+    }
+
+    private void SetUI()
+    {
+        UIManager.instance.livesLimit--;
+        UIManager.instance.livesText.SetText((UIManager.instance.livesLimit).ToString());
     }
 
     private void CheckForTargets()

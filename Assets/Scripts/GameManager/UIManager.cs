@@ -15,7 +15,9 @@ public class UIManager : MonoBehaviour
     public int raidsLimit;
     public int raidsCurrent;
 
-    public bool changes = false;
+    public bool changes = false, earlyRaid;
+
+    public GameObject startRaidButton;
 
     public static UIManager instance;
 
@@ -26,8 +28,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        livesText.SetText(livesLimit.ToString());
-        bankMoney.SetText(bankCurrentMoney.ToString());
+        MakeUIChanges();
     }
 
     private void Update()
@@ -39,5 +40,12 @@ public class UIManager : MonoBehaviour
     {
         changes = false;
         bankMoney.SetText(bankCurrentMoney.ToString());
+        livesText.SetText(livesLimit.ToString());
+        raidsText.SetText(raidsCurrent.ToString() + "/" + raidsLimit.ToString());
+    }
+
+    public void StartEarlyRaid()
+    {
+        earlyRaid = true;
     }
 }
