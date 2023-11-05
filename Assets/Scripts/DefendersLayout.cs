@@ -15,7 +15,7 @@ public class DefendersLayout : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (BankManager.instance.currentMoney >= price)
+        if (UIManager.instance.bankCurrentMoney >= price)
         {
             this.gameObject.GetComponent<Image>().raycastTarget = false;
             this.gameObject.GetComponentInParent<Image>().raycastTarget = false;
@@ -42,7 +42,8 @@ public class DefendersLayout : MonoBehaviour, IPointerEnterHandler, IPointerExit
             }
 
             TowerManager.instance.towerInUse.spawnedTower = go;
-            BankManager.instance.currentMoney -= price;
+            UIManager.instance.bankCurrentMoney -= price;
+            UIManager.instance.changes = true;
 
             Destroy(gameObject.transform.parent.gameObject);
         }

@@ -2596,7 +2596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1042970181
@@ -5005,7 +5005,6 @@ GameObject:
   - component: {fileID: 1721701662}
   - component: {fileID: 1721701663}
   - component: {fileID: 1721701664}
-  - component: {fileID: 1721701665}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5052,22 +5051,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea3c13656ed3424d91cf131bf959704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesText: {fileID: 0}
-  limit: 15
+  livesText: {fileID: 496198175}
+  livesLimit: 15
+  bankMoney: {fileID: 145476554}
+  bankCurrentMoney: 500
+  raidsText: {fileID: 517762782}
+  raidsLimit: 0
+  raidsCurrent: 0
   changes: 0
---- !u!114 &1721701665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721701661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f368e300f3602424e8fa31bcb4150552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMoney: 0
 --- !u!1 &1727184610
 GameObject:
   m_ObjectHideFlags: 0
