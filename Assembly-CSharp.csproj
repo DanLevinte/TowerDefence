@@ -122,6 +122,7 @@
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
     <Compile Include="Assets\Meteor.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DifficultyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

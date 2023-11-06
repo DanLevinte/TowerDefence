@@ -17,4 +17,6 @@ MonoBehaviour:
   isArcher: 0
   isSkirmisher: 1
   isAirborne: 0
+  minGold: 5
+  maxGold: 25
   hostileSkirmisher: {fileID: 11400000, guid: 8bc7271420531204286b796a35069d22, type: 2}

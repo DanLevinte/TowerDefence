@@ -6,6 +6,8 @@ public class FriendlyTroopManager : MonoBehaviour
 {
     public FriendlyTroop troops;
 
+    public string nameOfTroop;
+
     public int damage, health, speed;
 
     private void Start()
@@ -15,6 +17,7 @@ public class FriendlyTroopManager : MonoBehaviour
             damage = Random.Range(troops.defender.minDamage, troops.defender.maxDamage);
             health = troops.defender.health;
             speed = troops.defender.speed;
+            nameOfTroop = troops.nameOfTroop;
         }
     }
 }

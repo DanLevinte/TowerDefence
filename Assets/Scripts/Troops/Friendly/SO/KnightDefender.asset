@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b7052aadab9924daaf7e5b31ab55df, type: 3}
   m_Name: KnightDefender
   m_EditorClassIdentifier: 
+  nameOfTroop: Knight Defender
   isArcher: 0
   isMage: 0
   isMachine: 0

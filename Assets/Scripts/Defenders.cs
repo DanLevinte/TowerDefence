@@ -15,6 +15,11 @@ public class Defenders : MonoBehaviour, IPointerClickHandler
         GameObject go = Instantiate(defenderToBeSpawned, defenderPos.transform.position, Quaternion.identity);
         this.defenderManager = go.GetComponent<DefenderManager>();
         this.defenderManager.transform.SetParent(this.transform);
+
+        TabManager.instance.tabPoolManager.friendlyDefendersUI.Add(go);
+        TabManager.instance.tabPoolManager.addDefenders = true;
+
+        //go.GetComponent<MobManager>().
     }
 
     private void Update()
