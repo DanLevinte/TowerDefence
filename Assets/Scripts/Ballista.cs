@@ -23,7 +23,7 @@ public class Ballista : MonoBehaviour
 
     private void ShootTarget()
     {
-        var detections = Physics.OverlapSphere(this.transform.position, this.targetRadius, this.targetMask);
+        var detections = Physics.OverlapSphere(this.transform.position, this.GetComponent<FriendlyTroopManager>().radius, this.targetMask);
 
         GameObject tg = null;
 
@@ -72,6 +72,7 @@ public class Ballista : MonoBehaviour
 
         GameObject go = Instantiate(this.projectile, this.projectilePos.transform.position, this.projectile.transform.rotation);
         go.GetComponent<ProjectileMesh>().target = this.target;
+        go.GetComponent<ProjectileMesh>().projDamage = this.GetComponent<FriendlyTroopManager>().damage;
 
         this.canShoot = true;
     }

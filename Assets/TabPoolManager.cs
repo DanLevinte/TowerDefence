@@ -59,6 +59,7 @@ public class TabPoolManager : MonoBehaviour
                 go.GetComponent<MobInfoOnTab>().imageOfMob.sprite = mobOnUI.spriteOfMob;
 
                 mobOnUI.nameOfMob.SetText(mobOnUI.mob.GetComponent<FriendlyTroopManager>().nameOfTroop);
+                Debug.Log(mobOnUI.mob.GetComponent<FriendlyTroopManager>().nameOfTroop);
             }
         }
     }
