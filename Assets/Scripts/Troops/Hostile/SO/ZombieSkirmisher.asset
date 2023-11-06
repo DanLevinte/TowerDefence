@@ -16,3 +16,5 @@ MonoBehaviour:
   minDamage: 2
   maxDamage: 4
   speed: 3
+  minGold: 5
+  maxGold: 25

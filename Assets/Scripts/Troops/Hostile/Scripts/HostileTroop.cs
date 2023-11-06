@@ -10,5 +10,7 @@ public class HostileTroop : ScriptableObject
 
     public bool isMage, isArcher, isSkirmisher, isAirborne;
 
+    public int minGold, maxGold;
+
     [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisher;
 }

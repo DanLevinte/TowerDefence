@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZombieDeathState : State
 {
     public ZombieStayDeadState zombieStayDeadState;
+    public ZombieAttackingState attackingState;
 
     public float timer = 3;
 
@@ -13,7 +14,9 @@ public class ZombieDeathState : State
         timer -= Time.deltaTime;
 
         if (timer <= 0) 
-        { 
+        {
+            UIManager.instance.bankCurrentMoney += attackingState.mobManager.goldToBeDropped;
+            UIManager.instance.changes = true;
             PoolManager.instance.updatePool = true;
             this.GetComponentInParent<MobManager>().canvas.SetActive(false);
             return zombieStayDeadState;

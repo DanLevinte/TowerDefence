@@ -1370,6 +1370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieStayDeadState: {fileID: 919894229485205617}
+  attackingState: {fileID: 1888313484552879911}
   timer: 3
 --- !u!1 &3293691416910589311
 GameObject:
@@ -3004,6 +3005,7 @@ MonoBehaviour:
   spriteOfMob: {fileID: 21300000, guid: 40273c53a7f44564f83cde001b7228d8, type: 3}
   onUI: 0
   isHurt: 0
+  goldToBeDropped: 0
 --- !u!114 &8270696266203450697
 MonoBehaviour:
   m_ObjectHideFlags: 0

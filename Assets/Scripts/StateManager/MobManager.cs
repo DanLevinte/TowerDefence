@@ -32,11 +32,22 @@ public class MobManager : MonoBehaviour
 
     public bool isHurt;
 
+    public int goldToBeDropped;
+
     public static MobManager instance;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        if (typeOfTroop == TypeOfTroop.Hostile)
+        {
+            var gold = GetComponent<HostileTroopManager>().hostileTroop;
+            goldToBeDropped = Random.Range(gold.minGold, gold.maxGold);
+        }
     }
 
     private void Update()
