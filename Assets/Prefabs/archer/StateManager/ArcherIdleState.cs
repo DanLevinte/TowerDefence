@@ -23,7 +23,8 @@ public class ArcherIdleState : State
 
     public void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(this.mobManager.mob.transform.position, this.mobManager.targetRadius, this.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.mobManager.mob.transform.position, this.mobManager.GetComponent<FriendlyTroopManager>().radius,
+            this.mobManager.targetMask);
 
         if (detections.Length != 0)
         {

@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 7307050571259120803}
   - component: {fileID: 8279407380563465678}
   - component: {fileID: 6617937281979072489}
+  - component: {fileID: 4002531634827186492}
   m_Layer: 0
   m_Name: MageTower
   m_TagString: Untagged
@@ -391,6 +392,24 @@ MonoBehaviour:
   onUI: 0
   isHurt: 0
   goldToBeDropped: 0
+--- !u!114 &4002531634827186492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955085967118390467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d680f047e5ce2814c8309dcb053aafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troops: {fileID: 11400000, guid: 5ace7f2c064ca4b499d72f9821bf64c1, type: 2}
+  nameOfTroop: 
+  damage: 0
+  health: 0
+  speed: 0
+  radius: 0
 --- !u!1001 &4968973091218538881
 PrefabInstance:
   m_ObjectHideFlags: 0

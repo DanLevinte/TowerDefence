@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5120ba4f41673f84aac3ac0d304c9e27, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  health: 0
-  minDamage: 0
-  maxDamage: 0
-  speed: 0
-  radius: 0
+  health: 9999
+  minDamage: 1
+  maxDamage: 2
+  speed: 4
+  radius: 8

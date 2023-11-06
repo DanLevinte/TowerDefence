@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b7052aadab9924daaf7e5b31ab55df, type: 3}
   m_Name: ArcherDefender
   m_EditorClassIdentifier: 
-  nameOfTroop: 
-  isArcher: 0
+  nameOfTroop: Archer
+  isArcher: 1
   isMage: 0
   isMachine: 0
   isDefender: 0
   defender: {fileID: 0}
   machine: {fileID: 0}
+  archer: {fileID: 11400000, guid: eb760c4ba4e483a4dbed817ce282819c, type: 2}

@@ -29,7 +29,8 @@ public class MageShootingState : State
 
     public void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(this.transform.position, this.mageIdleState.mobManager.targetRadius, this.mageIdleState.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.transform.position, this.mageIdleState.mobManager.GetComponent<FriendlyTroopManager>().radius
+            , this.mageIdleState.mobManager.targetMask);
 
         GameObject tg = null;
 
@@ -52,7 +53,8 @@ public class MageShootingState : State
 
     private void ShootTarget()
     {
-        var detections = Physics.OverlapSphere(this.mageIdleState.mobManager.mob.transform.position, this.mageIdleState.mobManager.targetRadius, this.mageIdleState.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.mageIdleState.mobManager.mob.transform.position,
+            this.mageIdleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.mageIdleState.mobManager.targetMask);
 
         CheckForTargets();
 
@@ -67,6 +69,7 @@ public class MageShootingState : State
 
             GameObject go = Instantiate(this.fireballPrefab, this.fireballPos.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             go.GetComponent<Meteor>().target = this.mageIdleState.mobManager.target;
+            go.GetComponent<Meteor>().damage = this.mageIdleState.mobManager.GetComponent<FriendlyTroopManager>().damage;
         }
     }
 }
