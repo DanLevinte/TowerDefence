@@ -78,12 +78,13 @@ public class TabPoolManager : MonoBehaviour
         for (int i = 0; i <= tabPool.Count - 1; i++)
         {
             var mobUI = tabPool[i].GetComponent<MobInfoOnTab>();
+            var mobHostile = mobUI.mob.GetComponent<HostileTroopManager>();
 
             switch (mobUI.mob.GetComponent<MobManager>().typeOfTroop)
             {
                 case TypeOfTroop.Hostile:
-                    var mobHostile = mobUI.mob.GetComponent<HostileTroopManager>();
                     mobUI.healthSprite.fillAmount = mobHostile.currentHealth / mobHostile.maxHealth;
+                    Debug.Log(mobHostile);
                     break;
                 case TypeOfTroop.Friendly:
                     break;
@@ -91,6 +92,12 @@ public class TabPoolManager : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+
+            if (mobUI.healthSprite.fillAmount == 0)
+            {
+                Destroy(tabPool[i].gameObject);
+                tabPool.Remove(tabPool[i]);
             }
         }
 
