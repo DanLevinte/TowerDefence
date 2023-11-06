@@ -15,6 +15,8 @@ public class TabPoolManager : MonoBehaviour
 
     TabManager tabManager;
 
+    private GameObject defender;
+
     private void Awake()
     {
         tabManager = GetComponent<TabManager>();
@@ -47,21 +49,28 @@ public class TabPoolManager : MonoBehaviour
                 go.transform.SetParent(tabManager.friendlyContainer.transform);
                 go.transform.localScale = new Vector3(1, 1, 1);
                 tabPool.Add(go);
+                defender = go;
 
-                var mobOnUI = go.GetComponent<MobInfoOnTab>();
-
-                mobOnUI.mob = friendlyDefendersUI[i];
-
-                var mobOnMap = mobOnUI.mob.GetComponent<MobManager>();
-
-                mobOnUI.spriteOfMob = mobOnMap.spriteOfMob;
-
-                go.GetComponent<MobInfoOnTab>().imageOfMob.sprite = mobOnUI.spriteOfMob;
-
-                mobOnUI.nameOfMob.SetText(mobOnUI.mob.GetComponent<FriendlyTroopManager>().nameOfTroop);
-                Debug.Log(mobOnUI.mob.GetComponent<FriendlyTroopManager>().nameOfTroop);
+                StartCoroutine(SetText(i));
             }
         }
+    }
+
+    private IEnumerator SetText(int i)
+    {
+        yield return new WaitForSeconds(.1f);
+
+        var mobOnUI = defender.GetComponent<MobInfoOnTab>();
+
+        mobOnUI.mob = friendlyDefendersUI[i];
+
+        var mobOnMap = mobOnUI.mob.GetComponent<MobManager>();
+
+        mobOnUI.spriteOfMob = mobOnMap.spriteOfMob;
+
+        defender.GetComponent<MobInfoOnTab>().imageOfMob.sprite = mobOnUI.spriteOfMob;
+
+        mobOnUI.nameOfMob.SetText(mobOnUI.mob.GetComponent<FriendlyTroopManager>().nameOfTroop);
     }
 
     private void UpdateEnemyHealthbars()

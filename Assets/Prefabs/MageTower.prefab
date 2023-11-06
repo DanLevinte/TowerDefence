@@ -387,7 +387,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 128
-  targetRadius: 7
+  targetRadius: 8
   spriteOfMob: {fileID: 21300000, guid: 7dee1371bd466cf4682c6181df6cf683, type: 3}
   onUI: 0
   isHurt: 0

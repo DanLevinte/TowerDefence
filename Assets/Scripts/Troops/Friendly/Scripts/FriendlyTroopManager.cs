@@ -34,6 +34,14 @@ public class FriendlyTroopManager : MonoBehaviour
             speed = troops.archer.speed;
             radius = troops.archer.radius;
             nameOfTroop = troops.nameOfTroop;
+        }  
+        if (troops.isMage)
+        {
+            damage = Random.Range(troops.mage.minDamage, troops.mage.maxDamage);
+            health = troops.mage.health;
+            speed = troops.mage.speed;
+            radius = troops.mage.radius;
+            nameOfTroop = troops.nameOfTroop;
         }
     }
 }
