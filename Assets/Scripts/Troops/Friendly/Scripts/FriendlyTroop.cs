@@ -13,4 +13,6 @@ public class FriendlyTroop : ScriptableObject
     [ShowIf("isDefender")] public FriendlyTroopDefender defender;
 
     [ShowIf("isMachine")] public FriendlyTroopMachine machine;
+
+    [ShowIf("isArcher")] public FriendlyTroopArcher archer;
 }

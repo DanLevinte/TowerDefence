@@ -27,5 +27,13 @@ public class FriendlyTroopManager : MonoBehaviour
             radius = troops.machine.radius;
             nameOfTroop = troops.nameOfTroop;
         }
+        if (troops.isArcher)
+        {
+            damage = Random.Range(troops.archer.minDamage, troops.archer.maxDamage);
+            health = troops.archer.health;
+            speed = troops.archer.speed;
+            radius = troops.archer.radius;
+            nameOfTroop = troops.nameOfTroop;
+        }
     }
 }

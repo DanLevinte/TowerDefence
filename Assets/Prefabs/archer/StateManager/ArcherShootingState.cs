@@ -35,7 +35,7 @@ public class ArcherShootingState : State
 
     public void CheckForTargets()
     {
-        var detections = Physics.OverlapSphere(this.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.transform.position, this.idleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.idleState.mobManager.targetMask);
 
         GameObject tg = null;
 
@@ -58,7 +58,7 @@ public class ArcherShootingState : State
 
     private void ShootTarget()
     {
-        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.targetRadius, this.idleState.mobManager.targetMask);
+        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.idleState.mobManager.targetMask);
 
         CheckForTargets();
 
@@ -72,6 +72,7 @@ public class ArcherShootingState : State
 
             GameObject go = Instantiate(this.arrowPrefab, this.arrowPos.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
             go.GetComponent<ProjectileMesh>().target = idleState.mobManager.target;
+            go.GetComponent<ProjectileMesh>().projDamage = this.idleState.mobManager.GetComponent<FriendlyTroopManager>().damage;
             go.transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
         } 
     }

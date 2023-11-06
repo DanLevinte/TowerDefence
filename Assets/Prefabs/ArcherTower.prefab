@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 7040696244052510496}
   - component: {fileID: 68972517536638343}
   - component: {fileID: 2021234921939908746}
+  - component: {fileID: 2981591361506800570}
   m_Layer: 0
   m_Name: ArcherTower
   m_TagString: Untagged
@@ -299,6 +300,25 @@ MonoBehaviour:
   spriteOfMob: {fileID: 21300000, guid: 7dee1371bd466cf4682c6181df6cf683, type: 3}
   onUI: 0
   isHurt: 0
+  goldToBeDropped: 0
+--- !u!114 &2981591361506800570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860758234323199045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d680f047e5ce2814c8309dcb053aafac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troops: {fileID: 11400000, guid: 259fe8374788d3f4e91bc459cc4ed45d, type: 2}
+  nameOfTroop: 
+  damage: 0
+  health: 0
+  speed: 0
+  radius: 0
 --- !u!1 &6390100329718929796
 GameObject:
   m_ObjectHideFlags: 0
