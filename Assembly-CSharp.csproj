@@ -129,6 +129,8 @@
     <Compile Include="Assets\OpenMobInfo.cs" />
     <Compile Include="Assets\MobInfo.cs" />
     <Compile Include="Assets\CloseMobInfo.cs" />
+    <Compile Include="Assets\BuyStrength.cs" />
+    <Compile Include="Assets\StrengthManagers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

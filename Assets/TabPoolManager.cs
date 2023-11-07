@@ -13,12 +13,17 @@ public class TabPoolManager : MonoBehaviour
     public bool updateEnemyHealthbars;
     public bool addDefenders;
 
+    public GameObject defenderToUpgrade;
+
     TabManager tabManager;
 
     private GameObject defender;
 
+    public static TabPoolManager instance;
+
     private void Awake()
     {
+        instance = this;
         tabManager = GetComponent<TabManager>();
     }
 

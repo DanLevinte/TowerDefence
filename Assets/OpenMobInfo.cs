@@ -17,10 +17,11 @@ public class OpenMobInfo : MonoBehaviour, IPointerClickHandler
         mobInfo.SetActive(true);
         mobPhoto.SetActive(false);
 
+        StrengthManagers.instance.defenderToUpgrade = this.transform.parent.transform.parent.gameObject;
         var mob = GetComponentInParent<MobInfoOnTab>().mob.GetComponent<FriendlyTroopManager>();
         damageText.SetText(string.Empty);
         radiusText.SetText(string.Empty);
-        damageText.SetText(damageText.text + mob.damage.ToString());
-        radiusText.SetText(radiusText.text + mob.radius.ToString());
+        damageText.SetText(mob.damage.ToString());
+        radiusText.SetText(mob.radius.ToString());
     }
 }

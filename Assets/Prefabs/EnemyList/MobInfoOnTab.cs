@@ -27,6 +27,7 @@ public class MobInfoOnTab : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        StrengthManagers.instance.defenderToUpgrade = null;
         additionalUpgradeButton.gameObject.SetActive(false);
     }
 }
