@@ -61,6 +61,8 @@
     <Compile Include="Assets\Scripts\DefendersLayout.cs" />
     <Compile Include="Assets\Scripts\Raids\RaidManager.cs" />
     <Compile Include="Assets\Scripts\Ballista.cs" />
+    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopMage.cs" />
+    <Compile Include="Assets\Scripts\GameManager\DifficultyManager.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\WizardLayout.cs" />
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieIdleState.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightMovingState.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightRestState.cs" />
     <Compile Include="Assets\Prefabs\Mage\StateManager\MageIdleState.cs" />
+    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopArcher.cs" />
     <Compile Include="Assets\Scripts\ArcherLayout.cs" />
     <Compile Include="Assets\Scripts\GameManager\UIManager.cs" />
     <Compile Include="Assets\Mage.cs" />
@@ -122,10 +125,10 @@
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
     <Compile Include="Assets\Meteor.cs" />
-    <Compile Include="Assets\Scripts\GameManager\DifficultyManager.cs" />
     <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopMachine.cs" />
-    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopArcher.cs" />
-    <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopMage.cs" />
+    <Compile Include="Assets\OpenMobInfo.cs" />
+    <Compile Include="Assets\MobInfo.cs" />
+    <Compile Include="Assets\CloseMobInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
