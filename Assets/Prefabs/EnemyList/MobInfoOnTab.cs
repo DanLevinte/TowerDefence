@@ -18,9 +18,6 @@ public class MobInfoOnTab : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public Button additionalUpgradeButton;
 
-    public TextMeshProUGUI damageText;
-    public TextMeshProUGUI radiusText;
-
     public bool onTab;
 
     public void OnPointerEnter(PointerEventData eventData)
