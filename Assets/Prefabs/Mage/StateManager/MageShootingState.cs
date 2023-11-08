@@ -27,36 +27,12 @@ public class MageShootingState : State
         return "mage_isShooting";
     }
 
-    public void CheckForTargets()
-    {
-        var detections = Physics.OverlapSphere(this.transform.position, this.mageIdleState.mobManager.GetComponent<FriendlyTroopManager>().radius
-            , this.mageIdleState.mobManager.targetMask);
-
-        GameObject tg = null;
-
-        if (detections.Length > 0)
-        {
-            for (int i = 0; i <= detections.Length - 1; i++)
-            {
-                if (detections[i].gameObject == this.mageIdleState.mobManager.target && this.mageIdleState.mobManager.target.GetComponent<HostileTroopManager>().currentHealth > 0)
-                {
-                    tg = detections[i].gameObject;
-
-                    break;
-                }
-            }
-        }
-
-        if (tg == null) { this.mageIdleState.mobManager.target = null; }
-        else { this.mageIdleState.mobManager.target = tg; }
-    }
-
     private void ShootTarget()
     {
         var detections = Physics.OverlapSphere(this.mageIdleState.mobManager.mob.transform.position,
             this.mageIdleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.mageIdleState.mobManager.targetMask);
 
-        CheckForTargets();
+        this.mageIdleState.mobManager.CheckRadiusTargets();
 
         if (this.canShoot && this.mageIdleState.mobManager.target != null)
         {

@@ -33,34 +33,11 @@ public class ArcherShootingState : State
         return "archer_isShooting";
     }
 
-    public void CheckForTargets()
-    {
-        var detections = Physics.OverlapSphere(this.transform.position, this.idleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.idleState.mobManager.targetMask);
-
-        GameObject tg = null;
-
-        if (detections.Length > 0)
-        {
-            for (int i = 0; i <= detections.Length - 1; i++)
-            {
-                if (detections[i].gameObject == this.idleState.mobManager.target && this.idleState.mobManager.target.GetComponent<HostileTroopManager>().currentHealth > 0)
-                {
-                    tg = detections[i].gameObject;
-
-                    break;
-                }
-            }
-        }
-
-        if (tg == null) { this.idleState.mobManager.target = null; }
-        else { this.idleState.mobManager.target = tg; }
-    }
-
     private void ShootTarget()
     {
         var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.idleState.mobManager.targetMask);
 
-        CheckForTargets();
+        this.idleState.mobManager.CheckRadiusTargets();
 
         if (this.canShoot && idleState.mobManager.target != null)
         {

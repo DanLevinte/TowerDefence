@@ -19,10 +19,10 @@ public class KnightMovingState : State
 
     public override State RunCurrentState()
     {
-        if (this.mobManager.target == null) { CheckForTargets(); }
+        if (this.mobManager.target == null) { this.mobManager.CheckForTargets(); }
         else { MoveToTarget(); }
 
-        if (this.pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); Debug.Log("s"); }
+        if (this.pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
 
         if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { attack = false; return knightAttackState; }
 
@@ -34,28 +34,6 @@ public class KnightMovingState : State
     public override string GetStateName()
     {
         return "knight_moving";
-    }
-
-    public void CheckForTargets()
-    {
-        var detections = Physics.OverlapSphere(mobManager.mob.transform.position, 6, knightIdleState.targetMask);
-
-        if (detections.Length != 0)
-        {
-            for (int i = 0; i <= detections.Length - 1; i++)
-            {
-                float dist = (this.transform.position - detections[i].transform.position).magnitude;
-
-                if (dist <= 6 && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
-                {
-                    if (detections[i].transform.position.magnitude < knightIdleState.targetRadius)
-                    {
-                        this.mobManager.target = detections[i].gameObject;
-                        break;
-                    }
-                }
-            }
-        }
     }
 
     private void MoveToPath()

@@ -25,7 +25,7 @@ public class KnightIdleState : State
     {
         if (ShouldBeMoving()) { movingState.pathToMoveTo = GetComponentInParent<DefenderManager>().pathToDefend; return movingState; }
 
-        if (movingState.mobManager.target == null) { CheckForTargets(); }
+        if (movingState.mobManager.target == null) { movingState.mobManager.CheckForTargets(); }
 
         if (movingState.mobManager.target != null) { return movingState; }
 
@@ -39,30 +39,8 @@ public class KnightIdleState : State
 
     private bool ShouldBeMoving()
     {
-        if (defenderManager.pathToDefend != null && Vector3.Distance(movingState.mobManager.transform.position, defenderManager.pathToDefend.pathPos) >= 1f)
+        if (this.defenderManager.pathToDefend != null && Vector3.Distance(movingState.mobManager.transform.position, defenderManager.pathToDefend.pathPos) >= 1f)
         { return true; }
         else { return false; }
-    }
-
-    public void CheckForTargets()
-    {
-        var detections = Physics.OverlapSphere(movingState.mobManager.mob.transform.position, 6, targetMask);
-
-        if (detections.Length != 0)
-        {
-            for (int i = 0; i <= detections.Length - 1; i++)
-            {
-                float dist = (this.transform.position - detections[i].transform.position).magnitude;
-
-                if (dist <= 6 && detections[i].GetComponent<HostileTroopManager>().currentHealth >= 0 && detections[i].tag == "DownEnemy")
-                {
-                    if (detections[i].transform.position.magnitude < targetRadius)
-                    {
-                        this.movingState.mobManager.target = detections[i].gameObject;
-                        break;
-                    }
-                }
-            }
-        }
     }
 }

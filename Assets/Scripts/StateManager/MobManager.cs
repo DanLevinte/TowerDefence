@@ -65,4 +65,42 @@ public class MobManager : MonoBehaviour
     {
         if (this.canvas != null && this.canvas.activeInHierarchy) { this.canvas.transform.rotation = Quaternion.identity; }
     }
+
+    public void CheckForTargets()
+    {
+        var detections = Physics.OverlapSphere(this.transform.position, this.GetComponent<FriendlyTroopManager>().radius, this.targetMask);
+
+        GameObject tg = null;
+
+        if (detections.Length > 0)
+        {
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                tg = detections[i].gameObject;
+                break;
+            }
+            if (tg == null) { this.target = null; }
+            else { this.target = tg; }
+        }
+    }
+
+    public void CheckRadiusTargets()
+    {
+        var detections = Physics.OverlapSphere(this.transform.position, this.GetComponent<FriendlyTroopManager>().radius, this.targetMask);
+        GameObject tg = null;
+        if (detections.Length > 0)
+        {
+            for (int i = 0; i <= detections.Length - 1; i++)
+            {
+                if (detections[i].gameObject == this.target && this.target.GetComponent<HostileTroopManager>().currentHealth > 0)
+                {
+                    tg = detections[i].gameObject;
+                    break;
+                }
+            }
+        }
+        if (tg == null) { this.target = null; }
+        else { this.target = tg; }
+    }
+
 }
