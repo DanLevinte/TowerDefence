@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemiy\EnemyManager.cs" />
+    <Compile Include="Assets\BuyStrength.cs" />
     <Compile Include="Assets\Scripts\AreaOfRoam.cs" />
     <Compile Include="Assets\Scripts\DefendersLayout.cs" />
     <Compile Include="Assets\Scripts\Raids\RaidManager.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\TowerLayoutUI.cs" />
     <Compile Include="Assets\Scripts\ProjectileMesh.cs" />
     <Compile Include="Assets\Sword.cs" />
+    <Compile Include="Assets\OpenMobInfo.cs" />
     <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopDefender.cs" />
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieHurtState.cs" />
     <Compile Include="Assets\Arrow.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\Scripts\StateManager\Zombie\ZombieStayDeadState.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileSkirmisher.cs" />
     <Compile Include="Assets\TabManager.cs" />
+    <Compile Include="Assets\StrengthManagers.cs" />
     <Compile Include="Assets\Scripts\Raids\Raid.cs" />
     <Compile Include="Assets\Scripts\StateManager\Knight\KnightAttackingState.cs" />
     <Compile Include="Assets\Scripts\MoneyManager.cs" />
@@ -120,17 +123,14 @@
     <Compile Include="Assets\Scripts\DefenderManager.cs" />
     <Compile Include="Assets\Scripts\ShowMobBar.cs" />
     <Compile Include="Assets\Scripts\PathManager.cs" />
+    <Compile Include="Assets\CloseMobInfo.cs" />
     <Compile Include="Assets\MobBarButtonController.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
     <Compile Include="Assets\Scripts\StateManager\AnimationsController.cs" />
     <Compile Include="Assets\Scripts\Troops\Hostile\Scripts\HostileTroop.cs" />
+    <Compile Include="Assets\MobInfo.cs" />
     <Compile Include="Assets\Meteor.cs" />
     <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopMachine.cs" />
-    <Compile Include="Assets\OpenMobInfo.cs" />
-    <Compile Include="Assets\MobInfo.cs" />
-    <Compile Include="Assets\CloseMobInfo.cs" />
-    <Compile Include="Assets\BuyStrength.cs" />
-    <Compile Include="Assets\StrengthManagers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

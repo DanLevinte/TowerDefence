@@ -50,9 +50,9 @@ public class PoolManager : MonoBehaviour
     {
         if (enemiesOnPool.Count > 0) { timer -= Time.deltaTime; }
         
-        if (enemiesOnPool.Count == 0) { raidRest -= Time.deltaTime; UIManager.instance.startRaidButton.SetActive(true); }
+        if (enemiesOnPool.Count == 0 && raidList.Count > 0) { raidRest -= Time.deltaTime; raidList.Remove(currentRaid); UIManager.instance.startRaidButton.SetActive(true); }
 
-        if (enemiesOnPool.Count == 0 && raidRest <= 0 || UIManager.instance.earlyRaid) { SwitchToNextRaid(); UIManager.instance.startRaidButton.SetActive(false); }
+        if (enemiesOnPool.Count == 0 && raidRest <= 0 && raidList.Count > 0 || UIManager.instance.earlyRaid) { SwitchToNextRaid(); }
 
         if (timer <= 0 && enemiesOnPool.Count > 0) { CallEnemy(); }
 
@@ -65,9 +65,7 @@ public class PoolManager : MonoBehaviour
 
         for (int i = 0; i <= raidList.Count - 1; i++)
         {
-            if (currentRaid == raidList[i]) { currentRaid = null; raidList.Remove(raidList[i]); }
-
-            if (raidList[i] == raidManager.raidList[raidList.Count]) { break; }
+            if (currentRaid == raidList[i]) { currentRaid = null; raidList.Remove(raidList[i]); break; }
 
             currentRaid = raidList[i];
 
@@ -84,6 +82,8 @@ public class PoolManager : MonoBehaviour
         }
 
         raidRest = 10;
+        timer = 1;
+        UIManager.instance.startRaidButton.SetActive(false);
     }
 
     private void CallEnemy()

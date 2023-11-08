@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void StartEarlyRaid()
     {
-        earlyRaid = true;
+        if (PoolManager.instance.raidList.Count > 0) { earlyRaid = true; }
+        else { startRaidButton.SetActive(false); }
     }
 }
