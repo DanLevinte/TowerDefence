@@ -18,6 +18,8 @@ public class PoolManager : MonoBehaviour
 
     public float timer, spawnRate, raidRest;
 
+    public GameObject mobParent;
+
     public static PoolManager instance;
 
     private void Awake()
@@ -97,6 +99,7 @@ public class PoolManager : MonoBehaviour
                 {
                     onValueChange = true;
                     GameObject go = Instantiate(enemiesOnPool[0], poolStartup.position, Quaternion.identity);
+                    go.transform.SetParent(mobParent.transform);
                     enemiesOnPool.Remove(enemiesOnPool[0]);
                     enemiesOffPool.Add(go);
                     timer = spawnRate;

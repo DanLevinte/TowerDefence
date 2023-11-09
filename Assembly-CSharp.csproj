@@ -131,6 +131,7 @@
     <Compile Include="Assets\MobInfo.cs" />
     <Compile Include="Assets\Meteor.cs" />
     <Compile Include="Assets\Scripts\Troops\Friendly\Scripts\FriendlyTroopMachine.cs" />
+    <Compile Include="Assets\SetDifficulty.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
