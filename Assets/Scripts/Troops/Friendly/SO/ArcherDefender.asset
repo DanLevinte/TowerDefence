@@ -17,6 +17,4 @@ MonoBehaviour:
   isMage: 0
   isMachine: 0
   isDefender: 0
-  defender: {fileID: 0}
-  machine: {fileID: 0}
-  archer: {fileID: 11400000, guid: eb760c4ba4e483a4dbed817ce282819c, type: 2}
+  defender: {fileID: 11400000, guid: 0997c7acaa1c70848bfc550893b55107, type: 2}

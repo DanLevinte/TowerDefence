@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579e00f3f8c61994ebda8402fb3896a2, type: 3}
-  m_Name: ArmouredKnight
+  m_Name: Defender
   m_EditorClassIdentifier: 
   health: 50
-  minDamage: 2
-  maxDamage: 5
-  speed: 4
+  minDamage: 3
+  maxDamage: 4
+  speed: 6
+  radius: 8

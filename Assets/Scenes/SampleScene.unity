@@ -5159,6 +5159,7 @@ GameObject:
   - component: {fileID: 1721701662}
   - component: {fileID: 1721701663}
   - component: {fileID: 1721701664}
+  - component: {fileID: 1721701665}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5215,6 +5216,19 @@ MonoBehaviour:
   changes: 0
   earlyRaid: 0
   startRaidButton: {fileID: 755992305}
+--- !u!114 &1721701665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721701661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcb46d516b98144dbb98b968fcd87bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfDifficulty: 0
 --- !u!1 &1727184610
 GameObject:
   m_ObjectHideFlags: 0

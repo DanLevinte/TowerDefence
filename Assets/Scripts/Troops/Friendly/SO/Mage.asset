@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b7052aadab9924daaf7e5b31ab55df, type: 3}
+  m_Script: {fileID: 11500000, guid: 579e00f3f8c61994ebda8402fb3896a2, type: 3}
   m_Name: Mage
   m_EditorClassIdentifier: 
-  nameOfTroop: Mage
-  isArcher: 0
-  isMage: 1
-  isMachine: 0
-  isDefender: 0
-  defender: {fileID: 0}
-  machine: {fileID: 0}
-  archer: {fileID: 0}
-  mage: {fileID: 11400000, guid: 52e39730d1ecddd4a81694a2a49830a4, type: 2}
+  health: 50
+  minDamage: 2
+  maxDamage: 3
+  speed: 6
+  radius: 8

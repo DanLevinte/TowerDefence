@@ -17,4 +17,4 @@ MonoBehaviour:
   isMage: 0
   isMachine: 0
   isDefender: 1
-  defender: {fileID: 11400000, guid: dfa9a5da31f4f9c48aeeba2b36bc700f, type: 2}
+  defender: {fileID: 11400000, guid: 1b3679b69d20a9d42978d8f0f1206d99, type: 2}

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5120ba4f41673f84aac3ac0d304c9e27, type: 3}
+  m_Script: {fileID: 11500000, guid: 579e00f3f8c61994ebda8402fb3896a2, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  health: 9999
+  health: 50
   minDamage: 1
-  maxDamage: 2
-  speed: 4
+  maxDamage: 1
+  speed: 6
   radius: 8
