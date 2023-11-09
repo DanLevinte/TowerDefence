@@ -15,8 +15,6 @@ public class ZombieDeathState : State
 
         if (timer <= 0) 
         {
-            UIManager.instance.bankCurrentMoney += attackingState.mobManager.goldToBeDropped;
-            UIManager.instance.changes = true;
             PoolManager.instance.updatePool = true;
             this.GetComponentInParent<MobManager>().canvas.SetActive(false);
             return zombieStayDeadState;

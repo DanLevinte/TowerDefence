@@ -13,12 +13,12 @@ public class ArcherRestState : State
     {
         timer -= Time.deltaTime;
 
-        Vector3 tg = new Vector3(idleState.mobManager.target.transform.position.x, this.idleState.mobManager.mob.transform.position.y, idleState.mobManager.target.transform.position.z);
+        Vector3 tg = new Vector3(this.idleState.mobManager.target.transform.position.x, this.idleState.mobManager.mob.transform.position.y, this.idleState.mobManager.target.transform.position.z);
 
         this.idleState.mobManager.mob.transform.LookAt(tg);
 
-        if (idleState.mobManager.target != null && timer <= 0) { timer = 1; return shootingState; }
-        else if (idleState.mobManager.target == null && timer <= 0) { return idleState; }
+        if (this.idleState.mobManager.target != null && timer <= 0) { timer = 1; return shootingState; }
+        else if (this.idleState.mobManager.target == null && timer <= 0) { return idleState; }
 
         return this;
     }

@@ -56,6 +56,13 @@ public class MobManager : MonoBehaviour
         {
             var troop = this.mob.GetComponent<HostileTroopManager>();
             this.healthbar.fillAmount = (troop.currentHealth / troop.maxHealth);
+
+            if (troop.currentHealth <= 0)
+            {
+                UIManager.instance.bankCurrentMoney += this.goldToBeDropped;
+                UIManager.instance.changes = true;
+                this.gameObject.SetActive(false);
+            }
         }
         else if (this.typeOfTroop == TypeOfTroop.Friendly)
         {

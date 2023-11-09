@@ -383,7 +383,7 @@ MonoBehaviour:
   canvas: {fileID: 0}
   healthbar: {fileID: 0}
   stateManager: {fileID: 8182606266030835393}
-  typeOfTroop: 0
+  typeOfTroop: 2
   targetMask:
     serializedVersion: 2
     m_Bits: 128
@@ -408,6 +408,7 @@ MonoBehaviour:
   nameOfTroop: 
   damage: 0
   health: 0
+  maxHealth: 0
   speed: 0
   radius: 0
 --- !u!1001 &4968973091218538881

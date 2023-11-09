@@ -16,4 +16,4 @@ MonoBehaviour:
   minDamage: 4
   maxDamage: 5
   speed: 6
-  radius: 15
+  radius: 8

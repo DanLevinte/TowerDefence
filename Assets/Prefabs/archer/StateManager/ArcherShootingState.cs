@@ -14,6 +14,7 @@ public class ArcherShootingState : State
 
     public override State RunCurrentState()
     {
+        Debug.Log(gameObject.name);
         if (this.idleState.mobManager.target == null) { return idleState; }
         else { ShootTarget(); }
 
@@ -35,20 +36,18 @@ public class ArcherShootingState : State
 
     private void ShootTarget()
     {
-        var detections = Physics.OverlapSphere(this.idleState.mobManager.mob.transform.position, this.idleState.mobManager.GetComponent<FriendlyTroopManager>().radius, this.idleState.mobManager.targetMask);
-
         this.idleState.mobManager.CheckRadiusTargets();
 
-        if (this.canShoot && idleState.mobManager.target != null)
+        if (this.canShoot && this.idleState.mobManager.target != null)
         {
             this.canShoot = false;
 
-            Vector3 tg = new Vector3(idleState.mobManager.target.transform.position.x, this.idleState.mobManager.mob.transform.position.y, idleState.mobManager.target.transform.position.z);
+            Vector3 tg = new Vector3(this.idleState.mobManager.target.transform.position.x, this.idleState.mobManager.mob.transform.position.y, this.idleState.mobManager.target.transform.position.z);
 
             this.idleState.mobManager.mob.transform.LookAt(tg);
 
             GameObject go = Instantiate(this.arrowPrefab, this.arrowPos.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
-            go.GetComponent<ProjectileMesh>().target = idleState.mobManager.target;
+            go.GetComponent<ProjectileMesh>().target = this.idleState.mobManager.target;
             go.GetComponent<ProjectileMesh>().projDamage = this.idleState.mobManager.GetComponent<FriendlyTroopManager>().damage;
             go.transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
         } 
