@@ -5229,6 +5229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfDifficulty: 0
+  setDifficulty: 0
+  defenders:
+  - {fileID: 4633869133284477712, guid: 833e3e7907d19f04987d927c326a9cdf, type: 3}
+  - {fileID: 4002531634827186492, guid: 88a2cccbe6c504f44bbe30cd3229593b, type: 3}
+  - {fileID: 2981591361506800570, guid: fd0f9bffb49e27d4a90050855a0fa4f3, type: 3}
+  - {fileID: 7790553754244476746, guid: 79250aaef6c00e446a5eb6f9df894432, type: 3}
 --- !u!1 &1727184610
 GameObject:
   m_ObjectHideFlags: 0

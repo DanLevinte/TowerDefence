@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b7052aadab9924daaf7e5b31ab55df, type: 3}
+  m_Name: MageDefender
+  m_EditorClassIdentifier: 
+  nameOfTroop: Mage
+  isArcher: 0
+  isMage: 1
+  isMachine: 0
+  isDefender: 0
+  defenderEasy: {fileID: 11400000, guid: 60df8e5e0e75ff545acbbd1601ea52ae, type: 2}
+  defenderNormal: {fileID: 11400000, guid: 4cb9cfab05f5b364ab56b87a2779211f, type: 2}
+  defenderHard: {fileID: 11400000, guid: 6b61a30e0db88f84f804c1d5bf83c7f4, type: 2}

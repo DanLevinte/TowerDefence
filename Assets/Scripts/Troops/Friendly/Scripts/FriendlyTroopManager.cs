@@ -8,17 +8,32 @@ public class FriendlyTroopManager : MonoBehaviour
 
     public string nameOfTroop;
 
-    public int damage, health, speed, radius;
+    public int damage, health, maxHealth, speed, radius;
 
     private void Start()
     {
         if (troops != null) 
         { 
-            damage = Random.Range(troops.defender.minDamage, troops.defender.maxDamage);
-            health = troops.defender.health;
-            speed = troops.defender.speed;
-            nameOfTroop = troops.nameOfTroop;
-            radius = troops.defender.radius;
+            switch(DifficultyManager.instance.typeOfDifficulty)
+            {
+                case TypeOfDifficulty.Easy: SetDifficulty(troops.defenderEasy);
+                    break;
+                case TypeOfDifficulty.Medium: SetDifficulty(troops.defenderNormal);
+                    break;
+                case TypeOfDifficulty.Hard: SetDifficulty(troops.defenderHard);
+                    break;
+                default: break;
+            }
         }
+    }
+
+    private void SetDifficulty(FriendlyTroopDefender troopManager)
+    {
+        damage = Random.Range(troopManager.minDamage, troopManager.maxDamage);
+        health = troopManager.health;
+        maxHealth = troopManager.health;
+        speed = troopManager.speed;
+        nameOfTroop = troops.nameOfTroop;
+        radius = troopManager.radius;
     }
 }

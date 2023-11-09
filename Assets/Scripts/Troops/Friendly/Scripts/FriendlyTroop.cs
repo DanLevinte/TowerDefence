@@ -10,5 +10,7 @@ public class FriendlyTroop : ScriptableObject
 
     public bool isArcher, isMage, isMachine, isDefender;
 
-    public FriendlyTroopDefender defender;
+    public FriendlyTroopDefender defenderEasy;
+    public FriendlyTroopDefender defenderNormal;
+    public FriendlyTroopDefender defenderHard;
 }

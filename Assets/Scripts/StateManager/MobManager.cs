@@ -57,6 +57,11 @@ public class MobManager : MonoBehaviour
             var troop = this.mob.GetComponent<HostileTroopManager>();
             this.healthbar.fillAmount = (troop.currentHealth / troop.maxHealth);
         }
+        else if (this.typeOfTroop == TypeOfTroop.Friendly)
+        {
+            var troop = this.mob.GetComponent<FriendlyTroopManager>();
+            this.healthbar.fillAmount = (troop.health / troop.maxHealth);
+        }
 
         if (isHurt) { TabManager.instance.tabPoolManager.updateEnemyHealthbars = true; isHurt = false; }
     }

@@ -1447,7 +1447,7 @@ MonoBehaviour:
   mob: {fileID: 4436010591313827941}
   target: {fileID: 0}
   canvas: {fileID: 3872138541872556696}
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 3872138541916987442}
   stateManager: {fileID: 809362468119644582}
   typeOfTroop: 0
   targetMask:
@@ -1457,6 +1457,7 @@ MonoBehaviour:
   spriteOfMob: {fileID: 21300000, guid: ef43b1a826640fe48a4d7175d7243f88, type: 3}
   onUI: 0
   isHurt: 0
+  goldToBeDropped: 0
 --- !u!114 &2749849003603193402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,9 +1486,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troops: {fileID: 11400000, guid: 88edd9938dfabfb4382199ab71744095, type: 2}
+  nameOfTroop: 
   damage: 0
   health: 0
+  maxHealth: 0
   speed: 0
+  radius: 0
 --- !u!1 &4488832552286583614
 GameObject:
   m_ObjectHideFlags: 0
