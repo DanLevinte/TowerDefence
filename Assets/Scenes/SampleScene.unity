@@ -4424,7 +4424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1245702088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6221,6 +6221,7 @@ MonoBehaviour:
   changes: 0
   earlyRaid: 0
   startRaidButton: {fileID: 755992305}
+  loseText: {fileID: 1245702087}
 --- !u!114 &1721701665
 MonoBehaviour:
   m_ObjectHideFlags: 0
