@@ -89,7 +89,6 @@ public class TabPoolManager : MonoBehaviour
             {
                 case TypeOfTroop.Hostile:
                     mobUI.healthSprite.fillAmount = mobHostile.currentHealth / mobHostile.maxHealth;
-                    Debug.Log(mobHostile);
                     break;
                 case TypeOfTroop.Friendly:
                     break;

@@ -14,7 +14,6 @@ public class ArcherShootingState : State
 
     public override State RunCurrentState()
     {
-        Debug.Log(gameObject.name);
         if (this.idleState.mobManager.target == null) { return idleState; }
         else { ShootTarget(); }
 
