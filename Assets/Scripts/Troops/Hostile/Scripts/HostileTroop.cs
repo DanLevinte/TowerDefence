@@ -12,5 +12,7 @@ public class HostileTroop : ScriptableObject
 
     public int minGold, maxGold;
 
-    [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisher;
+    [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisherEasy;
+    [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisherNormal;
+    [ShowIf("isSkirmisher")] public HostileSkirmisher hostileSkirmisherHard;
 }

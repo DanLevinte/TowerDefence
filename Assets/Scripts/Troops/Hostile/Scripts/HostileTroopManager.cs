@@ -14,14 +14,30 @@ public class HostileTroopManager : MonoBehaviour
 
     private void Start()
     {
-        nameOfHostile = hostileTroop.nameOfTroop;
-
-        if (hostileTroop.isSkirmisher) 
-        { 
-            damage = Random.Range(hostileTroop.hostileSkirmisher.minDamage, hostileTroop.hostileSkirmisher.maxDamage);
-            currentHealth = hostileTroop.hostileSkirmisher.health;
-            speed = hostileTroop.hostileSkirmisher.speed;
-            maxHealth = hostileTroop.hostileSkirmisher.health;
+        if (hostileTroop != null)
+        {
+            switch (DifficultyManager.instance.typeOfDifficulty)
+            {
+                case TypeOfDifficulty.Easy:
+                    SetDifficulty(hostileTroop.hostileSkirmisherEasy);
+                    break;
+                case TypeOfDifficulty.Medium:
+                    SetDifficulty(hostileTroop.hostileSkirmisherNormal);
+                    break;
+                case TypeOfDifficulty.Hard:
+                    SetDifficulty(hostileTroop.hostileSkirmisherHard);
+                    break;
+                default: break;
+            }
         }
+    }
+
+    private void SetDifficulty(HostileSkirmisher skirmisher)
+    {
+        damage = Random.Range(skirmisher.minDamage, skirmisher.maxDamage);
+        currentHealth = skirmisher.health;
+        speed = skirmisher.speed;
+        maxHealth = skirmisher.health;
+        nameOfHostile = hostileTroop.nameOfTroop;
     }
 }

@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public GameObject startRaidButton;
 
     public GameObject loseText;
+    public GameObject winText;
 
     public static UIManager instance;
 
@@ -37,12 +38,28 @@ public class UIManager : MonoBehaviour
     {
         if (changes) { MakeUIChanges(); }
 
-        if (livesLimit <= 0) { LoseGame(); }
+        if (livesLimit <= 0) { ShowText(loseText); }
+
+        if (raidsCurrent == raidsLimit && PoolManager.instance.enemiesOnPool.Count == 0 && livesLimit > 0) 
+        { CheckIfTargetsAreDead(); }
     }
 
-    private void LoseGame()
+    private void CheckIfTargetsAreDead()
     {
-        loseText.SetActive(true);
+        GameObject tg = null;
+
+        for (int i = 0; i <= PoolManager.instance.enemiesOffPool.Count - 1; i++)
+        {
+            if (PoolManager.instance.enemiesOffPool[i].GetComponent<HostileTroopManager>().currentHealth > 0) { break; }
+            else { tg = PoolManager.instance.enemiesOffPool[i]; }
+        }
+
+        if (tg != null) { ShowText(winText); Debug.Log("ss"); }
+    }
+
+    private void ShowText(GameObject text)
+    {
+        text.SetActive(true);
         DifficultyManager.instance.poolManager.gameObject.SetActive(false);
         DifficultyManager.instance.tabManager.gameObject.SetActive(false);
         DifficultyManager.instance.gameInfo.SetActive(false);

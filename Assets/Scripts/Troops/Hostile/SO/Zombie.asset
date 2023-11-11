@@ -19,4 +19,9 @@ MonoBehaviour:
   isAirborne: 0
   minGold: 5
   maxGold: 25
-  hostileSkirmisher: {fileID: 11400000, guid: 8bc7271420531204286b796a35069d22, type: 2}
+  hostileSkirmisherEasy: {fileID: 11400000, guid: 3535e16ab47bff541a21911584a0fbfd,
+    type: 2}
+  hostileSkirmisherNormal: {fileID: 11400000, guid: 8bc7271420531204286b796a35069d22,
+    type: 2}
+  hostileSkirmisherHard: {fileID: 11400000, guid: 5a97eebd1266a0b45a5580a999a63067,
+    type: 2}
