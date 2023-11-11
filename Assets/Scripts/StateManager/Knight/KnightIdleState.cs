@@ -25,7 +25,7 @@ public class KnightIdleState : State
     {
         if (ShouldBeMoving()) { movingState.pathToMoveTo = GetComponentInParent<DefenderManager>().pathToDefend; return movingState; }
 
-        if (movingState.mobManager.target == null) { movingState.mobManager.CheckForTargets(); }
+        if (movingState.mobManager.target == null) { movingState.mobManager.CheckForTargets(this.movingState.mobManager.mob.GetComponent<FriendlyTroopManager>().radius); }
 
         if (movingState.mobManager.target != null) { return movingState; }
 

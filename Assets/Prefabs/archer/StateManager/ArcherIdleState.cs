@@ -11,7 +11,7 @@ public class ArcherIdleState : State
     public override State RunCurrentState()
     {
         if (this.mobManager.target != null) { return shootingState; }
-        else { this.mobManager.CheckForTargets(); }
+        else { this.mobManager.CheckForTargets(this.mobManager.mob.GetComponent<FriendlyTroopManager>().radius); }
 
         return this;
     }

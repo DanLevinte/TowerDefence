@@ -84,15 +84,15 @@ public class MobManager : MonoBehaviour
         }
     }
 
-    public void CheckForTargets()
+    public void CheckForTargets(float radius)
     {
-        var detections = Physics.OverlapSphere(this.transform.position, this.GetComponent<FriendlyTroopManager>().radius, this.targetMask);
+        var detections = Physics.OverlapSphere(this.transform.position, radius, this.targetMask);
 
         GameObject tg = null;
 
         if (detections.Length > 0)
         {
-            for (int i = 0; i <= detections.Length - 1; i++)
+            for (int i = 0; i <= detections.Length; i++)
             {
                 tg = detections[i].gameObject;
                 break;

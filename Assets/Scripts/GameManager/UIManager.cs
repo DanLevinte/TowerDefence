@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject startRaidButton;
 
+    public GameObject loseText;
+
     public static UIManager instance;
 
     private void Awake()
@@ -34,6 +36,18 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         if (changes) { MakeUIChanges(); }
+
+        if (livesLimit <= 0) { LoseGame(); }
+    }
+
+    private void LoseGame()
+    {
+        loseText.SetActive(true);
+        DifficultyManager.instance.poolManager.gameObject.SetActive(false);
+        DifficultyManager.instance.tabManager.gameObject.SetActive(false);
+        DifficultyManager.instance.gameInfo.SetActive(false);
+        PoolManager.instance.mobParent.SetActive(false);
+        startRaidButton.SetActive(false);
     }
 
     private void MakeUIChanges()

@@ -9,7 +9,7 @@ public class MageIdleState : State
 
     public override State RunCurrentState()
     {
-        if (this.mobManager.target == null) { this.mobManager.CheckForTargets(); }
+        if (this.mobManager.target == null) { this.mobManager.CheckForTargets(this.mobManager.mob.GetComponent<FriendlyTroopManager>().radius); }
         else { return mageShootingState; }
 
         return this;
