@@ -6,4 +6,6 @@ using UnityEngine;
 public class Raid : ScriptableObject
 {
     public List<GameObject> enemies;
+
+    public float spawnRate;
 }

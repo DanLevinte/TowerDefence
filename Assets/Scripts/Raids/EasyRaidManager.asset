@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbcbd03891967e4a92ad0536cf619a2, type: 3}
+  m_Name: EasyRaidManager
+  m_EditorClassIdentifier: 
+  raidList:
+  - {fileID: 11400000, guid: 08a6910308bbb3b4f88d7cee4fbc6113, type: 2}
+  - {fileID: 11400000, guid: e5e157c2c5923ea4c8c41e57c2ca63e1, type: 2}
+  - {fileID: 11400000, guid: f4a09fe3c2b90b34cbe35956c8fbdb93, type: 2}

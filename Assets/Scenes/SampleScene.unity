@@ -451,7 +451,6 @@ Transform:
   m_Children:
   - {fileID: 2080594383}
   - {fileID: 122610854}
-  - {fileID: 1518169069}
   - {fileID: 1629149540}
   - {fileID: 1604128176}
   - {fileID: 1721701662}
@@ -962,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c764eb401ead0cc47b8e06caac10c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfDifficulty: 0
+  difficulty: {fileID: 11400000, guid: 6dcbdd078e40f8844a0cdcf9c8d46af5, type: 2}
 --- !u!114 &230275828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2886,7 +2885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c764eb401ead0cc47b8e06caac10c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfDifficulty: 2
+  difficulty: {fileID: 11400000, guid: c5d52aac0a3296f4898ba66e141384fd, type: 2}
 --- !u!114 &874226623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3921,7 +3920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c764eb401ead0cc47b8e06caac10c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfDifficulty: 1
+  difficulty: {fileID: 11400000, guid: 930d56d425761dd468a51267e756b816, type: 2}
 --- !u!114 &1199738200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,51 +5243,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482218329}
   m_CullTransparentMesh: 1
---- !u!1 &1518169068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1518169069}
-  - component: {fileID: 1518169070}
-  m_Layer: 0
-  m_Name: MoneyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1518169069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518169068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 104403898}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1518169070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518169068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97fc73ea41479194081a11b22b4f996a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bank: 0
 --- !u!1 &1540201268
 GameObject:
   m_ObjectHideFlags: 0
@@ -5503,7 +5457,6 @@ GameObject:
   - component: {fileID: 1604128176}
   - component: {fileID: 1604128178}
   - component: {fileID: 1604128177}
-  - component: {fileID: 1604128179}
   m_Layer: 0
   m_Name: TabManager
   m_TagString: Untagged
@@ -5524,7 +5477,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104403898}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1604128177
 MonoBehaviour:
@@ -5563,21 +5516,6 @@ MonoBehaviour:
   mobPrefab: {fileID: 1543328243582756252, guid: 1fc3d45672289b64e966c99d7a3cb3ca,
     type: 3}
   tabPoolManager: {fileID: 0}
---- !u!114 &1604128179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604128175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf214fa703d06b4ab49e984fd448193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defenderToUpgrade: {fileID: 0}
-  canUpgrade: 0
-  strengthButton: {fileID: 0}
 --- !u!1 &1629149539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5608,7 +5546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104403898}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1629149541
 MonoBehaviour:
@@ -6074,7 +6012,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104403898}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1721701663
 MonoBehaviour:
@@ -6125,6 +6063,10 @@ MonoBehaviour:
   typeOfDifficulty: 2
   setDifficulty: 0
   DifficultyUI: {fileID: 2129816520}
+  poolManager: {fileID: 1629149539}
+  tabManager: {fileID: 1604128175}
+  gameInfo: {fileID: 1027413507}
+  difficulty: {fileID: 0}
 --- !u!1 &1727184610
 GameObject:
   m_ObjectHideFlags: 0

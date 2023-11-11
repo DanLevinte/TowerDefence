@@ -31,6 +31,7 @@ public class MobManager : MonoBehaviour
     public bool onUI;
 
     public bool isHurt;
+    public bool isHit;
 
     public int goldToBeDropped;
 
@@ -52,6 +53,18 @@ public class MobManager : MonoBehaviour
 
     private void Update()
     {
+        if (isHit) { SetHealth(); }
+
+        if (isHurt) { TabManager.instance.tabPoolManager.updateEnemyHealthbars = true; isHurt = false; }
+    }
+
+    private void LateUpdate()
+    {
+        if (this.canvas != null && this.canvas.activeInHierarchy) { this.canvas.transform.rotation = Quaternion.identity; }
+    }
+
+    private void SetHealth()
+    {
         if (this.typeOfTroop == TypeOfTroop.Hostile)
         {
             var troop = this.mob.GetComponent<HostileTroopManager>();
@@ -69,13 +82,6 @@ public class MobManager : MonoBehaviour
             var troop = this.mob.GetComponent<FriendlyTroopManager>();
             this.healthbar.fillAmount = (troop.health / troop.maxHealth);
         }
-
-        if (isHurt) { TabManager.instance.tabPoolManager.updateEnemyHealthbars = true; isHurt = false; }
-    }
-
-    private void LateUpdate()
-    {
-        if (this.canvas != null && this.canvas.activeInHierarchy) { this.canvas.transform.rotation = Quaternion.identity; }
     }
 
     public void CheckForTargets()

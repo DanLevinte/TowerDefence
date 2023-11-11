@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac7298c1c85706498d5340d89ebe195, type: 3}
+  m_Name: NormalRaid1
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 7651957213978116792, guid: 9f60deae8ca57324e929d24eb695d9f1, type: 3}
+  - {fileID: 7651957213978116792, guid: 9f60deae8ca57324e929d24eb695d9f1, type: 3}
+  - {fileID: 7651957213978116792, guid: 9f60deae8ca57324e929d24eb695d9f1, type: 3}
+  spawnRate: 3

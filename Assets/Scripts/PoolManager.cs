@@ -29,7 +29,7 @@ public class PoolManager : MonoBehaviour
 
     private void Start()
     {
-        if (currentRaid == null) { currentRaid = raidManager.raidList[0]; }
+        if (currentRaid == null) { currentRaid = raidManager.raidList[0]; spawnRate = currentRaid.spawnRate; }
 
         if (currentRaid != null)
         {
@@ -79,7 +79,7 @@ public class PoolManager : MonoBehaviour
                 enemiesOnPool.Add(currentRaid.enemies[i]);
             }
 
-            spawnRate--;
+            spawnRate = currentRaid.spawnRate;
             break;
         }
 

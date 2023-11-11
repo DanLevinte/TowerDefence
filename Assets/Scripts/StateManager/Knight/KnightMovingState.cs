@@ -21,12 +21,14 @@ public class KnightMovingState : State
     {
         if (this.mobManager.target == null) { this.mobManager.CheckForTargets(); }
         else { MoveToTarget(); }
-
+        
         if (this.pathToMoveTo != null && this.mobManager.target == null) { MoveToPath(); }
-
+       
         if (attack && this.mobManager.target.GetComponent<MobManager>().target != null) { attack = false; return knightAttackState; }
+        
+        if (this.pathToMoveTo != null && OnPathPosition(this.pathToMoveTo.pathPos) && this.mobManager.target == null) { attack = false; return knightIdleState; }
 
-        if (this.pathToMoveTo != null && OnPathPosition(this.pathToMoveTo.pathPos) && this.mobManager.target == null) { return knightIdleState; }
+        if (this.pathToMoveTo == null && this.mobManager.target == null) { attack = false; return knightIdleState; }
 
         return this;
     }
@@ -53,8 +55,8 @@ public class KnightMovingState : State
         var target = this.mobManager.target.transform.position;
 
         Vector3 targetPos = new Vector3(target.x, this.mobManager.mob.transform.position.y, target.z);
-        
-        if (Vector3.Distance(this.mobManager.mob.transform.position, target) >= 1.65f)
+
+        if (Vector3.Distance(this.mobManager.mob.transform.position, target) >= 1.65f && !this.mobManager.target.GetComponent<MobManager>().target == this.mobManager.mob)
         {
             this.mobManager.mob.transform.position = Vector3.MoveTowards(this.mobManager.mob.transform.position, targetPos, .01f);
         } else { attack = true; }

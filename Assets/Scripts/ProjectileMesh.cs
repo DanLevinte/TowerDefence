@@ -16,9 +16,6 @@ public class ProjectileMesh : MonoBehaviour
     {
         if (this.target != null)
         {
-            this.lifespan -= Time.deltaTime;
-            this.gameObject.transform.rotation = Quaternion.identity;
-
             FollowTarget();
         } else { this.lifespan = 0; Destroy(this.gameObject); }
 
@@ -27,6 +24,9 @@ public class ProjectileMesh : MonoBehaviour
 
     private void FollowTarget()
     {
+        this.lifespan -= Time.deltaTime;
+        this.gameObject.transform.rotation = Quaternion.identity;
+
         this.transform.position = Vector3.MoveTowards(this.transform.position, this.target.transform.position, this.speed * Time.deltaTime);
 
         var detections = Physics.OverlapSphere(this.transform.position, 1.5f, this.targetMask);
@@ -40,6 +40,8 @@ public class ProjectileMesh : MonoBehaviour
                     var targetManager = detections[i].gameObject.GetComponent<HostileTroopManager>();
 
                     this.target.GetComponent<MobManager>().isHurt = true;
+                    this.target.GetComponent<MobManager>().isHit = true;
+
                     targetManager.currentHealth -= this.projDamage;
                     this.target = null;
                     break;
