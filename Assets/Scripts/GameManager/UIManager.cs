@@ -50,11 +50,11 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i <= PoolManager.instance.enemiesOffPool.Count - 1; i++)
         {
-            if (PoolManager.instance.enemiesOffPool[i].GetComponent<HostileTroopManager>().currentHealth > 0) { break; }
+            if (PoolManager.instance.enemiesOffPool[i].GetComponent<HostileTroopManager>().currentHealth > 0) { tg = null; break; }
             else { tg = PoolManager.instance.enemiesOffPool[i]; }
         }
 
-        if (tg != null) { ShowText(winText); Debug.Log("ss"); }
+        if (tg != null) { ShowText(winText); }
     }
 
     private void ShowText(GameObject text)
